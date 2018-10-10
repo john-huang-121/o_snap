@@ -14,5 +14,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "8.10.0",
+    "npm": "3.5.2"
+  },
+  "scripts": {
+    "postinstall": "webpack"
+  }
 }
