@@ -18,32 +18,31 @@ class Navbar extends React.Component {
           </li>
 
           <li className="nav-flex-discover">
-            <a className='btn' href="#">Discover</a>
+            <a className='nav-btn' href="#">Discover</a>
           </li>
 
 
           <li className='nav-flex-about'>
-            <a className='btn' href="#">About</a>
+            <a className='nav-btn' href="#">About</a>
           </li>
 
           <li className='nav-flex-studio'>
-            <a className='btn' href="#">Studio</a>
+            <a className='nav-btn' href="#">Studio</a>
           </li>
 
           <li className='nav-flex-search-container'>
-            <ul>
-              <li>
-                <input className='search-bar' type="query"></input>
-              </li>
-            </ul>
-          </li>
-
-          <li className='nav-flex-signup'>
-            <Link className='btn' to='/signup'>Sign Up</Link>
+            <div className='nav-flex-search-container-2'>
+              <input className='search-bar' type="text"
+              placeholder="Search for photos, location, or people"></input>
+            </div>
           </li>
 
           <li className='nav-flex-login'>
-            <Link className='btn' to='/login'>Login</Link>
+            <Link className='nav-btn' id='login' to='/login'>Log In</Link>
+          </li>
+
+          <li className='nav-flex-signup'>
+            <Link className='nav-btn' id='signup' to='/signup'>Sign Up</Link>
           </li>
         </nav>
       </header>

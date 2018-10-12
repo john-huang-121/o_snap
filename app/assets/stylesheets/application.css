@@ -14,8 +14,9 @@
  */
 
 /* CSS Reset */
- @import "reset.scss";
+ /* @import "reset.scss"; */
 
 /* Core */
- @import "entire.scss";
+ /* @import "nav.scss"; */
+
  @import "https://fonts.googleapis.com/css?family=Rancho&effect=fire-animation";

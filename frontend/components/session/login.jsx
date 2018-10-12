@@ -1,4 +1,5 @@
 import React from 'react';
+import NavbarContainer from '../navbar/navbar_container';
 
 class Login extends React.Component {
   constructor(props) {
@@ -26,7 +27,9 @@ class Login extends React.Component {
 
   render () {
     return (
+
       <div className='session-form'>
+        <NavbarContainer />
         <form onSubmit={this.handleSubmit}>
           <h1>Log In!</h1>
 
