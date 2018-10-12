@@ -8,6 +8,7 @@ import NavbarContainer from './navbar/navbar_container';
 const App = () => (
   <div>
     <NavbarContainer />
+
     <AuthRoute path='/login' component={LoginContainer} />
     <AuthRoute path='/signup' component={SignupContainer} />
   </div>
