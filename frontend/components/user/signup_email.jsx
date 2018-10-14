@@ -2,7 +2,7 @@ import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import { Link } from 'react-router-dom';
 
-class Signup extends React.Component {
+class SignupEmail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,31 +28,19 @@ class Signup extends React.Component {
 
   render () {
     return (
-      <section className='signup-page-container'>
+      <section className='signup-email-page-container'>
         <NavbarContainer />
-        <div className='signup-page-after-nav'>
-          <div className='signup-form-flex-container'>
-            <div className='signup-buttons-header'>
-              <ul className='signup-buttons-header-texts'>
-                <li>Join OSnap</li>
-                <li>Share your photos, get inspired, and grow your skills</li>
+        <div className='signup-email-page-after-nav'>
+          <div className='signup-email-form-flex-container'>
+            <div className='signup-email-buttons-header'>
+              <ul className='signup-email-buttons-header-texts'>
+                <li>Sign up with <a href='#'>Facebook </a>
+                or <a href='#'>Google</a>.</li>
               </ul>
             </div>
 
-            <div className='signup-buttons'>
-              <button className='signup-facebook-button'>
-                <div className='signup-facebook-icon'></div>
-                <p>Continue with Facebook</p>
-              </button>
-
-              <button className='signup-google-button'>
-                <div className='signup-google-icon'></div>
-                <p>Continue with Google</p>
-              </button>
-            </div>
-
-            <div className="signup-newsletter-and-email-container">
-              <div className='signup-newsletter-checkbox-container'>
+            <div className="signup-email-newsletter-and-email-container">
+              <div className='signup-email-newsletter-checkbox-container'>
                 <input type="checkbox"></input>
                 <p>
                   I would like to receive emails with likes,
@@ -61,24 +49,24 @@ class Signup extends React.Component {
                 </p>
               </div>
 
-              <div className='signup-line-divider-container'>
-                <div className='signup-line-divider'></div>
-                <div className='signup-text-divider'>or</div>
-                <div className='signup-line-divider'></div>
+              <div className='signup-email-line-divider-container'>
+                <div className='signup-email-line-divider'></div>
+                <div className='signup-email-text-divider'>or</div>
+                <div className='signup-email-line-divider'></div>
               </div>
 
-               <button className='signup-email-button'>
-                 <div className='signup-email-icon'></div>
+               <button className='signup-email-email-button'>
+                 <div className='signup-email-email-icon'></div>
                  <p>Continue with Email</p>
                </button>
             </div>
 
-            <div className='signup-page-TOS-container'>
-              <li className='signup-page-TOS'>By signing up, you agree to our&nbsp;
+            <div className='signup-email-page-TOS-container'>
+              <li className='signup-email-page-TOS'>By signing up, you agree to our&nbsp;
                 <a href='#'>Terms of Service.</a>
               </li>
 
-              <li className='signup-page-TOS'>Already have an account?
+              <li className='signup-email-page-TOS'>Already have an account?
                 <Link className='nav-btn' id='login' to='/login'>Log in</Link>
               </li>
             </div>
@@ -91,9 +79,9 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup;
+export default SignupEmail;
 
-// <form className='signup-form' onSubmit={this.handleSubmit}>
+// <form className='signup-email-form' onSubmit={this.handleSubmit}>
 // <h1>Sign Up!</h1>
 //
 // <label>username

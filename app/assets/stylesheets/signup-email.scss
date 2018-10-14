@@ -1,4 +1,4 @@
-.signup-page-container {
+.signup-email-page-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,14 +9,13 @@
   z-index: 0;
 }
 
-.signup-page-after-nav {
+.signup-email-page-after-nav {
   display: flex;
-  // align-items: center;
   justify-content: center;
   height: 555px;
 }
 
-.signup-form-flex-container {
+.signup-email-form-flex-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,99 +27,41 @@
   padding: 32px 40px 24px;
 }
 
-.signup-buttons-header-texts li:first-child {
-  display: block;
-  color: #525558;
-  font-weight: 300 bold;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 25px;
-}
-
-.signup-buttons-header-texts li:last-child {
+.signup-email-buttons-header-texts li {
   display: block;
   color: #525558;
   font-weight: 300;
   font-family: 'Josefin Sans', sans-serif;
   margin-top: 12px;
-  // margin-bottom: 18px;
   font-size: 17px;
 }
 
-.signup-buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 120px;
-  width: 318px;
-  margin-bottom: 25px;
+.signup-email-buttons-header-texts a {
+  color: blue;
 }
 
-.signup-buttons button {
-  height: 50px;
-  width: 302px;
-  padding-left: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.signup-buttons p {
-  margin-left: 10px;
-  color: white;
-}
-
-.signup-facebook-button {
-  background-color: #3b5998;
-}
-
-.signup-facebook-icon {
-  width: 25px;
-  height: 25px;
-  background-size: 25px 25px;
-  background-image: url(facebook-logo-png-38362.jpg);
-}
-
-.signup-google-button {
-  display: flex;
-  background-color: white;
-  border-radius: 2px;
-  box-shadow: 0 1px 1px lightgrey
-}
-
-.signup-google-button p {
-  color: #525558;
-}
-
-.signup-google-icon {
-  width: 25px;
-  height: 25px;
-  background-size: 25px 25px;
-  background-image: url(if_new-google-favicon_682665.png);
-
-}
-
-.signup-newsletter-and-email-container {
+.signup-email-newsletter-and-email-container {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.signup-newsletter-checkbox-container {
+.signup-email-newsletter-checkbox-container {
   display: flex;
   flex-direction: row;
   text-align: left;
   font-size: 14px;
 }
 
-.signup-newsletter-checkbox-container input {
+.signup-email-newsletter-checkbox-container input {
   margin-right: 12px;
 }
 
-.signup-newsletter-checkbox-container a {
+.signup-email-newsletter-checkbox-container a {
   color: blue;
 }
 
-.signup-line-divider-container {
+.signup-email-line-divider-container {
   display: flex;
   align-items: center;
   width: 100%;
@@ -128,17 +69,17 @@
   color: #b9c1c7;
 }
 
-.signup-line-divider {
+.signup-email-line-divider {
   border: solid 1px #b9c1c7;
   width: 150px;
 }
 
-.signup-text-divider {
+.signup-email-text-divider {
   margin: 0 10px;
   flex: 0;
 }
 
-.signup-buttons {
+.signup-email-buttons {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -147,7 +88,7 @@
   margin-bottom: 25px;
 }
 
-.signup-email-button {
+.signup-email-email-button {
   display: flex;
   align-items: center;
   text-align: center;
@@ -159,13 +100,13 @@
   box-shadow: 0 1px 1px lightgrey
 }
 
-.signup-email-button p {
+.signup-email-email-button p {
   color: #525558;
   margin-left: 10px;
   // color: white;
 }
 
-.signup-email-icon {
+.signup-email-email-icon {
   width: 25px;
   height: 25px;
   background-size: 25px 25px;
@@ -173,7 +114,7 @@
 
 }
 
-.signup-page-TOS-container {
+.signup-email-page-TOS-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -181,6 +122,6 @@
   // padding-top: 30px;
 }
 
-.signup-page-TOS a {
+.signup-email-page-TOS a {
   color: blue;
 }
