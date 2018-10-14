@@ -1,0 +1,42 @@
+.homepage-display-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 107px;
+  background-image: url(muhammad-shahzad-361233-unsplash.jpg);
+  // background-image: url(nathan-anderson-135242-unsplash.jpg);
+  // Photo by Muhammad Shahzad on Unsplash (ocean horizon)
+  // Photo by Nathan Anderson on Unsplash (trees)
+  background-size: 1853px 528px;
+  // background-size: 1853px 1228px;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.home-display-opening-text {
+  font-size: 48px;
+  text-align: center;
+  color: white;
+  max-width: 900px;
+  padding: 40px 0;
+}
+
+.home-display-following-text {
+  color: white;
+  font-size: 27px;
+  max-width: 800px;
+}
+
+.home-display-signup-button {
+  margin-top: 40px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 100px;
+  border: 2px solid #0099e5;
+  height: 50px;
+  width: 140px;
+  background-color: #0099e5;
+  color: white;
+  text-align: center;
+}

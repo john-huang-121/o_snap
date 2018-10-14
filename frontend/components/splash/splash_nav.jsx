@@ -13,7 +13,7 @@ class SplashNav extends React.Component {
 
         <ul className='splash-nav-flex-link-container'>
           <li className='splash-nav-flex-logo'>
-            <a className='splash-logo' href='http://localhost:3000/#/'>OSnap</a>
+            <a className='splash-logo font-effect-fire-animation' href='http://localhost:3000/#/'>OSnap</a>
           </li>
 
           <li className='splash-nav-flex-discover'>

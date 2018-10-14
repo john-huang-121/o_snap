@@ -1,0 +1,93 @@
+.signup-page-after-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F9F7F7;
+  height: 646px;
+}
+
+.signup-form-flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  width: 400px;
+  background-color: #FFF;
+  border: 1px solid #eeeff2;
+  padding: 32px 40px 24px;
+}
+
+.signup-buttons-header-texts li:first-child {
+  display: block;
+  color: #525558;
+  font-weight: 300 bold;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30px;
+}
+
+.signup-buttons-header-texts li:last-child {
+  display: block;
+  color: #525558;
+  font-weight: 300;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 12px;
+  margin-bottom: 18px;
+  font-size: 21px;
+}
+
+.signup-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 120px;
+  width: 318px;
+}
+
+.signup-buttons button {
+  height: 50px;
+  width: 302px;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.signup-buttons p {
+  margin-left: 10px;
+  color: white;
+}
+
+.signup-facebook-button {
+  background-color: #3b5998;
+}
+
+.signup-facebook-icon {
+  width: 25px;
+  height: 25px;
+  background-size: 25px 25px;
+  background-image: url(facebook-logo-png-38362.jpg);
+}
+
+.signup-google-button {
+  display: flex;
+  background-color: green;
+}
+
+.signup-google-icon {
+  width: 25px;
+  height: 25px;
+  background-size: 25px 25px;
+  background-image: url(if_new-google-favicon_682665.png);
+
+}
+
+.signup-newsletter-checkbox-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.signup-thin-line-divider {
+  margin: 30px -40px;
+  border: 1px solid #eeeff2;
+}

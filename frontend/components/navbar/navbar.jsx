@@ -12,7 +12,7 @@ class Navbar extends React.Component {
       <header className="nav-bar">
         <nav className="nav-flex-container">
           <li className='nav-flex-logo'>
-            <a className='logo' href='http://localhost:3000/#/'>
+            <a className='nav-logo' href='http://localhost:3000/#/'>
               OSnap
             </a>
           </li>
