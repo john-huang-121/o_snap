@@ -38,3 +38,5 @@ class User < ApplicationRecord
   end
 
 end
+
+#find by credential take in optional username?

@@ -16,9 +16,9 @@ class HomepageDisplay extends React.Component {
           Find your home among the world's best photographers.
         </ul>
 
-        <button className='home-display-signup-button'>
-          Join Osnap
-        </button>
+        <Link className='home-display-signup-button'
+          to='/signup'>Join Osnap
+        </Link>
       </div>
     );
   }

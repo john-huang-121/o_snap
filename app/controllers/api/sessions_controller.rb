@@ -21,3 +21,5 @@ class Api::SessionsController < ApplicationController
     end
   end
 end
+
+# how to make username login optional?

@@ -10,21 +10,11 @@ class Login extends React.Component {
       email: '',
       password: ''
     };
-    this.demo = {
-      // username: '',
-      email: 'user11@gmail.com',
-      password: '123456'
-    };
+
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.demoLogin = this.demoLogin.bind(this);
   }
 
-  // demoOrNotLogin(button) {
-  //   return (e) => {
-  //     this.whichButton
-  //   }
-  // }
 
   handleInput(type) {
     return (e) => {
@@ -32,10 +22,17 @@ class Login extends React.Component {
     };
   }
 
+  demoLogin(e) {
+    e.preventDefault();
+    // this.setState({email: 'user11@gmail.com', password: '123456'});
+    this.props.login({email: 'user11@gmail.com', password: '123456'})
+    .then(() => this.props.history.push('/login_success!'));
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state)
-      .then(() => this.props.history.push('/'));
+      .then(() => this.props.history.push('/login_success!'));
   }
 
   render () {
@@ -66,8 +63,8 @@ class Login extends React.Component {
                 </label>
 
                 <div className='login-forms-container'>
-                  <input type='submit' value='Log In' />
-                  <input type='submit' value='Demo log In' />
+                  <input type='submit' value='Log in' />
+                  <button onClick={e => this.demoLogin(e)}>Demo Log In</button>
                 </div>
 
                 <div className='login-buttons'>
