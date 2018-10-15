@@ -22,7 +22,7 @@ class SignupEmail extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewUser(this.state)
-      .then(() => this.props.history.push('/photos'));
+      .then(() => this.props.history.push('/creation_success!'));
   }
 
   render () {

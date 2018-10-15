@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor(props) {
@@ -27,30 +28,53 @@ class Login extends React.Component {
 
   render () {
     return (
-
-      <div className='session-form'>
+      <section className='login-page-container'>
         <NavbarContainer />
-        <form onSubmit={this.handleSubmit}>
-          <h1>Log In!</h1>
+        <div className='login-page-after-nav'>
+          <div className='login-header-flex-container'>
+            <div className='login-header'>
+              <ul className='login-header-texts'>
+                <li>Log In to 500px</li>
+              </ul>
+            </div>
 
-          <label>username
-            <input type='text' value={this.state.username}
-            onChange={this.handleInput('username')} />
-          </label>
+            <div className='login-form-container'>
+              <form className='login-form' onSubmit={this.handleSubmit}>
+                <label>Email
+                  <input className='login-input' type='email' value={this.state.email}
+                  onChange={this.handleInput('email')} />
+                </label>
 
-          <label>Email
-            <input type='email' value={this.state.email}
-            onChange={this.handleInput('email')} />
-          </label>
+                <label>Password
+                  <input className='login-input' type='password' value={this.state.password}
+                  onChange={this.handleInput('password')} />
+                </label>
 
-          <label>Password
-            <input type='password' value={this.state.password}
-            onChange={this.handleInput('password')} />
-          </label>
+                <input className='login-form-submit' type='submit' value='Sign Up' />
 
-          <input type='submit' value='Log In' />
-        </form>
-      </div>
+                <div className='login-buttons'>
+                  <button className='login-facebook-button'>
+                    <div className='login-facebook-icon'></div>
+                    <p>Continue with Facebook</p>
+                  </button>
+
+                  <button className='login-google-button'>
+                    <div className='login-google-icon'></div>
+                    <p>Continue with Google</p>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div className='login-page-link-container'>
+              <li className='login-page-link'>Don't have an account?&nbsp;
+                <Link className='nav-btn' id='signup' to='/signup'>Log in</Link>
+              </li>
+            </div>
+
+          </div>
+        </div>
+      </section>
     );
   }
 }
