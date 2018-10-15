@@ -6,13 +6,25 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      // username: '',
       email: '',
       password: ''
     };
+    this.demo = {
+      // username: '',
+      email: 'user11@gmail.com',
+      password: '123456'
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.demoLogin = this.demoLogin.bind(this);
   }
+
+  // demoOrNotLogin(button) {
+  //   return (e) => {
+  //     this.whichButton
+  //   }
+  // }
 
   handleInput(type) {
     return (e) => {
@@ -40,17 +52,23 @@ class Login extends React.Component {
 
             <div className='login-form-container'>
               <form className='login-form' onSubmit={this.handleSubmit}>
-                <label>Email
+                <label className='login-form-email-username-container'>Email or Username
                   <input className='login-input' type='email' value={this.state.email}
                   onChange={this.handleInput('email')} />
                 </label>
 
-                <label>Password
+                <label className='login-form-password-container'>
+                  <div className='login-form-password-header'>
+                    Password<a href='#' className='forgot-pass'>Forgot password?</a>
+                  </div>
                   <input className='login-input' type='password' value={this.state.password}
                   onChange={this.handleInput('password')} />
                 </label>
 
-                <input className='login-form-submit' type='submit' value='Sign Up' />
+                <div className='login-forms-container'>
+                  <input type='submit' value='Log In' />
+                  <input type='submit' value='Demo log In' />
+                </div>
 
                 <div className='login-buttons'>
                   <button className='login-facebook-button'>
@@ -68,7 +86,7 @@ class Login extends React.Component {
 
             <div className='login-page-link-container'>
               <li className='login-page-link'>Don't have an account?&nbsp;
-                <Link className='nav-btn' id='signup' to='/signup'>Log in</Link>
+                <Link className='nav-btn' id='signup' to='/signup'>Sign up</Link>
               </li>
             </div>
 

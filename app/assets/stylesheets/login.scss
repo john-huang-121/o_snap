@@ -22,6 +22,7 @@
   justify-content: space-between;
   flex-direction: column;
   text-align: center;
+  height: 535px;
   width: 318px;
   background-color: #FFF;
   border: 1px solid #eeeff2;
@@ -31,7 +32,6 @@
 .login-header-texts li:first-child {
   display: block;
   color: #525558;
-  font-weight: 300 bold;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 25px;
 }
@@ -41,11 +41,27 @@
   text-align: left;
 }
 
-.login-form-container label {
+.login-form-email-username-container {
   display: flex;
   text-align: left;
   flex-direction: column;
   color: grey;
+}
+
+.login-form-password-container {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  color: grey;
+}
+
+.login-form-password-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.forgot-pass {
+  color: #0099e5;
 }
 
 .login-input {
@@ -59,7 +75,16 @@
   line-height: 1.4em;
 }
 
-.login-form-submit {
+.login-forms-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.login-forms-container input {
   font-weight: 300 bold;
   font-family: 'Josefin Sans', sans-serif;
   width: 100%;
@@ -70,7 +95,23 @@
   border: 1px solid #41cb56;
   border-radius: 5px;
   height: 40px;
+  margin-bottom: 25px;
 }
+
+.login-form-demo-container input {
+  font-weight: 300 bold;
+  font-family: 'Josefin Sans', sans-serif;
+  width: 100%;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  background-color: #41cb56;
+  border: 1px solid #41cb56;
+  border-radius: 5px;
+  height: 40px;
+  margin-bottom: 25px;
+}
+
 .login-buttons {
   display: flex;
   flex-direction: column;
@@ -207,5 +248,5 @@
 }
 
 .login-page-link a {
-  color: blue;
+  color: #0099e5;
 }
