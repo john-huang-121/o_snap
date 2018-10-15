@@ -69,7 +69,7 @@ class Signup extends React.Component {
 
                <button className='signup-email-button'>
                  <div className='signup-email-icon'></div>
-                 <Link className='signup-email-link' to='/signup/email'>Continue with Email</Link>
+                 <Link className='signup-email-link' to='/email'>Continue with Email</Link>
                </button>
             </div>
 
