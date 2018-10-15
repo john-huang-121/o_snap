@@ -7,7 +7,39 @@ class Navbar extends React.Component {
     this.props.fetchUsers();
   }
 
+  currentPageState () {
+    if (this.props.isSignup) {
+      const signup = (
+        <li className='nav-flex-login'>
+          <Link className='nav-btn' id='login' to='/login'>Log In</Link>
+        </li>
+      );
+      return signup;
+    } else if (this.props.isLogin) {
+      const login = (
+        <li className='nav-flex-signup'>
+          <Link className='nav-btn' id='signup' to='/signup'>Sign Up</Link>
+        </li>
+      );
+      return login;
+    } else if (this.props.isSplash) {
+      const splash = (
+        <ul className='nav-flex-login-signup-container'>
+          <li className='nav-flex-login'>
+            <Link className='nav-btn' id='login' to='/login'>Log In</Link>
+          </li>
+
+          <li className='nav-flex-signup'>
+            <Link className='nav-btn' id='signup' to='/signup'>Sign Up</Link>
+          </li>
+        </ul>
+      );
+      return splash;
+    }
+  }
+
   render () {
+
     return (
       <header className="nav-bar">
         <nav className="nav-flex-container">
@@ -37,13 +69,8 @@ class Navbar extends React.Component {
             </div>
           </li>
 
-          <li className='nav-flex-login'>
-            <Link className='nav-btn' id='login' to='/login'>Log In</Link>
-          </li>
+          {this.currentPageState()}
 
-          <li className='nav-flex-signup'>
-            <Link className='nav-btn' id='signup' to='/signup'>Sign Up</Link>
-          </li>
         </nav>
       </header>
     );

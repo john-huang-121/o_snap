@@ -7,14 +7,14 @@ import LoginContainer from './session/login_container';
 import SplashNavContainer from './splash/splash_nav_container';
 import NavbarContainer from './navbar/navbar_container';
 import HomepageDisplayContainer from './splash/homepage_display_container';
+import SignupHomeContainer from './user/signup_home_container';
 
 const App = () => (
   <div>
     <Route exact path='/' component={SplashNavContainer} />
     <Route exact path='/' component={HomepageDisplayContainer} />
     <AuthRoute path='/login' component={LoginContainer} />
-    <AuthRoute path='/signup' component={SignupContainer} />
-    <AuthRoute exact path='/email' component={SignupEmailContainer} />
+    <AuthRoute path='/signup' component={SignupHomeContainer} />
   </div>
 );
 

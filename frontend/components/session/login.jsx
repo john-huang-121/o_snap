@@ -24,9 +24,10 @@ class Login extends React.Component {
 
   demoLogin(e) {
     e.preventDefault();
-    // this.setState({email: 'user11@gmail.com', password: '123456'});
-    this.props.login({email: 'user11@gmail.com', password: '123456'})
-    .then(() => this.props.history.push('/login_success!'));
+    this.setState(
+      {email: 'user11@gmail.com', password: '123456'},
+      this.props.login(this.state)
+        .then(() => this.props.history.push('/login_success!')));
   }
 
   handleSubmit(e) {

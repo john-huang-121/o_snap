@@ -14,6 +14,12 @@ class Signup extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  emailSignupClicked() {
+    return (e) => {
+
+    }
+  }
+
   handleInput(type) {
     return (e) => {
       this.setState({[type]: e.target.value});
@@ -29,7 +35,6 @@ class Signup extends React.Component {
   render () {
     return (
       <section className='signup-page-container'>
-        <NavbarContainer />
         <div className='signup-page-after-nav'>
           <div className='signup-form-flex-container'>
             <div className='signup-buttons-header'>
@@ -69,7 +74,8 @@ class Signup extends React.Component {
 
                <button className='signup-email-button'>
                  <div className='signup-email-icon'></div>
-                 <Link className='signup-email-link' to='/email'>Continue with Email</Link>
+                 <Link className='signup-email-link' to='/signup'
+                  onClick={this.props.onSignupClick()}>Continue with Email</Link>
                </button>
             </div>
 

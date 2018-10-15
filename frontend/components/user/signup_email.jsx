@@ -28,7 +28,6 @@ class SignupEmail extends React.Component {
   render () {
     return (
       <section className='signup-email-page-container'>
-        <NavbarContainer />
         <div className='signup-email-page-after-nav'>
           <div className='signup-email-header-flex-container'>
             <div className='signup-email-header'>
