@@ -6,7 +6,6 @@ class SignupEmail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
       email: '',
       password: ''
     };
@@ -31,34 +30,45 @@ class SignupEmail extends React.Component {
       <section className='signup-email-page-container'>
         <NavbarContainer />
         <div className='signup-email-page-after-nav'>
-          <div className='signup-email-form-flex-container'>
-            <div className='signup-email-buttons-header'>
-              <ul className='signup-email-buttons-header-texts'>
+          <div className='signup-email-header-flex-container'>
+            <div className='signup-email-header'>
+              <ul className='signup-email-header-texts'>
                 <li>Sign up with <a href='#'>Facebook </a>
                 or <a href='#'>Google</a>.</li>
               </ul>
-            </div>
-
-            <div className="signup-email-newsletter-and-email-container">
-              <div className='signup-email-newsletter-checkbox-container'>
-                <input type="checkbox"></input>
-                <p>
-                  I would like to receive emails with likes,
-                  comments, replies and updates from Osnap.&nbsp;
-                  <a href='#'>Learn more.</a>
-                </p>
-              </div>
 
               <div className='signup-email-line-divider-container'>
                 <div className='signup-email-line-divider'></div>
                 <div className='signup-email-text-divider'>or</div>
                 <div className='signup-email-line-divider'></div>
               </div>
+            </div>
 
-               <button className='signup-email-email-button'>
-                 <div className='signup-email-email-icon'></div>
-                 <p>Continue with Email</p>
-               </button>
+            <div className='signup-email-form-container'>
+              <form className='signup-email-form' onSubmit={this.handleSubmit}>
+                <label>Email
+                  <input className='signup-email-input' type='email' value={this.state.email}
+                  onChange={this.handleInput('email')} />
+                </label>
+
+                <label>Password
+                  <input className='signup-email-input' type='password' value={this.state.password}
+                  onChange={this.handleInput('password')} />
+                </label>
+
+                <div className="signup-email-newsletter-and-email-container">
+                  <div className='signup-email-newsletter-checkbox-container'>
+                    <input type="checkbox"></input>
+                    <p>
+                      I would like to receive emails with likes,
+                      comments, replies and updates from Osnap.&nbsp;
+                      <a href='#'>Learn more.</a>
+                    </p>
+                  </div>
+                </div>
+
+                <input className='signup-email-form-submit' type='submit' value='Sign Up' />
+              </form>
             </div>
 
             <div className='signup-email-page-TOS-container'>
@@ -73,31 +83,9 @@ class SignupEmail extends React.Component {
 
           </div>
         </div>
-
       </section>
     );
   }
 }
 
 export default SignupEmail;
-
-// <form className='signup-email-form' onSubmit={this.handleSubmit}>
-// <h1>Sign Up!</h1>
-//
-// <label>username
-// <input type='text' value={this.state.username}
-// onChange={this.handleInput('username')} />
-// </label>
-//
-// <label>Email
-// <input type='email' value={this.state.email}
-// onChange={this.handleInput('email')} />
-// </label>
-//
-// <label>Password
-// <input type='password' value={this.state.password}
-// onChange={this.handleInput('password')} />
-// </label>
-//
-// <input type='submit' value='Sign Up' />
-// </form>

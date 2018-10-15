@@ -15,35 +15,102 @@
   height: 555px;
 }
 
-.signup-email-form-flex-container {
+.signup-email-header-flex-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-direction: column;
   text-align: center;
   width: 318px;
+  height: 425px;
   background-color: #FFF;
   border: 1px solid #eeeff2;
   padding: 32px 40px 24px;
 }
 
-.signup-email-buttons-header-texts li {
+.signup-email-header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.signup-email-header-texts li {
   display: block;
   color: #525558;
   font-weight: 300;
   font-family: 'Josefin Sans', sans-serif;
-  margin-top: 12px;
   font-size: 17px;
 }
 
-.signup-email-buttons-header-texts a {
+.signup-email-header-texts a {
   color: blue;
+}
+
+.signup-email-line-divider-container {
+  display: flex;
+  align-items: center;
+  width: 316px;
+  margin: 20px 0;
+  color: #b9c1c7;
+}
+
+.signup-email-form {
+  display: flex;
+  flex-direction: column;
+  width: 316px;
+}
+
+.signup-email-line-divider {
+  border: solid 1px #b9c1c7;
+  width: 150px;
+}
+
+.signup-email-text-divider {
+  margin: 0 10px;
+  flex: 0;
+}
+
+.signup-email-form-container {
+  display: flex;
+  text-align: left;
+}
+
+.signup-email-form-container label {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  color: grey;
+}
+
+.signup-email-input {
+  margin: 6px 0px 17px 0px;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  transition: border-color 0.2s;
+  line-height: 1.4em;
+}
+
+.signup-email-form-submit {
+  font-weight: 300 bold;
+  font-family: 'Josefin Sans', sans-serif;
+  width: 100%;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  background-color: #41cb56;
+  border: 1px solid #41cb56;
+  border-radius: 5px;
+  height: 40px;
 }
 
 .signup-email-newsletter-and-email-container {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-top: 17px;
+  padding-bottom: 17px;
 }
 
 .signup-email-newsletter-checkbox-container {
@@ -61,65 +128,20 @@
   color: blue;
 }
 
-.signup-email-line-divider-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin: 20px 0;
-  color: #b9c1c7;
-}
-
-.signup-email-line-divider {
-  border: solid 1px #b9c1c7;
-  width: 150px;
-}
-
-.signup-email-text-divider {
-  margin: 0 10px;
-  flex: 0;
-}
-
-.signup-email-buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 120px;
-  width: 318px;
-  margin-bottom: 25px;
-}
-
-.signup-email-email-button {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  background-color: #f7f8fa;
-  border-radius: 2px;
-  height: 50px;
-  width: 302px;
-  padding-left: 16px;
-  box-shadow: 0 1px 1px lightgrey
-}
-
-.signup-email-email-button p {
-  color: #525558;
-  margin-left: 10px;
-  // color: white;
-}
-
-.signup-email-email-icon {
-  width: 25px;
-  height: 25px;
-  background-size: 25px 25px;
-  background-image: url(if_envelope_925921.png);
-
+.signup-email-newsletter-checkbox-container p {
+  font-weight: 300;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 13px;
 }
 
 .signup-email-page-TOS-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 60px;
   font-size: 14px;
-  // padding-top: 30px;
+  font-weight: 300;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .signup-email-page-TOS a {
