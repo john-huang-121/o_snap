@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 import { createNewUser } from '../../actions/session_actions';
 import SignupEmail from './signup_email';
 
-// const mapStateToProps = (state) => {
-//   return {
-//
-//   };
-// };
+const mapStateToProps = (state) => {
+  return {
+    errors: state.errors,
+    entities: state.entities
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -14,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(SignupEmail);
+export default connect(mapStateToProps, mapDispatchToProps)(SignupEmail);

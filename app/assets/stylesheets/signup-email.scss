@@ -93,6 +93,16 @@
   line-height: 1.4em;
 }
 
+.signup-errors-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signup-error {
+  color: red;
+}
+
 .signup-email-form-submit {
   font-weight: 300 bold;
   font-family: 'Josefin Sans', sans-serif;

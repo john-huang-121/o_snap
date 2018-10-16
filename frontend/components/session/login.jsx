@@ -37,6 +37,18 @@ class Login extends React.Component {
       .then(() => this.props.history.push('/login_success!'));
   }
 
+  renderErrors() {
+    if (this.props.errors) {
+      return (
+        <ul className='login-errors-container'>
+          {this.props.errors.map((error) => (
+            <li className='login-error'>{error}</li>)
+          )}
+        </ul>
+      );
+    }
+  }
+
   render () {
     return (
       <section className='login-page-container'>
@@ -63,6 +75,8 @@ class Login extends React.Component {
                   <input className='login-input' type='password' value={this.state.password}
                   onChange={this.handleInput('password')} />
                 </label>
+
+                {this.renderErrors()}
 
                 <div className='login-forms-container'>
                   <input type='submit' value='Log in' />

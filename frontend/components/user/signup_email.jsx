@@ -10,6 +10,7 @@ class SignupEmail extends React.Component {
       password: ''
     };
 
+    this.renderErrors = this.renderErrors.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -25,7 +26,26 @@ class SignupEmail extends React.Component {
       .then(() => this.props.history.push('/creation_success!'));
   }
 
+  renderErrors() {
+    if (this.props.errors) {
+      return (
+        <ul className='signup-errors-container'>
+          {this.props.errors.map((error) => (
+            <li className='signup-error'>{error}</li>)
+          )}
+        </ul>
+      );
+    }
+  }
+
   render () {
+
+    // const show = this.props.errors.map((error) => {
+    //   return (<ul className='signup-error'>
+    //       <li className='signup-error'>{error}</li>;
+    //       </ul>);
+    //   });
+
     return (
       <section className='signup-email-page-container'>
         <div className='signup-email-page-after-nav'>
@@ -54,6 +74,8 @@ class SignupEmail extends React.Component {
                   <input className='signup-email-input' type='password' value={this.state.password}
                   onChange={this.handleInput('password')} />
                 </label>
+
+                {this.renderErrors()}
 
                 <div className="signup-email-newsletter-and-email-container">
                   <div className='signup-email-newsletter-checkbox-container'>
