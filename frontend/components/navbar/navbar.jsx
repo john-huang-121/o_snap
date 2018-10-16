@@ -22,7 +22,7 @@ class Navbar extends React.Component {
         </li>
       );
       return login;
-    } else if (this.props.isSplash) {
+    } else if (this.props.isSplash && this.props.currentUserId === 'null') {
       const splash = (
         <ul className='nav-flex-login-signup-container'>
           <li className='nav-flex-login'>
@@ -35,6 +35,24 @@ class Navbar extends React.Component {
         </ul>
       );
       return splash;
+
+    } else if (this.props.isSplash && this.props.currentUserId !== 'null') {
+      const userNav = (
+        <ul className='nav-icons-and-upload-flex-container'>
+          <li>profile pic circle dropdown
+          </li>
+
+          <li>messenger (paper airplane icon)
+          </li>
+
+          <li>notifications (clickable dropdown)
+          </li>
+
+          <button>Upload
+          </button>
+        </ul>
+      );
+      return userNav;
     }
   }
 

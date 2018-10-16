@@ -72,6 +72,12 @@
   width: 325px;
 }
 
+.nav-flex-login-signup-container {
+  display: flex;
+  justify-content: space-between;
+  height: 50px
+}
+
 .nav-flex-signup {
   display: flex;
   align-items: center;
