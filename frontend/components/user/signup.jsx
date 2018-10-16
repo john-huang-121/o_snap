@@ -14,12 +14,6 @@ class Signup extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  emailSignupClicked() {
-    return (e) => {
-
-    }
-  }
-
   handleInput(type) {
     return (e) => {
       this.setState({[type]: e.target.value});

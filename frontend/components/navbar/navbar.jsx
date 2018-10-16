@@ -7,6 +7,12 @@ class Navbar extends React.Component {
     this.props.fetchUsers();
   }
 
+  clickLogout(e) {
+    e.preventDefault();
+    this.props.logout().then(() =>
+      this.props.history.push('/logout_success!'));
+  }
+
   currentPageState () {
     if (this.props.isSignup) {
       const signup = (
@@ -39,17 +45,64 @@ class Navbar extends React.Component {
     } else if (this.props.isSplash && this.props.currentUserId !== 'null') {
       const userNav = (
         <ul className='nav-icons-and-upload-flex-container'>
-          <li>profile pic circle dropdown
+          <li className='nav-flex-default-user-container'>
+            <a href='#'>
+              <div className='nav-default-user-icon'></div>
+            </a>
+            <div className='nav-default-user-icon-dropdown'>
+              <ul className='nav-default-user-icon-dropdown-clearfix'>
+                <li>
+                  <a href='#'>My Profile</a>
+                </li>
+                <li>
+                  <a href='#'>My Stats</a>
+                </li>
+                <li>
+                  <a href='#'>My Galleries</a>
+                </li>
+                <li>
+                  <a href='#'>My Liked Photos</a>
+                </li>
+              </ul>
+              <ul className='nav-default-user-icon-dropdown-clearfix'>
+                <li>
+                  <a href='#'>My Settings</a>
+                </li>
+                <li>
+                  <a href='#'>Manage Photos</a>
+                </li>
+              </ul>
+              <ul className='nav-default-user-icon-dropdown-clearfix'>
+                <li>
+                  <a href='#'>Support</a>
+                </li>
+              </ul>
+              <ul className='nav-default-user-icon-dropdown-clearfix'>
+                <li>
+                  <div>
+                    <button onClick={e => this.clickLogout(e)}>Log out</button>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </li>
 
-          <li>messenger (paper airplane icon)
+          <li className='nav-flex-messenger-container'>
+            <a href='#'>
+              <div className='nav-messenger-icon'></div>
+            </a>
           </li>
 
-          <li>notifications (clickable dropdown)
+          <li className='nav-flex-notification-container'>
+            <a href='#'>
+              <div className='nav-notification-icon'></div>
+            </a>
           </li>
 
-          <button>Upload
-          </button>
+          <li className='nav-flex-upload-container'>
+            <div className='nav-upload-icon'></div>
+            <a href='#' className='nav-btn' id='upload'>Upload</a>
+          </li>
         </ul>
       );
       return userNav;
@@ -81,10 +134,10 @@ class Navbar extends React.Component {
           </li>
 
           <li className='nav-flex-search-container'>
-            <div className='nav-flex-search-container-2'>
+            <form className='nav-flex-search-container-2'>
               <input className='search-bar' type="text"
               placeholder="Search for photos, location, or people"></input>
-            </div>
+            </form>
           </li>
 
           {this.currentPageState()}
