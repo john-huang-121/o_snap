@@ -14,6 +14,10 @@ class SignupEmail extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearAllErrors();
+  }
+
   handleInput(type) {
     return (e) => {
       this.setState({[type]: e.target.value});
@@ -23,7 +27,7 @@ class SignupEmail extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewUser(this.state)
-      .then(() => this.props.history.push('/creation_success!'));
+      .then(() => this.props.history.push('/'));
   }
 
   renderErrors() {

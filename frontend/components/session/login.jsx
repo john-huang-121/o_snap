@@ -14,6 +14,9 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearAllErrors();
+  }
 
   handleInput(type) {
     return (e) => {
@@ -24,16 +27,16 @@ class Login extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     this.setState(
-      {email: 'user11@gmail.com', password: '123456'}, () => {
+      {email: 'testy_mctoastface@gmail.com', password: '123456'}, () => {
       this.props.login(this.state)
-        .then(() => this.props.history.push('/login_success!'));
+        .then(() => this.props.history.push('/'));
     });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state)
-      .then(() => this.props.history.push('/login_success!'));
+      .then(() => this.props.history.push('/'));
   }
 
   renderErrors() {

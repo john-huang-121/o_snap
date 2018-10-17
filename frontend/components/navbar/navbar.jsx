@@ -10,7 +10,7 @@ class Navbar extends React.Component {
   clickLogout(e) {
     e.preventDefault();
     this.props.logout().then(() =>
-      this.props.history.push('/logout_success!'));
+      this.props.history.push('/'));
   }
 
   currentPageState () {
