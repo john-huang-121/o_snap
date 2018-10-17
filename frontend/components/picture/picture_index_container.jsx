@@ -6,7 +6,7 @@ import PictureIndex from './picture_index';
 
 const mapStateToProps = (state) => {
   return {
-    pictures: state.entities.pictures
+    pictures: Object.values(state.entities.pictures)
   };
 };
 

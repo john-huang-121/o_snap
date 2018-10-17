@@ -6,32 +6,29 @@ export const DELETE_PICTURE = 'DELETE_PICTURE';
 
 export const receiveAllPictures = (pictures) => {
   return {
-    action: RECEIVE_ALL_PICTURES,
+    type: RECEIVE_ALL_PICTURES,
     pictures
   };
 };
 
 export const receivePicture = (picture) => {
   return {
-    action: RECEIVE_PICTURE,
+    type: RECEIVE_PICTURE,
     picture
   };
 };
 
 export const deletePicture = () => {
   return {
-    action: DELETE_PICTURE,
+    type: DELETE_PICTURE,
   };
 };
 
 export const fetchPictures = () => {
-  return (dispatch) => {
+  return dispatch => {
     return APIUtils.fetchPictures().then((pictures) => {
       return dispatch(receiveAllPictures(pictures));
-    }
-    // , err => {
-    //   return dispatch(receiveAllPictures(err.responseJSON));
-    //   }
+      }
     );
   };
 };

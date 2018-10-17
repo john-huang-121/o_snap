@@ -9,7 +9,7 @@ const PictureIndexItem = ({ picture, deletePicture }) => {
       {picture.title}
       {picture.description}
 
-      <img src={picture.photoUrl} />
+      <img src={picture.pictureUrl} />
       <button onClick={() => deletePicture(picture.id)}>Delete Picture</button>
     </li>);
 };

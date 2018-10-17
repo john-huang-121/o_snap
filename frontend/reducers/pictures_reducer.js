@@ -2,7 +2,7 @@ import { RECEIVE_ALL_PICTURES, RECEIVE_PICTURE, DELETE_PICTURE }
   from '../actions/pictures_actions';
 import merge from 'lodash/merge';
 
-export const picturesReducer = (oldState = [], action) => {
+export const picturesReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_ALL_PICTURES:
