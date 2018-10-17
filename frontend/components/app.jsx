@@ -7,9 +7,11 @@ import LoginContainer from './session/login_container';
 import NavbarContainer from './navbar/navbar_container';
 import HomepageDisplayContainer from './splash/homepage_display_container';
 import SignupHomeContainer from './user/signup_home_container';
+import PictureIndexContainer from './picture/picture_index_container';
 
 const App = () => (
   <div>
+    <Route path='/pictures' component={PictureIndexContainer} />
     <Route exact path='/' component={HomepageDisplayContainer} />
     <AuthRoute path='/login' component={LoginContainer} />
     <AuthRoute path='/signup' component={SignupHomeContainer} />
@@ -17,5 +19,3 @@ const App = () => (
 );
 
 export default App;
-
-// <AuthRoute path='/signup' component={SignupContainer} />

@@ -1,2 +1,2 @@
-json.extract! picture, :id, :title, :body
-json.photoUrl url_for(picture.picture)
+json.extract! picture, :id, :title, :description
+json.pictureUrl url_for(picture.picture)

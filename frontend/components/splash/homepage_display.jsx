@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SplashNavContainer from './splash_nav_container';
 import NavbarContainer from '../navbar/navbar_container';
+import PictureIndexContainer from '../picture/picture_index_container';
 
 
 class HomepageDisplay extends React.Component {
@@ -37,6 +38,7 @@ class HomepageDisplay extends React.Component {
       const logged = (
         <div className='main-feed'>
           <NavbarContainer />
+          <PictureIndexContainer />
         </div>
       );
       return logged;
