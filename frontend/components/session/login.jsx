@@ -6,7 +6,6 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // username: '',
       email: '',
       password: ''
     };
@@ -42,7 +41,7 @@ class Login extends React.Component {
       return (
         <ul className='login-errors-container'>
           {this.props.errors.map((error) => (
-            <li className='login-error'>{error}</li>)
+            <li className='login-error' key={error.id}>{error}</li>)
           )}
         </ul>
       );
