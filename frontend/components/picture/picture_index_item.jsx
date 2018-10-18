@@ -5,7 +5,7 @@ const Timestamp = require('react-timestamp');
 const PictureIndexItem = ({ picture, deletePicture }) => {
   return (
     <ul className='picture-index-items-container'>
-      <li className='picture-index-item'>
+      <a href='#' className='picture-index-item'>
         <div className='picture-index-header-container'>
           <li className='profile-pic'></li>
           <div className='profile-header-texts-container'>
@@ -17,10 +17,12 @@ const PictureIndexItem = ({ picture, deletePicture }) => {
               time={picture.created_at} format='ago' />
           </div>
         </div>
-        <img className='picture-index-item-picture'
-          src={picture.pictureUrl} />
-        <h1>Editor's Choice: {picture.title}</h1>
-      </li>
+        <a href='#'>
+          <img className='picture-index-item-picture'
+            src={picture.pictureUrl} />
+        </a>
+        <a href='#' className='picture-index-item-title'>{picture.title}</a>
+      </a>
     </ul>);
 };
 // <button onClick={() => deletePicture(picture.id)}>Delete Picture</button>
