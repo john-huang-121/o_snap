@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import UploadContainer from '../upload/upload_container';
 
 class Navbar extends React.Component {
 
@@ -101,7 +102,7 @@ class Navbar extends React.Component {
 
           <li className='nav-flex-upload-container'>
             <div className='nav-upload-icon'></div>
-            <a href='#' className='nav-btn' id='upload'>Upload</a>
+            <Link to='/upload' className='nav-btn' id='upload'>Upload</Link>
           </li>
         </ul>
       );

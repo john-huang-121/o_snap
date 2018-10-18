@@ -8,11 +8,13 @@ import NavbarContainer from './navbar/navbar_container';
 import HomepageDisplayContainer from './splash/homepage_display_container';
 import SignupHomeContainer from './user/signup_home_container';
 import PictureIndexContainer from './picture/picture_index_container';
+import UploadContainer from './upload/upload_container';
 
 const App = () => (
   <div>
     <Route path='/pictures' component={PictureIndexContainer} />
     <Route exact path='/' component={HomepageDisplayContainer} />
+    <ProtectedRoute path='/upload' component={UploadContainer} />
     <AuthRoute path='/login' component={LoginContainer} />
     <AuthRoute path='/signup' component={SignupHomeContainer} />
   </div>

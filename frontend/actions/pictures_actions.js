@@ -33,6 +33,18 @@ export const fetchPictures = () => {
   };
 };
 
+export const uploadPicture = (pictureForm) => {
+  return (dispatch) => {
+    return APIUtils.uploadPicture(pictureForm).then((picture) => {
+      return dispatch(receivePicture(picture));
+    }
+    // , err => {
+    //   return dispatch(receivePicture(err.responseJSON));
+    //   }
+    );
+  };
+};
+
 export const fetchPicture = (id) => {
   return (dispatch) => {
     return APIUtils.fetchPicture(id).then((picture) => {

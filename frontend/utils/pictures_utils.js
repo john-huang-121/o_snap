@@ -12,11 +12,13 @@ export const fetchPicture = (id) => {
   });
 };
 
-export const createPicture = (picture) => {
+export const uploadPicture = (picture) => {
   return $.ajax ({
     method: 'POST',
     url: `/api/pictures/`,
-    data: { picture }
+    data: picture,
+    contentType: false,
+    processData: false
   });
 };
 
