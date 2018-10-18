@@ -1,0 +1,68 @@
+.homepage-user-feed-gallery-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.picture-index-items-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
+  padding-top: 20px;
+  width: 700px;
+  height: 460px;
+}
+
+.picture-index-item {
+  display: flex;
+  flex-direction: column;
+  height: 418px;
+  // border: 1px solid lightgrey;
+  box-shadow: 0 1px 1px lightgrey;
+}
+
+.profile-pic {
+  background-image: url(if_users-10_984119.png);
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
+
+.profile-header-texts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-header-texts {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-header-texts a {
+  font-weight: bold;
+}
+
+.profile-header-texts-published {
+  padding-left: 5px;
+  color: grey;
+}
+
+.picture-index-header-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-gallery-timestamp {
+  color: lightgrey;
+}
+
+.picture-index-item-picture {
+  width: 480px;
+  height:300px;
+}

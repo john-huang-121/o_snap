@@ -12,7 +12,6 @@ class PictureIndex extends React.Component {
   }
 
   render() {
-    // debugger;
     const pictures = this.props.pictures.map(picture => {
           return (
             <PictureIndexItem key={picture.id} picture={picture}
@@ -21,10 +20,8 @@ class PictureIndex extends React.Component {
         });
 
     return (
-      <div>
-        <ul className='Picture-index-items-container'>
-          {pictures}
-        </ul>
+      <div className='homepage-user-feed-gallery-container'>
+        {pictures}
       </div>
     );
   }
