@@ -7,12 +7,6 @@ class Signup extends React.Component {
     super(props);
   }
 
-  handleInput(type) {
-    return (e) => {
-      this.setState({[type]: e.target.value});
-    };
-  }
-
   render () {
     return (
       <section className='signup-page-container'>

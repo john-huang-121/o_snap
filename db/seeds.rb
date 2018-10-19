@@ -7,13 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-User.reset_sequence_name
-
 Picture.destroy_all
-Picture.reset_sequence_name
-
 Follow.destroy_all
-Follow.reset_sequence_name
+
+ActiveRecord::Base.connection.tables.each do |t|
+  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end
 
 User.create!({id: 1, email: 'editor@gmail.com', password: 'editor'})
 User.create!({id: 2, email: 'testy_mctestface@gmail.com', password: '123456'})

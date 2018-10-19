@@ -7,11 +7,6 @@ class PictureIndex extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    // this.props.fetchPictures();
-    // this.props.fetchUsers();
-  }
-
   render() {
       const pictures = Object.values(this.props.pictures).map(picture => {
         if (picture.user_id === 1) {

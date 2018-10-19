@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 
 class SplashNav extends React.Component {
 
-  componentDidMount () {
-    this.props.fetchUsers();
-  }
-
   render () {
     return (
       <nav className="splash-nav-flex-container">
@@ -45,16 +41,3 @@ class SplashNav extends React.Component {
 }
 
 export default SplashNav;
-
-// <li className='splash-nav-flex-items'>
-// {this.props.currentUserId ? (
-//   <div>
-//   <button onClick={this.props.logout}>Log Out</button>
-//   </div>
-// ) : (
-//   <section>
-//   <Link className='btn' to='/signup'>Sign Up</Link>
-//   <Link className='btn' to='/login'>Login</Link>
-//   </section>
-// )}
-// </li>

@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { fetchPicture, removePicture }
-  from '../../actions/pictures_actions';
+import { fetchPicture, removePicture } from '../../actions/pictures_actions';
 import PictureShow from './picture_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchPicture: (id) => dispatch(fetchPicture(id)),
-    removePicture: (id) => dispatch(removePicture(id))
+    // removePicture: (id) => dispatch(removePicture(id))
   };
 };
 

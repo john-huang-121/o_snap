@@ -18,5 +18,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Navbar));
-
-//set up delete json.jbuilder for userscontroller

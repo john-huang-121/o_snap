@@ -43,13 +43,6 @@ class SignupEmail extends React.Component {
   }
 
   render () {
-
-    // const show = this.props.errors.map((error) => {
-    //   return (<ul className='signup-error'>
-    //       <li className='signup-error'>{error}</li>;
-    //       </ul>);
-    //   });
-
     return (
       <section className='signup-email-page-container'>
         <div className='signup-email-page-after-nav'>

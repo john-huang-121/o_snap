@@ -2,7 +2,6 @@ import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import SignupEmailContainer from './signup_email_container';
 import SignupContainer from './signup_container';
-
 import { Link } from 'react-router-dom';
 
 class SignupHome extends React.Component {
