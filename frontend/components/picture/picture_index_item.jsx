@@ -5,12 +5,12 @@ const Timestamp = require('react-timestamp');
 const PictureIndexItem = ({ picture, deletePicture }) => {
   return (
     <ul className='picture-index-items-container'>
-      <a href='#' className='picture-index-item'>
+      <div href='#' className='picture-index-item'>
         <div className='picture-index-header-container'>
           <li className='profile-pic'></li>
           <div className='profile-header-texts-container'>
             <div className='profile-header-texts'>
-              <a href='#'>Osnap</a>
+              <li href='#'>Osnap</li>
               <ul className='profile-header-texts-published'>published a Gallery</ul>
             </div>
             <Timestamp className='profile-gallery-timestamp'
@@ -23,7 +23,7 @@ const PictureIndexItem = ({ picture, deletePicture }) => {
         </Link>
         <Link to={`/pictures/${picture.id}`}
           className='picture-index-item-title'>{picture.title}</Link>
-      </a>
+      </div>
     </ul>);
 };
 // <button onClick={() => deletePicture(picture.id)}>Delete Picture</button>

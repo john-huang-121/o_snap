@@ -8,26 +8,25 @@ class PictureIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPictures();
-    this.props.fetchUsers();
+    // this.props.fetchPictures();
+    // this.props.fetchUsers();
   }
 
   render() {
-    const pictures = this.props.pictures.map(picture => {
-      if (picture.user_id === 1) {
-        return (
-          <PictureIndexItem key={picture.id} picture={picture}
-            deletePicture={this.props.deletePicture} />
-        );
-      } else {
-        return (
-          <PictureIndexUserItem key={picture.id} picture={picture}
-            user={this.props.users[picture.user_id]}
-            deletePicture={this.props.deletePicture} />
-        );
-      }
-    });
-
+      const pictures = Object.values(this.props.pictures).map(picture => {
+        if (picture.user_id === 1) {
+          return (
+            <PictureIndexItem key={picture.id} picture={picture}
+              deletePicture={this.props.deletePicture} />
+          );
+        } else {
+          return (
+            <PictureIndexUserItem key={picture.id} picture={picture}
+              user={this.props.users[picture.user_id]}
+              deletePicture={this.props.deletePicture} />
+          );
+        }
+      });
     return (
       <div className='homepage-user-feed-gallery-container'>
         {pictures}

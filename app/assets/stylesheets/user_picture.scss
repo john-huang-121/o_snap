@@ -5,6 +5,8 @@
   padding-top: 20px;
   width: 898px;
   height: 830px;
+  background-color: white;
+  box-shadow: 0 1px 1px lightgrey;
 }
 
 .picture-index-item-user-header-container {
@@ -34,11 +36,19 @@
 .picture-index-item-user-image-container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+
 }
 
 .picture-index-item-user-image {
-  width: 100%;
-  max-height: 450px;
+  display: block;
+  max-height: 600px;
+  max-width: 898px;
+  width: auto;
+  height: auto;
+  background-color: white;
+  box-shadow: 0 1px 1px lightgrey;
 }
 
 .picture-index-item-user-title-desc-act-container {
