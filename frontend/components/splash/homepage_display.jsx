@@ -38,7 +38,7 @@ class HomepageDisplay extends React.Component {
       const logged = (
         <div className='main-feed'>
           <NavbarContainer />
-          <PictureIndexContainer />
+          <PictureIndexContainer/>
         </div>
       );
       return logged;

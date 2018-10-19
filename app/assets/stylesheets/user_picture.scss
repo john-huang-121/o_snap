@@ -1,0 +1,168 @@
+.picture-index-items-user-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  padding-top: 20px;
+  width: 898px;
+  height: 830px;
+}
+
+.picture-index-item-user-header-container {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 15px;
+  height: 61px;
+  text-align: left;
+}
+
+.picture-index-item-user-profile-pic {
+  background-image: url(user_image/daniel-monteiro-1105874-unsplash.jpg);
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+}
+
+.picture-index-item-email-timestamp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 5px;
+}
+
+.picture-index-item-user-image-container {
+  display: flex;
+  align-items: center;
+}
+
+.picture-index-item-user-image {
+  width: 100%;
+  max-height: 450px;
+}
+
+.picture-index-item-user-title-desc-act-container {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: center;
+  padding: 0 15px;
+  padding-top: 15px;
+  height: 30px;
+  width: 868px;
+}
+
+.picture-index-item-user-title {
+  width: 584px;
+  font-size: 20px;
+  margin-right: 10px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.picture-index-item-user-act {
+  display: flex;
+  justify-content: space-between;
+  width: 274px;
+}
+
+.picture-index-item-user-messenger {
+  padding: 0 16px;
+  width: 20px;
+  height: 30px;
+  border: 1px solid grey;
+  border-color: #c7ced2;
+  background-color: #fff;
+  color: #71767a;
+  border-radius: 15px;
+}
+
+.picture-index-item-user-messenger-icon {
+  background-image: url(if_paperplane_115704.png);
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  margin-left: 1px;
+  margin-top: 5px;
+}
+
+.picture-index-item-user-comment {
+  padding: 0 16px;
+  width: 20px;
+  height: 30px;
+  border: 1px solid grey;
+  border-color: #c7ced2;
+  background-color: #fff;
+  color: #71767a;
+  border-radius: 15px;
+}
+
+.picture-index-item-user-comment-icon {
+  background-image: url(if_bubble_925926.png);
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  margin-left: 1px;
+  margin-top: 5px;
+}
+
+.picture-index-item-user-gallery {
+  padding: 0 16px;
+  width: 20px;
+  height: 30px;
+  border: 1px solid grey;
+  border-color: #c7ced2;
+  background-color: #fff;
+  color: #71767a;
+  border-radius: 15px;
+}
+
+.picture-index-item-user-gallery-icon {
+  background-image: url(if_Streamline-41_185061.png);
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  margin-left: 1px;
+  margin-top: 5px;
+}
+
+.picture-index-item-user-like {
+  padding: 0 16px;
+  width: 60px;
+  height: 30px;
+  border: 1px solid grey;
+  border-color: #c7ced2;
+  background-color: #fff;
+  color: #71767a;
+  border-radius: 15px;
+  text-align: left;
+  background-color: #0099e5;
+}
+
+.picture-index-item-user-like-icon {
+  display: flex;
+  justify-content: space-between;
+  background-image: url(if_icon-ios7-heart-outline_211754.png);
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  margin-left: 1px;
+  margin-top: 8px;
+}
+
+.picture-index-item-user-like-icon li {
+  font-weight: bold;
+  color: white;
+  padding-left: 25px;
+}
+
+.picture-index-item-user-desc {
+  height: 76px;
+  font-size: 16px;
+  text-align: left;
+  padding: 0 15px;
+  padding-bottom: 15px;
+}

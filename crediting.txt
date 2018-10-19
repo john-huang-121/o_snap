@@ -26,3 +26,15 @@ https://www.iconfinder.com/icons/743893/find_glass_magnifier_magnifying_search_z
 
 https://www.iconfinder.com/icons/984119/avatar_male_man_person_profile_user_icon
 (guy icon) creative commons (attribution 3.0 unported) https://creativecommons.org/licenses/by/3.0/
+
+https://www.iconfinder.com/icons/925926/bubble_chat_conversation_friends_talk_icon
+(message icon) creative commons (attribution 3.0 unported) https://creativecommons.org/licenses/by/3.0/
+
+https://www.iconfinder.com/icons/185061/photo_pictures_streamline_icon
+(gallery icon) Webalys
+
+https://www.iconfinder.com/icons/211754/heart_icon
+(empty heart icon) https://opensource.org/licenses/MIT
+
+https://www.iconfinder.com/icons/299063/heart_icon
+(full heart icon) creative commons (attribution 3.0 unported) https://creativecommons.org/licenses/by/3.0/

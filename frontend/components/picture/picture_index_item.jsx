@@ -17,11 +17,12 @@ const PictureIndexItem = ({ picture, deletePicture }) => {
               time={picture.created_at} format='ago' />
           </div>
         </div>
-        <a href='#'>
+        <Link to={`/pictures/${picture.id}`}>
           <img className='picture-index-item-picture'
             src={picture.pictureUrl} />
-        </a>
-        <a href='#' className='picture-index-item-title'>{picture.title}</a>
+        </Link>
+        <Link to={`/pictures/${picture.id}`}
+          className='picture-index-item-title'>{picture.title}</Link>
       </a>
     </ul>);
 };
