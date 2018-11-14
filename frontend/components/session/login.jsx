@@ -51,63 +51,66 @@ class Login extends React.Component {
   }
 
   render () {
-    return (
-      <section className='login-page-container'>
+    return <section className="login-page-container">
         <NavbarContainer />
-        <div className='login-page-after-nav'>
-          <div className='login-header-flex-container'>
-            <div className='login-header'>
-              <ul className='login-header-texts'>
+        <div className="login-page-after-nav">
+          <div className="login-header-flex-container">
+            <div className="login-header">
+              <ul className="login-header-texts">
                 <li>Log In to 500px</li>
               </ul>
             </div>
 
-            <div className='login-form-container'>
-              <form className='login-form' onSubmit={this.handleSubmit}>
-                <label className='login-form-email-username-container'>Email or Username
-                  <input className='login-input' type='email' value={this.state.email}
-                  onChange={this.handleInput('email')} />
+            <div className="login-form-container">
+              <form className="login-form" onSubmit={this.handleSubmit}>
+                <label className="login-form-email-username-container">
+                  Email or Username
+                  <input className="login-input" type="email" value={this.state.email} onChange={this.handleInput("email")} />
                 </label>
 
-                <label className='login-form-password-container'>
-                  <div className='login-form-password-header'>
-                    Password<a href='#' className='forgot-pass'>Forgot password?</a>
+                <label className="login-form-password-container">
+                  <div className="login-form-password-header">
+                    Password<a href="#" className="forgot-pass">
+                      Forgot password?
+                    </a>
                   </div>
-                  <input className='login-input' type='password' value={this.state.password}
-                  onChange={this.handleInput('password')} />
+                  <input className="login-input" type="password" value={this.state.password} onChange={this.handleInput("password")} />
                 </label>
 
                 {this.renderErrors()}
 
-                <div className='login-forms-container'>
-                  <input type='submit' value='Log in' />
-                  <button onClick={e => this.demoLogin(e)}>Demo Log In</button>
+                <div className="login-forms-container">
+                  <input type="submit" value="Log in" />
+                  <button onClick={e => this.demoLogin(e)}>
+                    Demo Log In
+                  </button>
                 </div>
 
-                <div className='login-buttons'>
-                  <button className='login-facebook-button'>
-                    <div className='login-facebook-icon'></div>
+                <div className="login-buttons">
+                  <button className="login-facebook-button" onClick={e => this.demoLogin(e)}>
+                    <div className="login-facebook-icon" />
                     <p>Continue with Facebook</p>
                   </button>
 
-                  <button className='login-google-button'>
-                    <div className='login-google-icon'></div>
+                <button className="login-google-button" onClick={e => this.demoLogin(e)}>
+                    <div className="login-google-icon" />
                     <p>Continue with Google</p>
                   </button>
                 </div>
               </form>
             </div>
 
-            <div className='login-page-link-container'>
-              <li className='login-page-link'>Don't have an account?&nbsp;
-                <Link className='nav-btn' id='signup' to='/signup'>Sign up</Link>
+            <div className="login-page-link-container">
+              <li className="login-page-link">
+                Don't have an account?&nbsp;
+                <Link className="nav-btn" id="signup" to="/signup">
+                  Sign up
+                </Link>
               </li>
             </div>
-
           </div>
         </div>
-      </section>
-    );
+      </section>;
   }
 }
 
