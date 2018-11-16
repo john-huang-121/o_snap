@@ -20,11 +20,14 @@ http://o-snap.herokuapp.com/#/
 
 ### Beautiful splash page
 - Styled close to pixel perfection
+![Splash Page](https://github.com/coconutman19/o_snap/blob/master/app/assets/images/OSnap.jpg "Splash Page")
 
 ### Authentic Authenticity
 - Account creation is seamless
 - Errors clear upon page refresh
 - Demo login to a test user account to further explore the site
+
+![Signup Page](https://github.com/coconutman19/o_snap/blob/master/app/assets/images/OSnap2.jpg "Signup Page")
 
 ### Upload pictures to the cloud
 - Images are stored in the cloud
