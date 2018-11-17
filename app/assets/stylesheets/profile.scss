@@ -26,6 +26,7 @@
 .profile-buttons-container-container {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 33px;
 }
 
 .profile-buttons-container {
@@ -35,4 +36,78 @@
 
 .profile-buttons-container li {
   border: 1px solid black;
+}
+
+.profile-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-username-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-username {
+  font-size: 30px;
+  margin: 0 0 10px 0;
+}
+
+.profile-details {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #eeeff2;
+}
+
+.profile-tabs-container {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #eeeff2;
+}
+
+.profile-tabs li {
+  font-size: 14px;
+  display: inline-block;
+  padding: 15px 0;
+  height: 50px;
+  border-bottom: 2px solid transparent;
+  color: #71767a;
+  cursor: pointer;
+}
+
+.profile-tabs li:hover {
+  color: lightblue;
+}
+
+.profile-grid {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  height: 500px;
+  background-color: lightgrey;
+}
+
+.profile-null {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-null-image {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-null-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.profile-null-content li {
+  
 }
