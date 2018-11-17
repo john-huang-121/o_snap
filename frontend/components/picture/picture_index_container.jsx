@@ -5,9 +5,11 @@ import { fetchUsers } from '../../actions/users_actions';
 import PictureIndex from './picture_index';
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger;
   return {
     pictures: ownProps.pictures,
-    users: ownProps.users
+    users: ownProps.users,
+    currentUser: state.session.currentUserId
   };
 };
 
