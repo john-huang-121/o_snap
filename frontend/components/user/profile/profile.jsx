@@ -14,11 +14,13 @@ class Profile extends React.Component {
       <div className='profile-cover-avatar-buttons-container'>
         <img className='profile-cover-picture' />
         <img className='profile-avatar-picture' />
-        <ul className='profile-buttons-container'>
-          <li>...</li>
-          <li>arrow</li>
-          <li>Complete your profiles</li>
-        </ul>
+        <div className='profile-buttons-container-container'>
+          <ul className='profile-buttons-container'>
+            <li>...</li>
+            <li>arrow</li>
+            <li>Complete your profiles</li>
+          </ul>
+        </div>
       </div>
       <h1>Name</h1>
       <div className='profile-details'>

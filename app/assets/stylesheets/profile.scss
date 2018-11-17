@@ -22,3 +22,17 @@
   border: 1px solid white;
   border-radius: 1px;
 }
+
+.profile-buttons-container-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile-buttons-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-buttons-container li {
+  border: 1px solid black;
+}
