@@ -14,12 +14,26 @@ class Profile extends React.Component {
     });
   }//should add limit users on submitting only landscape images
 
+  noCoverPicture() {
+    return (
+      <div className='profile-null-cover-pic'>
+        
+      </div>
+    );
+  }
+
+  hasCoverPicture() {
+    return (
+      <img className='profile-cover-picture' id="cover-picture" />
+    );
+  }
+
   render() {
     return (
     <div className='profile-container'>
       <NavBarContainer />
       <div className='profile-cover-avatar-buttons-container'>
-        <img className='profile-cover-picture' id="cover-picture"/>
+        {this.noCoverPicture()}
         <img className='profile-avatar-picture' />
         <div className='profile-buttons-container-container'>
           <ul className='profile-buttons-container'>

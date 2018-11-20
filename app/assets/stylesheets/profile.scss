@@ -8,6 +8,11 @@
   overflow: hidden;
 }
 
+.profile-null-cover-picture {
+  height: 426px;
+  z-index: -1;
+}
+
 .profile-cover-picture {
   height: 829px;
   z-index: -1;
@@ -27,8 +32,9 @@
   width: 100px;
   background-image: url(if_30.User_290120.png);
   background-size: 100px;
-  border: 1px solid transparent;
-  border-radius: 1px;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+
 }
 
 .profile-buttons-container-container {
