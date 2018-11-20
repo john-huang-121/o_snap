@@ -6,7 +6,8 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  # has_many :pictures
+  has_one_attached :profile-picture
+  has_one_attached :profile-cover
 
   def password=(pw)
     @password = pw
