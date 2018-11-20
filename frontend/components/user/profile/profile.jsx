@@ -7,12 +7,19 @@ class Profile extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    let cover = document.getElementById('cover-picture');
+    window.addEventListener("scroll", () => {
+      cover.style.transform = "translate3d(0px," + window.pageYOffset + "px, 0px)";
+    });
+  }//should add limit users on submitting only landscape images
+
   render() {
     return (
     <div className='profile-container'>
       <NavBarContainer />
       <div className='profile-cover-avatar-buttons-container'>
-        <img className='profile-cover-picture' />
+        <img className='profile-cover-picture' id="cover-picture"/>
         <img className='profile-avatar-picture' />
         <div className='profile-buttons-container-container'>
           <ul className='profile-buttons-container'>
