@@ -1,10 +1,22 @@
 class User < ApplicationRecord
   validates :email, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  validate :profile_cover?
 
   after_initialize :ensure_session_token
 
+  # has_one_attached :profile_picture, default_url: "app/assets/images/if_30.User_290120.png"
+
+  has_one_attached :profile_cover
+
   attr_reader :password
+
+  def profile_cover?
+    unless self.profile_cover.attached?
+      self.profile_cover.attach(io: File.open('app/assets/images/nathan-anderson-135242-unsplash.jpg'), filename: 'default_cover.jpg')
+      self.save!
+    end
+  end
 
   def password=(pw)
     @password = pw
