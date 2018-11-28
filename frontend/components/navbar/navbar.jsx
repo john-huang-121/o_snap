@@ -112,40 +112,41 @@ class Navbar extends React.Component {
 
   render () {
 
-    return (
-      <header className="nav-bar">
+    return <header className="nav-bar">
         <nav className="nav-flex-container">
-          <li className='nav-flex-logo'>
-            <a className='nav-logo' href='http://localhost:3000/#/'>
+          <li className="nav-flex-logo">
+            <Link className="nav-logo" to="/">
               OSnap
-            </a>
+            </Link>
           </li>
 
           <li className="nav-flex-discover">
-            <a className='nav-btn' href="#">Discover</a>
+            <a className="nav-btn" href="#">
+              Discover
+            </a>
           </li>
 
-
-          <li className='nav-flex-about'>
-            <a className='nav-btn' href="#">About</a>
+          <li className="nav-flex-about">
+            <a className="nav-btn" href="#">
+              About
+            </a>
           </li>
 
-          <li className='nav-flex-studio'>
-            <a className='nav-btn' href="#">Studio</a>
+          <li className="nav-flex-studio">
+            <a className="nav-btn" href="#">
+              Studio
+            </a>
           </li>
 
-          <li className='nav-flex-search-container'>
-            <form className='nav-flex-search-container-2'>
-              <input className='search-bar' type="text"
-              placeholder="Search for photos, location, or people"></input>
+          <li className="nav-flex-search-container">
+            <form className="nav-flex-search-container-2">
+              <input className="search-bar" type="text" placeholder="Search for photos, location, or people" />
             </form>
           </li>
 
           {this.currentPageState()}
-
         </nav>
-      </header>
-    );
+      </header>;
   }
 }
 
