@@ -53,7 +53,7 @@ class Navbar extends React.Component {
             <div className='nav-default-user-icon-dropdown'>
               <ul className='nav-default-user-icon-dropdown-clearfix'>
                 <li>
-                  <a href='#'>My Profile</a>
+                  <Link to={"/user/" + this.props.currentUserId}>My Profile</Link>
                 </li>
                 <li>
                   <a href='#'>My Stats</a>
