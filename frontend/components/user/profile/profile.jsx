@@ -5,48 +5,33 @@ import NavBarContainer from '../../navbar/navbar_container';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
-
-    this.CoverPicture = this.CoverPicture.bind(this);
+ 
+    this.checkCoverPicture = this.checkCoverPicture.bind(this);
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     let cover = document.getElementById('cover-picture');
     window.addEventListener("scroll", () => {
       cover.style.transform = "translate3d(0px," + window.pageYOffset + "px, 0px)";
     });
   }//should add limit users on submitting only landscape images
 
-  CoverPicture() {
-    // debugger;
-    console.log(this.props.users[this.props.currentUserId].profile_cover);
-    if (this.props.users[this.props.currentUserId].profile_cover) {
-      return (
-        <img className='profile-cover-picture' id="cover-picture" src={this.props.users[this.props.currentUserId].profile_cover}/>  
-      );
+  checkCoverPicture() {
+    if (this.props.users[this.props.currentPageId]) {
+      return <img className="profile-cover-picture" id="cover-picture" src={this.props.users[this.props.currentPageId].profile_cover} />;
     } else {
-      return (
-        <div className='profile-null-cover-picture'>
+      return <div className="profile-null-cover-picture" id="cover-picture">
           <p>Please upload a cover picture</p>
-        </div>
-      );
+        </div>;
     }
   }
 
   render() {
-    let coverPicture;
-    console.log(this.props.users[this.props.currentUserId]);
-    if (this.props.users[this.props.currentUserId]) {
-      console.log(this.props.users[this.props.currentUserId]);
-      coverPicture = this.CoverPicture();
-    } else {
-      coverPicture = <div />;
-    }
-
     return (
     <div className='profile-container'>
       <NavBarContainer />
       <div className='profile-cover-avatar-buttons-container'>
-        {coverPicture}
+        {this.checkCoverPicture()}
         <img className='profile-avatar-picture' />
         <div className='profile-buttons-container-container'>
           <ul className='profile-buttons-container'>

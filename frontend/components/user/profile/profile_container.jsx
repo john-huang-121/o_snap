@@ -4,9 +4,8 @@ import { withRouter } from "react-router";
 import Profile from "./profile";
 
 const mapStateToProps = (state, ownProps) => ({
-  currentUser: state.entities.users[state.session.currentUserId],
-  currentUserId: state.session.currentUserId,
-  users: state.entities.users
+  users: state.entities.users,
+  currentPageId: ownProps.match.params.id,
 });
 
 const mapDispatchToProps = (dispatch) => ({
