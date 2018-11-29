@@ -46,7 +46,7 @@ class Profile extends React.Component {
           <ul className='profile-buttons-container'>
             <li>...</li>
             <li>arrow</li>
-            <li>Complete your profiles</li>
+            <li id="profile-complete">Complete your profiles</li>
           </ul>
         </div>
       </div>

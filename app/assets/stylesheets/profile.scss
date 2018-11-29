@@ -51,12 +51,22 @@
 .profile-buttons-container {
   display: flex;
   flex-direction: row;
+  width: 265px;
+  margin-right: 25px;
 }
 
 .profile-buttons-container li {
   border: 1px solid black;
-  width: 40px;
-  vertical-align: top;
+  margin: 10px 5px;
+  background: rgba(236, 236, 236, 0.952);
+  border-radius: 2px;
+  padding: 1px 5px;
+}
+
+#profile-complete {
+  font-size: 14px;
+  color: white;
+  background: #0099e5;
 }
 
 .profile-details-container {
