@@ -55,6 +55,8 @@
 
 .profile-buttons-container li {
   border: 1px solid black;
+  width: 40px;
+  vertical-align: top;
 }
 
 .profile-details-container {
@@ -79,6 +81,10 @@
   border-bottom: 1px solid #eeeff2;
 }
 
+.profile-details li {
+  margin-left: 10px;
+}
+
 .profile-tabs-container {
   display: flex;
   justify-content: center;
@@ -89,14 +95,15 @@
   font-size: 14px;
   display: inline-block;
   padding: 15px 0;
-  height: 50px;
+  margin: 0 10px;
   border-bottom: 2px solid transparent;
   color: #71767a;
   cursor: pointer;
 }
 
 .profile-tabs li:hover {
-  color: lightblue;
+  color: #0099e5;
+  border-bottom: 2px solid #0099e5;
 }
 
 .profile-grid {

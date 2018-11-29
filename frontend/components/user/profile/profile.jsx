@@ -7,6 +7,7 @@ class Profile extends React.Component {
     super(props);
  
     this.checkCoverPicture = this.checkCoverPicture.bind(this);
+    this.checkUsername = this.checkUsername.bind(this);
   }
 
   componentDidUpdate() {
@@ -23,6 +24,14 @@ class Profile extends React.Component {
       return <div className="profile-null-cover-picture" id="cover-picture">
           <p>Please upload a cover picture</p>
         </div>;
+    }
+  }
+
+  checkUsername() {
+    if (this.props.users[this.props.currentPageId]) {
+      return <p>{this.props.users[this.props.currentPageId].email}</p>
+    } else {
+      return <p>No name</p>
     }
   }
 
@@ -43,7 +52,9 @@ class Profile extends React.Component {
       </div>
       <div className='profile-details-container'>
         <div className='profile-username-container'>
-          <h1 className='profile-username'>Name</h1>
+          <h1 className='profile-username'>
+            {this.checkUsername()}
+          </h1>
         </div> 
         <ul className='profile-details'>
           <li># Affection</li>
