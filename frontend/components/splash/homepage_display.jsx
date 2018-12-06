@@ -18,29 +18,37 @@ class HomepageDisplay extends React.Component {
   isLoggedIn() {
     if (this.props.session === null) {
       const notLogged = (
-        <div className='homepage-display-container'>
-          <SplashNavContainer />
-          <ul className='home-display-opening-text'>
-            Get inspired and share your best photos
-          </ul>
+        <div className='homepage-container'>
+          <div className='homepage-display-container'>
+            <SplashNavContainer />
+            <ul className='home-display-opening-text'>
+              Get inspired and share your best photos
+            </ul>
 
-          <ul className='home-display-following-text'>
-            Find your home among the world's best photographers.
-          </ul>
+            <ul className='home-display-following-text'>
+              Find your home among the world's best photographers.
+            </ul>
 
-          <Link className='home-display-signup-button'
-            to='/signup'>Join Osnap
-          </Link>
+            <Link className='home-display-signup-button'
+              to='/signup'>Join Osnap
+            </Link>
+          </div>
+          <div className='homepage-top-photos-container'>
+            <div className='homepage-top-photos-header'>
+              <h1>The top photos, chosen by you</h1>
+              <p>Discover what's trending according to photographers around the world.</p>
+            </div>
+              
+
+          {/* this is for grid pictures that might need masonry */}
+          </div>
+          <div className='homepage-get-motivated-to-share'>
+          {/* this is for the become a part of the community */}
+          </div>
+          <footer className='homepage-footer'>
+          {/* for the bottom of the page */}
+          </footer>
         </div>
-        <div className='homepage-top-photos'>
-        {/* this is for grid pictures that might need masonry */}
-        </div>
-        <div className='homepage-get-motivated-to-share'>
-        {/* this is for the become a part of the community */}
-        </div>
-        <footer className='homepage-footer'>
-        {/* for the bottom of the page */}
-        </footer>
       );
       return notLogged;
 
