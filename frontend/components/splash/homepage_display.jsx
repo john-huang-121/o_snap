@@ -38,7 +38,13 @@ class HomepageDisplay extends React.Component {
               <h1>The top photos, chosen by you</h1>
               <p>Discover what's trending according to photographers around the world.</p>
             </div>
-              
+            <ul className='homepage-top-photos-header-list'>
+              <li>People</li>
+              <li>Landscapes</li>
+              <li>Nature</li>
+              <li>City</li>
+              <li>Animals</li>
+            </ul>
 
           {/* this is for grid pictures that might need masonry */}
           </div>
