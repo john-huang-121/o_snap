@@ -29,9 +29,9 @@ class Profile extends React.Component {
 
   checkUsername() {
     if (this.props.users[this.props.currentPageId]) {
-      return <p>{this.props.users[this.props.currentPageId].email}</p>
+      return <p>{this.props.users[this.props.currentPageId].email}</p>;
     } else {
-      return <p>No name</p>
+      return <p>No name</p>;
     }
   }
 

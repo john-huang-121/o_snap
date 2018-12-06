@@ -32,6 +32,15 @@ class HomepageDisplay extends React.Component {
             to='/signup'>Join Osnap
           </Link>
         </div>
+        <div className='homepage-top-photos'>
+        {/* this is for grid pictures that might need masonry */}
+        </div>
+        <div className='homepage-get-motivated-to-share'>
+        {/* this is for the become a part of the community */}
+        </div>
+        <footer className='homepage-footer'>
+        {/* for the bottom of the page */}
+        </footer>
       );
       return notLogged;
 
