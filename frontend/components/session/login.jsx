@@ -103,9 +103,9 @@ class Login extends React.Component {
             <div className="login-page-link-container">
               <li className="login-page-link">
                 Don't have an account?&nbsp;
-                <Link className="nav-btn" id="signup" to="/signup">
+                <a href="#signup">
                   Sign up
-                </Link>
+                </a>
               </li>
             </div>
           </div>
