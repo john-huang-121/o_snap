@@ -45,8 +45,9 @@ class HomepageDisplay extends React.Component {
               <li>City</li>
               <li>Animals</li>
             </ul>
-
-          {/* this is for grid pictures that might need masonry */}
+            <div className='homepage-top-photos-grid-container'>
+              {/* grid goes here */}
+            </div>
           </div>
           <div className='homepage-get-motivated-to-share'>
           {/* this is for the become a part of the community */}
