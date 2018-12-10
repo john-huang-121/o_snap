@@ -9,7 +9,7 @@ class PictureIndex extends React.Component {
 
   render() {
       const pictures = Object.values(this.props.pictures).map(picture => {
-        console.log(picture.user_id);
+        // console.log(picture.user_id);
         if (picture.user_id === 1) {
           return (
             <PictureIndexItem key={picture.id} picture={picture}

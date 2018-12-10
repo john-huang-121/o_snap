@@ -11,6 +11,9 @@ class Profile extends React.Component {
     this.checkUsername = this.checkUsername.bind(this);
   }
 
+  componentWillMount() {
+    this.props.fetchPictures();
+  }
   componentDidUpdate() {
     let cover = document.getElementById('cover-picture');
     window.addEventListener("scroll", () => {
@@ -37,17 +40,22 @@ class Profile extends React.Component {
   }
 
   render() {
-    const allUserPictures = Object.values(this.props.pictures).map( picture => {
-      if (picture.user_id === this.props.currentPageId) {
-        return (
+    const allUserPictures = [];
+    Object.values(this.props.pictures).forEach( picture => {
+      if (picture.user_id == this.props.currentPageId) {
+        allUserPictures.push(
           <li className='user-account-pictures'>
             <img src={picture.pictureUrl} />
            </li>
-          );
+        );
       }
     });
 
     console.log(allUserPictures);
+
+    const masonryOptions = {
+      transitionDuration: 0
+    };
 
     return (
     <div className='profile-container'>
@@ -84,9 +92,12 @@ class Profile extends React.Component {
           <li>ABOUT</li>
         </ul>
       </div>
-      {/* <Masonry>
+        <Masonry options={masonryOptions} // default {}
+          disableImagesLoaded={false} // default false
+          updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+          >
         {allUserPictures}
-      </Masonry> */}
+      </Masonry>
       <div className='profile-grid'>
         <div className='profile-null'>
           <img className='profile-null-image' />
