@@ -6,6 +6,7 @@ import Profile from "./profile";
 const mapStateToProps = (state, ownProps) => ({
   users: state.entities.users,
   currentPageId: ownProps.match.params.id,
+  pictures: state.entities.pictures
 });
 
 const mapDispatchToProps = (dispatch) => ({
