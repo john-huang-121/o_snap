@@ -44,8 +44,8 @@ class Profile extends React.Component {
     Object.values(this.props.pictures).forEach( picture => {
       if (picture.user_id == this.props.currentPageId) {
         allUserPictures.push(
-          <li className='user-account-pictures'>
-            <img src={picture.pictureUrl} />
+          <li className='user-account-picture-container'>
+            <img className='user-account-picture'src={picture.pictureUrl} />
            </li>
         );
       }

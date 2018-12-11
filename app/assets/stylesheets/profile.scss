@@ -27,7 +27,7 @@
 
 .profile-avatar-picture {
   position: absolute;
-  left: 870px;
+  left: ((100vw)/2) - 2.5;
   z-index: 2;
   top: 829px;
   height: 100px;
@@ -118,16 +118,23 @@
 
 .profile-grid-masonry {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
   width: 100vw;
-  // height: 500px;
 }
 
-.user-account-pictures {
-  width: 300px;
+.user-account-picture-container {
+  padding: 0 5px;
+  margin-bottom: 10px;
+  max-height: 386.82px;
+
 }
-// .something {
-//  width: 200px;
-// }
+
+.user-account-picture {
+  // max-width: auto;
+  // max-height: 386.82px;
+}
 
 .profile-grid {
   display: flex;
