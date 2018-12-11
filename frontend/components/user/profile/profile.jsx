@@ -92,12 +92,10 @@ class Profile extends React.Component {
           <li>ABOUT</li>
         </ul>
       </div>
-        <Masonry options={masonryOptions} // default {}
-          disableImagesLoaded={false} // default false
-          updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-          >
-        {allUserPictures}
-      </Masonry>
+        <Masonry className='profile-grid-masonry' options={masonryOptions}
+          elementType={'ul'}>
+          {allUserPictures}
+        </Masonry>
       <div className='profile-grid'>
         <div className='profile-null'>
           <img className='profile-null-image' />

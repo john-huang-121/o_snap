@@ -116,6 +116,19 @@
   border-bottom: 2px solid #0099e5;
 }
 
+.profile-grid-masonry {
+  display: flex;
+  width: 100vw;
+  // height: 500px;
+}
+
+.user-account-pictures {
+  width: 300px;
+}
+// .something {
+//  width: 200px;
+// }
+
 .profile-grid {
   display: flex;
   justify-content: center;
