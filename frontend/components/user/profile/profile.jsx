@@ -49,8 +49,7 @@ class Profile extends React.Component {
         );
       }
     })
-    console.log(allUserPictures);
-    if (allUserPictures.length === 0) {
+    if (allUserPictures.length !== 0) {
       return (
         <div className='user-account-picture-container'>
           {allUserPictures}
