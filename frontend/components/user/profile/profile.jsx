@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import React from 'react';
 import NavBarContainer from '../../navbar/navbar_container';
-import Masonry from 'react-masonry-component';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -44,18 +43,12 @@ class Profile extends React.Component {
     Object.values(this.props.pictures).forEach( picture => {
       if (picture.user_id == this.props.currentPageId) {
         allUserPictures.push(
-          <li className='user-account-picture-container'>
-            <img className='user-account-picture'src={picture.pictureUrl} />
-           </li>
+          <img key={picture.id} className='user-account-picture'src={picture.pictureUrl} />
         );
       }
     });
 
     console.log(allUserPictures);
-
-    const masonryOptions = {
-      transitionDuration: 0
-    };
 
     return (
     <div className='profile-container'>
@@ -92,10 +85,9 @@ class Profile extends React.Component {
           <li>ABOUT</li>
         </ul>
       </div>
-        <Masonry className='profile-grid-masonry' options={masonryOptions}
-          elementType={'ul'}>
-          {allUserPictures}
-        </Masonry>
+      <div className='user-account-picture-container'>
+        {allUserPictures}
+      </div>
       <div className='profile-grid'>
         <div className='profile-null'>
           <img className='profile-null-image' />

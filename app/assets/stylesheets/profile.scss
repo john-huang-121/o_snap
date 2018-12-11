@@ -5,6 +5,7 @@
 .profile-cover-avatar-buttons-container {
   display: flex;
   flex-direction: column;
+  width: 100vw;
   overflow: hidden;
 }
 
@@ -116,24 +117,32 @@
   border-bottom: 2px solid #0099e5;
 }
 
-.profile-grid-masonry {
+.profile-grid {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
   padding: 0 40px;
-  width: 100vw;
+  border: 1px solid grey;
 }
 
 .user-account-picture-container {
-  padding: 0 5px;
-  margin-bottom: 10px;
-  max-height: 386.82px;
-
+  // display: flex;
+  // flex-direction: column;
+  // padding: 0 5px;
+  // margin-bottom: 10px;
+  // height: 400px;
+  // width: 300px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .user-account-picture {
-  // max-width: auto;
-  // max-height: 386.82px;
+  // max-width: 300px;
+  // height: 386.82px;
+  width: 25%;
+  // flex: 1 0 auto;
 }
 
 .profile-grid {
