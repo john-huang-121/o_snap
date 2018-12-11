@@ -8,11 +8,13 @@ class Profile extends React.Component {
  
     this.checkCoverPicture = this.checkCoverPicture.bind(this);
     this.checkUsername = this.checkUsername.bind(this);
+    this.checkPicture = this.checkPicture.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchPictures();
   }
+
   componentDidUpdate() {
     let cover = document.getElementById('cover-picture');
     window.addEventListener("scroll", () => {
@@ -38,7 +40,7 @@ class Profile extends React.Component {
     }
   }
 
-  render() {
+  checkPicture() {
     const allUserPictures = [];
     Object.values(this.props.pictures).forEach( picture => {
       if (picture.user_id == this.props.currentPageId) {
@@ -46,9 +48,31 @@ class Profile extends React.Component {
           <img key={picture.id} className='user-account-picture'src={picture.pictureUrl} />
         );
       }
-    });
-
+    })
     console.log(allUserPictures);
+    if (allUserPictures.length === 0) {
+      return (
+        <div className='user-account-picture-container'>
+          {allUserPictures}
+        </div>
+      );
+    } else {
+      return (
+        <div className='profile-grid'>
+          <div className='profile-null'>
+            <img className='profile-null-image' />
+            <ul className='profile-null-content'>
+              <li>You haven't uploaded any photos yet.</li>
+              <li>Get the most out of 500px by uploading your photos and be seen by our global community.</li>
+            </ul>
+            <button>Upload now</button>
+          </div>
+        </div>
+      );
+    }
+  }
+
+  render() {
 
     return (
     <div className='profile-container'>
@@ -85,19 +109,7 @@ class Profile extends React.Component {
           <li>ABOUT</li>
         </ul>
       </div>
-      <div className='user-account-picture-container'>
-        {allUserPictures}
-      </div>
-      <div className='profile-grid'>
-        <div className='profile-null'>
-          <img className='profile-null-image' />
-          <ul className='profile-null-content'>
-            <li>You haven't uploaded any photos yet.</li>
-            <li>Get the most out of 500px by uploading your photos and be seen by our global community.</li>
-          </ul>
-          <button>Upload now</button> 
-        </div> 
-      </div>
+      {this.checkPicture()}
     </div>
     );
   }
