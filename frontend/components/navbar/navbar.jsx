@@ -43,7 +43,7 @@ class Navbar extends React.Component {
       );
       return splash;
 
-    } else if (this.props.isSplash && this.props.currentUserId !== 'null') {
+    } else if (this.props.currentUserId !== 'null') {
       const userNav = (
         <ul className='nav-icons-and-upload-flex-container'>
           <li className='nav-flex-default-user-container'>
