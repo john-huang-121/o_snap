@@ -31,11 +31,12 @@ class SignupEmail extends React.Component {
   }
 
   renderErrors() {
+    console.log(this.props.errors);
     if (this.props.errors) {
       return (
         <ul className='signup-errors-container'>
           {this.props.errors.map((error) => (
-            <li className='signup-error'>{error}</li>)
+            <li className='signup-error' key={error.id}>{error}</li>)
           )}
         </ul>
       );

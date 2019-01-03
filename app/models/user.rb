@@ -2,6 +2,7 @@ class User < ApplicationRecord
   validates :email, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validate :profile_cover?
+  validate :user_errors!
 
   after_initialize :ensure_session_token
 
@@ -10,6 +11,12 @@ class User < ApplicationRecord
   has_one_attached :profile_cover
 
   attr_reader :password
+
+  def user_errors!
+    if self.password.length < 6
+      errors.add(message: "password length can't be less than 6 characters")
+    end
+  end
 
   def profile_cover?
     unless self.profile_cover.attached?
