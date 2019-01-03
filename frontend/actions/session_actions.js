@@ -42,7 +42,6 @@ export const createNewUser = (formUser) => {
     return APIUtils.createUser(formUser).then(returnedUser => {
       return dispatch(receiveCurrentUser(returnedUser));
     }, err => {
-      console.log(err);
       return dispatch(receiveErrors(err.responseJSON));
       }
     );
@@ -54,7 +53,6 @@ export const login = (formUser) => {
     return APIUtils.createSession(formUser).then(returnedUser => {
       return dispatch(receiveCurrentUser(returnedUser));
     }, err => {
-      console.log(err);
       return dispatch(receiveErrors(err.responseJSON));
       }
     );
