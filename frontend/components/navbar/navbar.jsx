@@ -44,68 +44,70 @@ class Navbar extends React.Component {
       return splash;
 
     } else if (this.props.currentUserId !== 'null') {
-      const userNav = (
-        <ul className='nav-icons-and-upload-flex-container'>
-          <li className='nav-flex-default-user-container'>
-            <a href='#'>
-              <div className='nav-default-user-icon'></div>
+      const userNav = <ul className="nav-icons-and-upload-flex-container">
+          <li className="nav-flex-default-user-container">
+            <a href="#">
+              <div className="nav-default-user-icon" />
             </a>
-            <div className='nav-default-user-icon-dropdown'>
-              <ul className='nav-default-user-icon-dropdown-clearfix'>
-                <li>
-                  <Link to={"/user/" + this.props.currentUserId}>My Profile</Link>
+            <div className="nav-default-user-icon-dropdown">
+              <ul className="nav-default-user-icon-dropdown-clearfix">
+                <li className="nav-working-link">
+                  <Link to={"/user/" + this.props.currentUserId}>
+                    My Profile
+                  </Link>
                 </li>
-                <li>
-                  <a href='#'>My Stats</a>
+                <li className="nav-not-working-link">
+                  <a href="#">My Stats</a>
                 </li>
-                <li>
-                  <a href='#'>My Galleries</a>
+                <li className="nav-not-working-link">
+                  <a href="#">My Galleries</a>
                 </li>
-                <li>
-                  <a href='#'>My Liked Photos</a>
-                </li>
-              </ul>
-              <ul className='nav-default-user-icon-dropdown-clearfix'>
-                <li>
-                  <a href='#'>My Settings</a>
-                </li>
-                <li>
-                  <a href='#'>Manage Photos</a>
+                <li className="nav-not-working-link">
+                  <a href="#">My Liked Photos</a>
                 </li>
               </ul>
-              <ul className='nav-default-user-icon-dropdown-clearfix'>
-                <li>
-                  <a href='#'>Support</a>
+              <ul className="nav-default-user-icon-dropdown-clearfix">
+                <li className="nav-not-working-link">
+                  <a href="#">My Settings</a>
+                </li>
+                <li className="nav-not-working-link">
+                  <a href="#">Manage Photos</a>
                 </li>
               </ul>
-              <ul className='nav-default-user-icon-dropdown-clearfix'>
-                <li>
-                  <div>
-                    <button onClick={e => this.clickLogout(e)}>Log out</button>
-                  </div>
+              <ul className="nav-default-user-icon-dropdown-clearfix">
+                <li className="nav-not-working-link">
+                  <a href="#">Support</a>
+                </li>
+              </ul>
+              <ul className="nav-default-user-icon-dropdown-clearfix">
+                <li className='nav-working-link'>
+                  <button onClick={e => this.clickLogout(e)}>
+                    Log out
+                  </button>
                 </li>
               </ul>
             </div>
           </li>
 
-          <li className='nav-flex-messenger-container'>
-            <a href='#'>
-              <div className='nav-messenger-icon'></div>
+          <li className="nav-flex-messenger-container">
+            <a href="#">
+              <div className="nav-messenger-icon" />
             </a>
           </li>
 
-          <li className='nav-flex-notification-container'>
-            <a href='#'>
-              <div className='nav-notification-icon'></div>
+          <li className="nav-flex-notification-container">
+            <a href="#">
+              <div className="nav-notification-icon" />
             </a>
           </li>
 
-          <li className='nav-flex-upload-container'>
-            <div className='nav-upload-icon'></div>
-            <Link to='/upload' className='nav-btn' id='upload'>Upload</Link>
+          <li className="nav-flex-upload-container">
+            <div className="nav-upload-icon" />
+            <Link to="/upload" className="nav-btn" id="upload">
+              Upload
+            </Link>
           </li>
-        </ul>
-      );
+        </ul>;
       return userNav;
     }
   }

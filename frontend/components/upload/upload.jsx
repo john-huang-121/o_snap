@@ -1,4 +1,5 @@
 import React from 'react';
+import NavbarContainer from "../navbar/navbar_container";
 import { Link } from 'react-router-dom';
 import Dropzone from 'react-dropzone'; //not used
 
@@ -12,7 +13,6 @@ class Upload extends React.Component {
       pictureFile: null,
       pictureUrl: null
     };
-
 
     this.handleInput = this.handleInput.bind(this);
     this.handleFile = this.handleFile.bind(this);
@@ -87,6 +87,7 @@ class Upload extends React.Component {
     const preview = this.state.pictureUrl ? <img src={this.state.pictureUrl} /> : null;
     return (
       <div className="upload-container" id='upload-container'>
+        <NavbarContainer />
         <form className="upload-form-container" onSubmit={this.handleSubmit}>
           <label className="upload-form-label-title" for="upload-title">
             Title:

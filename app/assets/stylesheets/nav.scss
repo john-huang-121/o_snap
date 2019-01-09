@@ -157,23 +157,28 @@
   right: 135px;
   font-size: 14px;
   letter-spacing: -0.01em;
-  padding: 0px 25px;
+  // padding: 0px 25px;
   background-color: white;
   line-height: 26px;
   border: 1px solid black;
   text-align: left;
 }
 
+.nav-default-user-icon-dropdown li {
+  padding: 0px 25px;
+}
+
 li:hover .nav-default-user-icon-dropdown {
   display: block;
 }
 
-// .nav-default-user-icon-dropdown-clearfix::after {
-//   content: "";
-//   clear: both;
-//   display: table;
-// }
+.nav-working-link:hover {
+  background: lightblue;
+}
 
+.nav-not-working-link:hover {
+  background: lightcoral;
+}
 .nav-flex-messenger-container {
   display: flex;
   align-items: center;
