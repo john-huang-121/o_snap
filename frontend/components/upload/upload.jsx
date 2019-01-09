@@ -88,24 +88,24 @@ class Upload extends React.Component {
     return (
       <div className="upload-container" id='upload-container'>
         <form className="upload-form-container" onSubmit={this.handleSubmit}>
-          <label className="upload-form-label-title">
-            Title
-            <input type="text" className="upload-form-title" onChange={this.handleInput("title")} />
+          <label className="upload-form-label-title" for="upload-title">
+            Title:
           </label>
-
-          <label className="upload-form-label-description">
-            description
-            <input type="text" className="upload-form-description" onChange={this.handleInput("description")} />
+          <input type="text" className="upload-form-title" id="upload-title" onChange={this.handleInput("title")} />
+          <br></br>
+          <label className="upload-form-label-description" for="upload-desc">
+            Description:
           </label>
-
-          <label className="upload-form-label-pictureUrl">
-            pictureUrl
-            <input type="file" className="upload-form-pictureUrl" onChange={this.handleFile} />
+          <input type="text" className="upload-form-description" id="upload-desc" onChange={this.handleInput("description")} />
+          <br></br>
+          <label className="upload-form-label-pictureUrl" for="upload-img">
+            Image:
           </label>
-          <h1>Image Preview</h1>
+          <input type="file" className="upload-form-pictureUrl" id="upload-img" onChange={this.handleFile} />
           {preview}
+          <br></br>
           <label className="upload-form-label-submit">
-            <input type="submit" className="upload-form-" value="submit" />
+            <input type="submit" className="upload-form" value="submit" />
           </label>
         </form>
       </div>
