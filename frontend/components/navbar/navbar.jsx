@@ -89,13 +89,13 @@ class Navbar extends React.Component {
             </div>
           </li>
 
-          <li className="nav-flex-messenger-container">
+          <li className="nav-flex-messenger-container nav-not-working-link">
             <a href="#">
               <div className="nav-messenger-icon" />
             </a>
           </li>
 
-          <li className="nav-flex-notification-container">
+          <li className="nav-flex-notification-container nav-not-working-link">
             <a href="#">
               <div className="nav-notification-icon" />
             </a>
@@ -122,19 +122,19 @@ class Navbar extends React.Component {
             </Link>
           </li>
 
-          <li className="nav-flex-discover">
+          <li className="nav-flex-discover nav-not-working-link">
             <a className="nav-btn" href="#">
               Discover
             </a>
           </li>
 
-          <li className="nav-flex-about">
+          <li className="nav-flex-about nav-not-working-link">
             <a className="nav-btn" href="#">
               About
             </a>
           </li>
 
-          <li className="nav-flex-studio">
+          <li className="nav-flex-studio nav-not-working-link">
             <a className="nav-btn" href="#">
               Studio
             </a>
