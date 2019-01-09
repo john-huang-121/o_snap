@@ -9,6 +9,16 @@ class User < ApplicationRecord
 
   has_one_attached :profile_cover
 
+  has_many :followers,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: 'Follow'
+
+  has_many :follows,
+  primary_key: :id,
+  foreign_key: :follower_id,
+  class_name: 'Follow'
+
   attr_reader :password
 
   def profile_cover?
