@@ -1,5 +1,4 @@
-import { RECEIVE_ALL_PICTURES, RECEIVE_PICTURE, DELETE_PICTURE }
-  from '../actions/pictures_actions';
+import { RECEIVE_ALL_PICTURES, RECEIVE_PICTURE, DELETE_PICTURE } from '../actions/pictures_actions';
 import merge from 'lodash/merge';
 
 export const picturesReducer = (oldState = {}, action) => {

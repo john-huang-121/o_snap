@@ -4,5 +4,5 @@ import { picturesReducer } from './pictures_reducer';
 
 export const entitiesReducer = combineReducers({
   users: usersReducer,
-  pictures: picturesReducer
+  pictures: picturesReducer,
 });
