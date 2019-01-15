@@ -1,8 +1,8 @@
-class Api::PicturesController < ApplicationController
+class Api::FollowsController < ApplicationController
   def index
     @follows = Follow.all
 
-    render :index
+    render json: "api/follows/index"
   end
   
   def create
@@ -11,7 +11,7 @@ class Api::PicturesController < ApplicationController
     if @follow.save
       render :show
     else
-      render json: @follow.errors.full_messages, status 422
+      render json: @follow.errors.full_messages, status: 422
     end
   end
 

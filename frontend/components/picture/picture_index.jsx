@@ -1,7 +1,6 @@
 import React from 'react';
 import PictureIndexItem from './picture_index_item';
 import PictureIndexUserItem from './picture_index_user_item';
-import { fetchFollows, createFollow, deleteFollow } from '../../actions/follows_actions';
 
 class PictureIndex extends React.Component {
   constructor(props) {
@@ -14,7 +13,6 @@ class PictureIndex extends React.Component {
 
   render() {
       const pictures = Object.values(this.props.pictures).map(picture => {
-        // console.log(picture.user_id);
         if (picture.user_id === 1) {
           return (
             <PictureIndexItem key={picture.id} picture={picture}
@@ -23,16 +21,16 @@ class PictureIndex extends React.Component {
               deleteFollow={this.props.deleteFollow} />
           );
         } 
-        // else if (picture.user_id == null) {
-        //   debugger;
-        //   return (
-        //     <PictureIndexUserItem key={picture.id} picture={picture}
-        //       user={this.props.users[this.props.currentUser]}
-        //       deletePicture={this.props.deletePicture}
-        //       createFollow={this.props.createFollow}
-        //       deleteFollow={this.props.deleteFollow} />
-        //   );
-        // } 
+        else if (picture.user_id == null) {
+          debugger;
+          return (
+            <PictureIndexUserItem key={picture.id} picture={picture}
+              user={this.props.users[this.props.currentUser]}
+              deletePicture={this.props.deletePicture}
+              createFollow={this.props.createFollow}
+              deleteFollow={this.props.deleteFollow} />
+          );
+        }
         else {
           return (
             <PictureIndexUserItem key={picture.id} picture={picture}

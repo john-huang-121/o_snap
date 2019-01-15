@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 import * as actions from './actions/session_actions';
+import * as action from './actions/follows_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let preloadedState = {};
@@ -18,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
 
   //testing start
+  window.fetchFollows = action.fetchFollows;
+  window.createFollow = action.createFollow;
   window.login = actions.login;
   window.logout = actions.logout;
   window.getState = store.getState;
