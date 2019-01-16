@@ -22,7 +22,6 @@ class PictureIndex extends React.Component {
           );
         } 
         else if (picture.user_id == null) {
-          debugger;
           return (
             <PictureIndexUserItem key={picture.id} picture={picture}
               user={this.props.users[this.props.currentUser]}
@@ -41,7 +40,6 @@ class PictureIndex extends React.Component {
           );
         }
       });
-      // debugger;
     return (
       <div className='homepage-user-feed-gallery-container'>
         {pictures}
