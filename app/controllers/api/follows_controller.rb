@@ -2,7 +2,7 @@ class Api::FollowsController < ApplicationController
   def index
     @follows = Follow.all
 
-    render json: "api/follows/index"
+    render :index
   end
   
   def create
