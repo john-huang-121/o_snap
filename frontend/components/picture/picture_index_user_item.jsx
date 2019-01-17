@@ -12,6 +12,9 @@ const PictureIndexUserItem = ({ user, picture, deletePicture }) => {
           <Timestamp className='profile-gallery-timestamp'
             time={picture.created_at} format='ago' />
         </div>
+        <div className='profile-header-follow-user-container'>
+          <button className='profile-header-follow-user-button'>+ Follow</button>
+        </div>
       </div>
 
       <Link to={`/pictures/${picture.user_id}`}

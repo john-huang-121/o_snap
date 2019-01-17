@@ -60,6 +60,32 @@
   margin-bottom: 20px;
 }
 
+.profile-header-follow-container {
+  display: flex;
+  align-content: center;
+  margin-left: 165px;
+}
+
+.profile-header-follow-button {
+  border: 1px solid grey;
+  border-radius: 30px;
+  width: 85px;
+}
+
+.profile-header-follow-user-container {
+  display: flex;
+  align-content: center;
+  margin-left: 500px;
+}
+
+.profile-header-follow-user-button {
+  border: 1px solid grey;
+  border-radius: 30px;
+  text-align: center;
+  height: 30px;
+  width: 85px;
+}
+
 .profile-gallery-timestamp {
   color: lightgrey;
 }
