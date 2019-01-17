@@ -9,7 +9,20 @@ class PictureIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchFollows();
+
+    let followButton = document.getElementsByClassName('profile-header-follow-button');
+    let followUserButton = document.getElementsByClassName("profile-header-follow-user-button");
+
+    for (let i = 0; i < followButton.length; i++) {
+      console.log(i);
+      console.log(followButton[i]);
+    }
+
+    console.log(followButton);
+    console.log(followButton.length);
   }
+
+
 
   render() {
       const pictures = Object.values(this.props.pictures).map(picture => {

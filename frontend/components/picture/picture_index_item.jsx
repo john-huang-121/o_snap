@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 const Timestamp = require('react-timestamp');
 
 const PictureIndexItem = ({ picture, deletePicture }) => {
+  
   return (
     <ul className='picture-index-items-container'>
       <div href='#' className='picture-index-item'>
