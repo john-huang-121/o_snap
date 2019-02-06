@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Follow from '../follow/follow';
+import FollowContainer from '../follow/follow_container';
 const Timestamp = require('react-timestamp');
 
 const PictureIndexItem = ({ user, picture, deletePicture }) => {
-  // <button className='profile-header-follow-button'>+ Follow</button>
-  console.log(Follow);
   return (
     <ul className='picture-index-items-container'>
       <div href='#' className='picture-index-item'>
@@ -20,7 +18,7 @@ const PictureIndexItem = ({ user, picture, deletePicture }) => {
               time={picture.created_at} format='ago' />
           </div>
           <div className='profile-header-follow-container'>
-            <Follow user={user}/>
+            <FollowContainer user={user}/>
           </div>
         </div>
         <Link to={`/pictures/${picture.id}`}>
