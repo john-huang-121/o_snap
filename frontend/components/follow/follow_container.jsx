@@ -7,7 +7,7 @@ import Follow from './follow';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    follows: state.follows,
+    followers: state.followers,
     pictures: ownProps.pictures,
     users: ownProps.users,
     currentUser: state.session.currentUserId
@@ -15,7 +15,6 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(createFollow);
   return {
     fetchFollows: () => dispatch(fetchFollows()),
     createFollow: (follow) => dispatch(createFollow(follow)),
