@@ -30,6 +30,5 @@ const PictureIndexItem = ({ user, picture, deletePicture }) => {
       </div>
     </ul>);
 };
-// <button onClick={() => deletePicture(picture.id)}>Delete Picture</button>
 
 export default PictureIndexItem;
