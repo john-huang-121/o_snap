@@ -18,7 +18,7 @@ const PictureIndexItem = ({ user, picture, deletePicture }) => {
               time={picture.created_at} format='ago' />
           </div>
           <div className='profile-header-follow-container'>
-            <FollowContainer user={user}/>
+            <FollowContainer user={user} />
           </div>
         </div>
         <Link to={`/pictures/${picture.id}`}>

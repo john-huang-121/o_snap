@@ -18,13 +18,10 @@ class Follow extends React.Component {
   componentDidMount() {
     if (this.props.followers) {
       this.isFollowed();
-      console.log(this.state);
     }
   }
 
   isFollowed() {
-    console.log(this.state);
-
     if (this.props.followers) {
       let followHash = this.props.followers;
       let allFollows = Object.keys(this.props.followers); //get keys from all followers
@@ -55,6 +52,8 @@ class Follow extends React.Component {
   checkIfEditor() {
     let followButton;
 
+    // console.log(this.props.user);
+
     if (this.props.user === 1) { //if user is the editor
       if (this.state.isFollowed) {
         followButton = (<button className='profile-header-follow-user-button follow-clicked' onClick={this.handleClick}>- Unfollow</button>);
@@ -74,8 +73,6 @@ class Follow extends React.Component {
   }
 
   render () {
-    // this.isFollowed();
-
     return (
       this.checkIfEditor()
     );

@@ -16,7 +16,7 @@ class PictureIndex extends React.Component {
         if (picture.user_id === 1) {
           return (
             <PictureIndexItem key={picture.id} picture={picture}
-              user={picture.user_id}
+              user={this.props.users[1]}
               deletePicture={this.props.deletePicture} 
               createFollow={this.props.createFollow}
               deleteFollow={this.props.deleteFollow} />
