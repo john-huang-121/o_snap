@@ -49,10 +49,10 @@ class SignupEmail extends React.Component {
             <div className="signup-email-header">
               <ul className="signup-email-header-texts">
                 <li>
-                  Sign up with <a href="#" onClick={e => this.onSignupClick(e)}>
+                  Sign up with <a href="#signup" onClick={e => this.onSignupClick(e)}>
                     Facebook{" "}
                   </a>
-                or <a href="#" onClick={e => this.onSignupClick(e)}>
+                or <a href="#signup" onClick={e => this.onSignupClick(e)}>
                     Google
                   </a>.
                 </li>
@@ -84,7 +84,7 @@ class SignupEmail extends React.Component {
                     <input type="checkbox" />
                     <p>
                       I would like to receive emails with likes, comments, replies and updates from Osnap.&nbsp;
-                      <a href="#">Learn more.</a>
+                      <a href="#signup">Learn more.</a>
                     </p>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ class SignupEmail extends React.Component {
             <div className="signup-email-page-TOS-container">
               <li className="signup-email-page-TOS">
                 By signing up, you agree to our&nbsp;
-                <a href="#">Terms of Service.</a>
+                <a href="#signup">Terms of Service.</a>
               </li>
 
               <li className="signup-email-page-TOS">

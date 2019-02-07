@@ -7,7 +7,8 @@ class Signup extends React.Component {
   }
 
   render () {
-    return <section className="signup-page-container">
+    return (
+      <section className="signup-page-container">
         <div className="signup-page-after-nav">
           <div className="signup-form-flex-container">
             <div className="signup-buttons-header">
@@ -20,12 +21,18 @@ class Signup extends React.Component {
             </div>
 
             <div className="signup-buttons">
-              <button className="signup-facebook-button" onClick={this.props.onSignupClick()}>
+              <button
+                className="signup-facebook-button"
+                onClick={this.props.onSignupClick()}
+              >
                 <div className="signup-facebook-icon" />
                 <p>Continue with Facebook</p>
               </button>
 
-              <button className="signup-google-button" onClick={this.props.onSignupClick()}>
+              <button
+                className="signup-google-button"
+                onClick={this.props.onSignupClick()}
+              >
                 <div className="signup-google-icon" />
                 <p>Continue with Google</p>
               </button>
@@ -35,8 +42,9 @@ class Signup extends React.Component {
               <div className="signup-newsletter-checkbox-container">
                 <input type="checkbox" />
                 <p>
-                  I would like to receive emails with likes, comments, replies and updates from Osnap.&nbsp;
-                  <a href="#">Learn more.</a>
+                  I would like to receive emails with likes, comments,
+                  replies and updates from Osnap.&nbsp;
+                  <a href="#signup">Learn more.</a>
                 </p>
               </div>
 
@@ -46,18 +54,19 @@ class Signup extends React.Component {
                 <div className="signup-line-divider" />
               </div>
 
-              <button className="signup-email-button">
+              <button
+                className="signup-email-button"
+                onClick={this.props.onSignupClick()}
+              >
                 <div className="signup-email-icon" />
-                <Link className="signup-email-link" to="/signup" onClick={this.props.onSignupClick()}>
-                  Continue with Email
-                </Link>
+                <p className="signup-email-link">Continue with Email</p>
               </button>
             </div>
 
             <div className="signup-page-TOS-container">
               <li className="signup-page-TOS">
                 By signing up, you agree to our&nbsp;
-                <a href="#">Terms of Service.</a>
+                <a href="#signup">Terms of Service.</a>
               </li>
 
               <li className="signup-page-TOS">
@@ -69,7 +78,8 @@ class Signup extends React.Component {
             </div>
           </div>
         </div>
-      </section>;
+      </section>
+    );
   }
 }
 

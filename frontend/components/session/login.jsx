@@ -70,7 +70,7 @@ class Login extends React.Component {
 
                 <label className="login-form-password-container">
                   <div className="login-form-password-header">
-                    Password<a href="#" className="forgot-pass">
+                    Password<a href="#login" className="forgot-pass">
                       Forgot password?
                     </a>
                   </div>
