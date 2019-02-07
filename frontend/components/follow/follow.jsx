@@ -1,5 +1,7 @@
 import React from 'react';
 
+//Need to update all follow buttons when one is clicked
+
 class Follow extends React.Component {
   constructor(props) {
     super(props);
@@ -55,14 +57,14 @@ class Follow extends React.Component {
 
     if (this.props.user === 1) { //if user is the editor
       if (this.state.isFollowed) {
-        followButton = (<button className='profile-header-follow-user-button follow-clicked' onClick={this.handleClick}>+ Follow</button>);
+        followButton = (<button className='profile-header-follow-user-button follow-clicked' onClick={this.handleClick}>- Unfollow</button>);
       } else {
         followButton = (<button className='profile-header-follow-user-button' onClick={this.handleClick}>+ Follow</button>);
       }
       
     } else {
       if (this.state.isFollowed) {
-        followButton = (<button className='profile-header-follow-button follow-clicked' onClick={this.handleClick}>+ Follow</button>);
+        followButton = (<button className='profile-header-follow-button follow-clicked' onClick={this.handleClick}>- Unfollow</button>);
       } else {
         followButton = (<button className='profile-header-follow-button' onClick={this.handleClick}>+ Follow</button>);
       }

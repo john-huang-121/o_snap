@@ -1,8 +1,7 @@
 import React from 'react';
 import NavbarContainer from '../../navbar/navbar_container';
 import SignupEmailContainer from './signup_email_container';
-import SignupContainer from './signup_container';
-import { Link } from 'react-router-dom';
+import Signup from './signup';
 
 class SignupHome extends React.Component {
   constructor(props) {
@@ -24,7 +23,7 @@ class SignupHome extends React.Component {
         <NavbarContainer />
         {this.state.isSignupClicked ?
           <SignupEmailContainer /> :
-          <SignupContainer onSignupClick={this.onSignupClick.bind(this)}/>}
+          <Signup onSignupClick={this.onSignupClick.bind(this)}/>}
       </div>
     );
   }

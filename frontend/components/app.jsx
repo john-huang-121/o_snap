@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
-import SignupContainer from './user/signup/signup_container';
+import Signup from './user/signup/signup';
 import SignupEmailContainer from "./user/signup/signup_email_container";
 import SignupHomeContainer from "./user/signup/signup_home_container";
 import ProfileContainer from './user/profile/profile_container';
