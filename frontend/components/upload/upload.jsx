@@ -10,6 +10,7 @@ class Upload extends React.Component {
       title: '',
       description: '',
       user_id: this.props.currentUser,
+      tags: [],
       pictureFile: null,
       pictureUrl: null
     };
@@ -48,9 +49,15 @@ class Upload extends React.Component {
   // }
 
   handleInput(type) {
-    return (e) => {
-      this.setState({[type]: e.target.value});
-    };
+    if (type === 'tags') {
+      return (e) => {
+        this.setState({ [type]: e.target.value.split(' ') });
+      };
+    } else {
+      return (e) => {
+        this.setState({[type]: e.target.value});
+      };
+    }
   }
 
   // handleDrop(e) {
@@ -99,6 +106,13 @@ class Upload extends React.Component {
           </label>
           <input type="text" className="upload-form-description" id="upload-desc" onChange={this.handleInput("description")} />
           <br></br>
+          {/* recently added, tags description */}
+          <label className="upload-form-label-tags" for="upload-tags">
+            Tags(space separated):
+          </label>
+          <input type="text" className="upload-form-tags" id="upload-tags" onChange={this.handleInput("tags")} />
+          <br></br>
+          {/* above is tags */}
           <label className="upload-form-label-pictureUrl" for="upload-img">
             Image:
           </label>

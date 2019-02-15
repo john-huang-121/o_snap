@@ -1,5 +1,5 @@
 class Picture < ApplicationRecord
-  validates :title, :description, :user_id, presence: true
+  validates :title, :description, :user_id, :tags presence: true
 
   validate :ensure_picture
 
