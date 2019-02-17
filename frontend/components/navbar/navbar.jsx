@@ -3,15 +3,25 @@ import { Link } from 'react-router-dom';
 // import UploadContainer from '../upload/upload_container';
 
 class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
 
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
   componentDidMount () {
     this.props.fetchUsers();
+    this.props.fetchPictures();
   }
 
   clickLogout(e) {
     e.preventDefault();
     this.props.logout().then(() =>
       this.props.history.push('/'));
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log(e);
   }
 
   currentPageState () {
@@ -142,7 +152,11 @@ class Navbar extends React.Component {
 
           <li className="nav-flex-search-container">
             <form className="nav-flex-search-container-2">
-              <input className="search-bar" type="text" placeholder="Search for photos, location, or people" />
+              <input className="search-bar" 
+                type="text"
+                placeholder="Search for photos, location, or people"
+                onSubmit={(e) => this.handleSubmit(e)}
+              />
             </form>
           </li>
 

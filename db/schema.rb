@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_09_044158) do
+ActiveRecord::Schema.define(version: 2019_02_15_013615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2019_01_09_044158) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tags", array: true
+    t.index ["tags"], name: "index_pictures_on_tags", using: :gin
     t.index ["user_id"], name: "index_pictures_on_user_id"
   end
 

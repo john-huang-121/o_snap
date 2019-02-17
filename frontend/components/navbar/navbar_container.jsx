@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { fetchUsers } from '../../actions/users_actions';
+import { fetchPictures } from "../../actions/pictures_actions";
 import Navbar from './navbar';
 import { withRouter } from 'react-router';
 
@@ -15,6 +16,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
   fetchUsers: () => dispatch(fetchUsers()),
+  fetchPictures: ()=>dispatch(fetchPictures())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Navbar));
