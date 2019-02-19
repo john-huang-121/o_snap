@@ -7,8 +7,10 @@ class Picture < ApplicationRecord
 
   def self.search_pictures(search_terms)
     if search_terms
-      nil
-      # Picture.where("tags @> ARRAY[?]::varchar[]", ["fantasy", "fiction"])
+      debugger
+      # @> means contains
+      Picture.where("tags @> ARRAY[?]::varchar[]", ["fantasy", "fiction"]) + 
+      Picture.where("'fantasy' = ANY (tags)")
     else
       nil
     end
