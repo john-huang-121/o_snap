@@ -6,22 +6,25 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount () {
     this.props.fetchUsers();
     this.props.fetchPictures();
+
+    const searchBar = document.getElementById('search-bar');
+    searchBar.addEventListener('keyup', (e) => {
+      if (e.key === 'Enter') {
+        console.log(e.currentTarget.value);
+        e.preventDefault();
+        // this.props.searchPictures().then(() => this.props.history.push('/search'));
+      }
+    });
   }
 
   clickLogout(e) {
     e.preventDefault();
     this.props.logout().then(() =>
       this.props.history.push('/'));
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    console.log(e);
   }
 
   currentPageState () {
@@ -152,10 +155,10 @@ class Navbar extends React.Component {
 
           <li className="nav-flex-search-container">
             <form className="nav-flex-search-container-2">
-              <input className="search-bar" 
+              <input className="search-bar"
+                id='search-bar'
                 type="text"
                 placeholder="Search for photos, location, or people"
-                onSubmit={(e) => this.handleSubmit(e)}
               />
             </form>
           </li>
