@@ -52,8 +52,9 @@
   border: 1px solid lightgrey;
 }
 
+//makes the choose file button be on the right side
 .upload-form-pictureUrl::-webkit-file-upload-button{
-  float: right;
+  // float: right;
 }
 
 .upload-form {

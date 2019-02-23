@@ -105,7 +105,11 @@ class Upload extends React.Component {
           <label className="upload-form-label-description" htmlFor="upload-desc">
             Description:
           </label>
-          <input type="text" className="upload-form-description" id="upload-desc" onChange={this.handleInput("description")} />
+          <textarea 
+            className="upload-form-description"
+            id="upload-desc"
+            wrap="soft"
+            onChange={this.handleInput("description")} />
           <br></br>
           {/* recently added, tags description */}
           <label className="upload-form-label-tags" htmlFor="upload-tags">
