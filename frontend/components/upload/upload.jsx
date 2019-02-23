@@ -74,7 +74,7 @@ class Upload extends React.Component {
     formData.append('picture[description]', this.state.description);
     formData.append('picture[user_id]', this.state.user_id);
     formData.append('picture[picture]', this.state.pictureFile);
-    formData.append("picture[tags]", this.state.tags);
+    formData.append('picture[tags]', this.state.tags);
     this.props.uploadPicture(formData)
       .then(() => this.props.history.push('/'));
   }
