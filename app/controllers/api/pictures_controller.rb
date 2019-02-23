@@ -1,6 +1,6 @@
 class Api::PicturesController < ApplicationController
   def index
-    if params[:data]
+    if (params[:data] && params[:data] != [""])
       @pictures = Picture.search_pictures(params[:data])
       render :index
     else

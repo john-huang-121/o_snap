@@ -74,6 +74,7 @@ class Upload extends React.Component {
     formData.append('picture[description]', this.state.description);
     formData.append('picture[user_id]', this.state.user_id);
     formData.append('picture[picture]', this.state.pictureFile);
+    formData.append("picture[tags]", this.state.tags);
     this.props.uploadPicture(formData)
       .then(() => this.props.history.push('/'));
   }
@@ -96,24 +97,24 @@ class Upload extends React.Component {
       <div className="upload-container" id='upload-container'>
         <NavbarContainer />
         <form className="upload-form-container" onSubmit={this.handleSubmit}>
-          <label className="upload-form-label-title" for="upload-title">
+          <label className="upload-form-label-title" htmlFor="upload-title">
             Title:
           </label>
           <input type="text" className="upload-form-title" id="upload-title" onChange={this.handleInput("title")} />
           <br></br>
-          <label className="upload-form-label-description" for="upload-desc">
+          <label className="upload-form-label-description" htmlFor="upload-desc">
             Description:
           </label>
           <input type="text" className="upload-form-description" id="upload-desc" onChange={this.handleInput("description")} />
           <br></br>
           {/* recently added, tags description */}
-          <label className="upload-form-label-tags" for="upload-tags">
-            Tags(space separated):
+          <label className="upload-form-label-tags" htmlFor="upload-tags">
+            Tags (space separated):
           </label>
           <input type="text" className="upload-form-tags" id="upload-tags" onChange={this.handleInput("tags")} />
           <br></br>
           {/* above is tags */}
-          <label className="upload-form-label-pictureUrl" for="upload-img">
+          <label className="upload-form-label-pictureUrl" htmlFor="upload-img">
             Image:
           </label>
           <input type="file" className="upload-form-pictureUrl" id="upload-img" onChange={this.handleFile} />

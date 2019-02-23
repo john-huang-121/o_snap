@@ -58,7 +58,7 @@ g = Picture.new({title:'Fair-ly Beautiful', description:'My best myspace angle. 
 g.picture.attach(io: File.open('app/assets/images/user_image/hunter-newton-1104673-unsplash.jpg'), filename: 'girl_at_the_fair.jpg')
 g.save!
 
-h = Picture.new({title:'Wild and Free', description:'Just me and my board travelling along the coast.', user_id: 4, tags: ['board','girl','girl','woman','ocean','sea','rocks']})
+h = Picture.new({title:'Wild and Free', description:'Just me and my board travelling along the coast.', user_id: 4, tags: ['board','girl','woman','ocean','sea','rocks']})
 h.picture.attach(io: File.open('app/assets/images/user_image/jeff-kepler-1106964-unsplash.jpg'), filename: 'wild_girl.jpg')
 h.save!
 
