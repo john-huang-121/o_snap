@@ -4,7 +4,6 @@ import FollowContainer from '../follow/follow_container';
 const Timestamp = require('react-timestamp');
 
 const PictureIndexUserItem = ({ user, picture, deletePicture }) => {
-  // <button className='profile-header-follow-user-button'>+ Follow</button>
   return (
     <ul className='picture-index-items-user-container'>
       <div href='#' className='picture-index-item-user-header-container'>

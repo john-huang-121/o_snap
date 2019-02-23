@@ -14,12 +14,11 @@ class Navbar extends React.Component {
     const searchBar = document.getElementById('search-bar');
     searchBar.addEventListener('keyup', (e) => {
       if (e.key === 'Enter') {
-        // console.log(e.currentTarget.value);
         e.preventDefault();
         let searchParams = (e.currentTarget.value).split(' ');
         this.props
           .searchMatchingPictures({ data: searchParams });
-          // .then(() => this.props.history.push("/"));
+          // .then(() => this.props.history.push("/search"));
       }
     });
   }

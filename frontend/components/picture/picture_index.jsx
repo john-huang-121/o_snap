@@ -5,6 +5,7 @@ import PictureIndexUserItem from './picture_index_user_item';
 class PictureIndex extends React.Component {
   constructor(props) {
     super(props);
+    
   }
 
   componentDidMount() {

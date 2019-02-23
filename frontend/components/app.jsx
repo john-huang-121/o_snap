@@ -14,13 +14,13 @@ import PictureShowContainer from './picture/picture_show_container';
 
 const App = () => (
   <div>
-    <Route exact path='/pictures/:id' component={PictureShowContainer} />
-    <Route exact path='/pictures' component={PictureIndexContainer} />
-    <Route exact path='/user/:id' component={ProfileContainer} />
-    <Route exact path='/' component={HomepageDisplayContainer} />
-    <ProtectedRoute path='/upload' component={UploadContainer} />
-    <AuthRoute path='/login' component={LoginContainer} />
-    <AuthRoute path='/signup' component={SignupHomeContainer} />
+    <Route exact path="/pictures/:id" component={PictureShowContainer} />
+    <Route exact path="/pictures" component={PictureIndexContainer} />
+    <Route exact path="/user/:id" component={ProfileContainer} />
+    <Route exact path="/" component={HomepageDisplayContainer} />
+    <ProtectedRoute path="/upload" component={UploadContainer} />
+    <AuthRoute path="/login" component={LoginContainer} />
+    <AuthRoute path="/signup" component={SignupHomeContainer} />
   </div>
 );
 

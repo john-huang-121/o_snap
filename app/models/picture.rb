@@ -15,13 +15,12 @@ class Picture < ApplicationRecord
       i -= 1
     end
 
+    # @> means contains; Picture.where("'#{search_terms[0]}' = ANY (tags)")
     resulting_search.each do |search_combo|
-      #   # @> means contains
-      # Picture.where("'#{search_terms[0]}' = ANY (tags)")
-      result += Picture.where("tags @> ARRAY[?]::varchar[]", search_combo)
+      result += Picture.where("tags @> ARRAY[?]::varchar[]", search_combo) 
     end
 
-    result.reverse
+    result
   end
 
   def ensure_picture
