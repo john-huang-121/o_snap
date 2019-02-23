@@ -1,4 +1,4 @@
-import { searchPictures } from "../utils/pictures_utils";
+import { searchPictures } from "../utils/search_utils";
 
 export const PICTURE_SEARCH_RESULTS = "PICTURE_SEARCH_RESULTS";
 
@@ -9,7 +9,7 @@ export const pictureSearchResults = (pictures) => {
   };
 };
 
-export const fetchPictures = (searchTerms) => {
+export const searchMatchingPictures = (searchTerms) => {
   return dispatch => {
     return searchPictures(searchTerms).then((result) => {
       return dispatch(pictureSearchResults(result));

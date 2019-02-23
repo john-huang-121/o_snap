@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 import { logout } from '../../actions/session_actions';
 import { fetchUsers } from '../../actions/users_actions';
 import { fetchPictures } from "../../actions/pictures_actions";
+import { searchMatchingPictures } from "../../actions/search_actions";
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.entities.users[state.session.currentUserId],
@@ -13,10 +14,11 @@ const mapStateToProps = (state, ownProps) => ({
   isSplash: ownProps.location.pathname === '/'
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   fetchUsers: () => dispatch(fetchUsers()),
-  fetchPictures: () => dispatch(fetchPictures())
+  fetchPictures: () => dispatch(fetchPictures()),
+  searchMatchingPictures: (searchTerms) => dispatch(searchMatchingPictures(searchTerms))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Navbar));

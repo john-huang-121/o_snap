@@ -1,8 +1,7 @@
 class Api::PicturesController < ApplicationController
   def index
-    @pictures = Picture.search_pictures(params[:data])
-
-    if @pictures
+    if params[:data]
+      @pictures = Picture.search_pictures(params[:data])
       render :index
     else
       @pictures = Picture.all

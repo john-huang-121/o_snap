@@ -1,11 +1,3 @@
-export const searchPictures = (searchTerms) => {
-  return $.ajax({
-    method: 'GET',
-    url: 'api/pictures',
-    data: { searchTerms }
-  });
-};
-
 export const fetchPictures = () => {
   return $.ajax ({
     method: 'GET',
