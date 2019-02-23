@@ -14,21 +14,23 @@ ActiveRecord::Base.connection.tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)
 end
 
-n = User.create!({id: 1, email: 'editor@gmail.com', password: 'editor'})
+n = User.create!({email: 'editor@gmail.com', password: 'editor'})
 n.profile_cover.attach(io: File.open('app/assets/images/muhammad-shahzad-361233-unsplash.jpg'), filename: 'cover.jpg')
 n.save!
 
-o = User.create!({id: 2, email: 'testy_mctestface@gmail.com', password: '123456'})
+o = User.create!({email: 'testy_mctestface@gmail.com', password: '123456'})
 o.profile_cover.attach(io: File.open('app/assets/images/muhammad-shahzad-361233-unsplash.jpg'), filename: 'cover.jpg')
 o.save!
 
-p = User.create!({id: 3, email: 'amanda_lee@gmail.com', password: '123456'})
+p = User.create!({email: 'amanda_lee@gmail.com', password: '123456'})
 p.profile_cover.attach(io: File.open('app/assets/images/muhammad-shahzad-361233-unsplash.jpg'), filename: 'cover.jpg')
 p.save!
 
-q = User.create!({id: 4, email: 'brittany_murphy@gmail.com', password: '123456'})
+q = User.create!({email: 'brittany_murphy@gmail.com', password: '123456'})
 q.profile_cover.attach(io: File.open('app/assets/images/muhammad-shahzad-361233-unsplash.jpg'), filename: 'cover.jpg')
 q.save!
+
+User.maximum(:id).next
 
 a = Picture.new({title:'Purple Ocean', description:'In a sea of violet.', user_id: 1, tags: ['ocean','purple', 'shore', 'rocks', 'boulder']})
 a.picture.attach(io: File.open('app/assets/images/free_image/brett-ritchie-567662-unsplash.jpg'), filename: 'ocean.jpg')
