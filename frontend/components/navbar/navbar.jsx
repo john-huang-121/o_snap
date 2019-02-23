@@ -18,7 +18,7 @@ class Navbar extends React.Component {
         let searchParams = (e.currentTarget.value).split(' ');
         this.props
           .searchMatchingPictures({ data: searchParams });
-          // .then(() => this.props.history.push("/search"));
+          // .then(() => this.props.history.push("/"));
       }
     });
   }
