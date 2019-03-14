@@ -16,9 +16,7 @@ class Follow extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.followers) {
-      this.isFollowed();
-    }
+     this.isFollowed();
   }
 
   isFollowed() {

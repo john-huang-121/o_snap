@@ -111,13 +111,11 @@ class Upload extends React.Component {
             wrap="soft"
             onChange={this.handleInput("description")} />
           <br></br>
-          {/* recently added, tags description */}
           <label className="upload-form-label-tags" htmlFor="upload-tags">
             Tags (space separated):
           </label>
           <input type="text" className="upload-form-tags" id="upload-tags" onChange={this.handleInput("tags")} />
           <br></br>
-          {/* above is tags */}
           <label className="upload-form-label-pictureUrl" htmlFor="upload-img">
             Image:
           </label>
