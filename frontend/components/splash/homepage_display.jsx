@@ -13,6 +13,7 @@ class HomepageDisplay extends React.Component {
   componentDidMount() {
     this.props.fetchUsers();
     this.props.fetchPictures();
+    this.props.fetchFollows();
   }
 
   isLoggedIn() {
@@ -63,8 +64,11 @@ class HomepageDisplay extends React.Component {
       const logged = (
         <div className='main-feed'>
           <NavbarContainer />
-          <PictureIndexContainer users={this.props.users}
-            pictures={this.props.pictures}/>
+          <PictureIndexContainer 
+            users={this.props.users}
+            pictures={this.props.pictures}
+            followers={this.props.followers}
+          />
         </div>
       );
       return logged;
