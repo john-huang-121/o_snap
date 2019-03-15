@@ -6,20 +6,22 @@ class PictureIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      followers: this.props.followers,
+      // followers: this.props.followers,
       pictures: this.props.pictures,
       users: this.props.users
-    }
+    };
     
     // this.checkFollowed = this.checkFollowed.bind(this);
     this.allPictures = this.allPictures.bind(this);
   }
 
-  componentDidMount() {
+  componentWillReceiveProps() {
 
   }
 
   allPictures() {
+    // console.log(this.props, this.state);
+    // let followers = Object.values(this.props.followers);
     let pictures = Object.values(this.props.pictures).map(picture => {
       if (picture.user_id === 1) {
         return (
@@ -54,6 +56,7 @@ class PictureIndex extends React.Component {
   }
 
   render() {
+    // console.log(this.props, this.state);
     return (
       <div className='homepage-user-feed-gallery-container'>
         {this.allPictures()}

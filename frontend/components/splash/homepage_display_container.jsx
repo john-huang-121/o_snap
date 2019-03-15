@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
     users: state.entities.users,
     session: state.session.currentUserId,
     pictures: state.entities.pictures,
-    followers: state.followers
+    followers: state.entities.followers
   };
 };
 
@@ -19,7 +19,6 @@ const mapDispatchToProps = (dispatch) => {
     fetchUsers: () => dispatch(fetchUsers()),
     fetchPictures: () => dispatch(fetchPictures()),
     fetchFollows: () => dispatch(fetchFollows()),
-
   };
 };
 

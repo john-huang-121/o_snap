@@ -6,9 +6,11 @@ import { fetchUsers } from '../../actions/users_actions';
 import PictureIndex from './picture_index';
 
 const mapStateToProps = (state, ownProps) => {
+  console.log(state, ownProps);
   return {
-    pictures: ownProps.pictures,
-    users: ownProps.users,
+    pictures: state.entities.pictures,
+    users: state.entities.users,
+    followers: state.entities.followers,
     currentUser: state.session.currentUserId,
   };
 };

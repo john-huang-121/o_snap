@@ -64,11 +64,7 @@ class HomepageDisplay extends React.Component {
       const logged = (
         <div className='main-feed'>
           <NavbarContainer />
-          <PictureIndexContainer 
-            users={this.props.users}
-            pictures={this.props.pictures}
-            followers={this.props.followers}
-          />
+          <PictureIndexContainer />
         </div>
       );
       return logged;
