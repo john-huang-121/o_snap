@@ -15,18 +15,32 @@ class Follow extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount() {
-     this.isFollowed();
+  componentWillReceiveProps(nextProps) {
+    // console.log(nextProps.followers, this.props.followers);
+    if (nextProps.followers !== this.props.followers) {
+      // console.log(this.state.isFollowed);
+      this.isFollowed(nextProps.followers);
+    }
   }
 
-  isFollowed() {
+  componentDidMount() {
+    this.isFollowed();
+    // console.log(this.props.user);
+  }
+
+  isFollowed(nextProps = null) {
     if (this.props.followers) {
       let followHash = this.props.followers;
       let allFollows = Object.keys(this.props.followers); //get keys from all followers
 
+      if (nextProps !== null) {
+        followHash = nextProps.followers;
+        allFollows = Object.keys(nextProps.followers); //get keys from all followers
+      }
+
       allFollows.forEach((followPrimaryId) => {
         if ((followHash[followPrimaryId].user_id === this.props.user.id) && (followHash[followPrimaryId].follower_id === this.props.currentUser)) {
-          this.setState({ isFollowed: true, followedPrimaryId: followPrimaryId });
+          this.setState({ isFollowed: true, followedPrimaryId: followPrimaryId }, () => console.log('done'));
         }
       });
     }
@@ -49,8 +63,6 @@ class Follow extends React.Component {
 
   checkIfEditor() {
     let followButton;
-
-    // console.log(this.props.user);
 
     if (this.props.user === 1) { //if user is the editor
       if (this.state.isFollowed) {

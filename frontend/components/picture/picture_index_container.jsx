@@ -5,8 +5,7 @@ import { createFollow, deleteFollow } from '../../actions/follows_actions';
 import { fetchUsers } from '../../actions/users_actions';
 import PictureIndex from './picture_index';
 
-const mapStateToProps = (state, ownProps) => {
-  console.log(state, ownProps);
+const mapStateToProps = (state) => {
   return {
     pictures: state.entities.pictures,
     users: state.entities.users,

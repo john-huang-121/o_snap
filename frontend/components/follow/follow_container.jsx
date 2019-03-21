@@ -7,7 +7,7 @@ import Follow from './follow';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    followers: state.followers,
+    followers: state.entities.followers,
     pictures: ownProps.pictures,
     users: ownProps.users,
     currentUser: state.session.currentUserId

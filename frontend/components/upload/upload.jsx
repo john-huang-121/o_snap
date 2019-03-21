@@ -63,18 +63,23 @@ class Upload extends React.Component {
   // handleDrop(e) {
   //   let dt = e.dataTransfer;
   //   let files = dt.files;
-  //   this.setState({pictureFile: files});
+  //   this.setState({pictureFile: files}); s
   //   console.log(this.state);
   // }
 
   handleSubmit(e) {
     e.preventDefault();
+
     const formData = new FormData();
-    formData.append('picture[title]', this.state.title);
-    formData.append('picture[description]', this.state.description);
-    formData.append('picture[user_id]', this.state.user_id);
-    formData.append('picture[picture]', this.state.pictureFile);
-    formData.append('picture[tags]', this.state.tags);
+    let { title, description, user_id, pictureFile, tags } = this.state;
+
+    formData.append('picture[title]', title);
+    formData.append('picture[description]', description);
+    formData.append('picture[user_id]', user_id);
+    formData.append('picture[picture]', pictureFile);
+    for (let i = 0; i < tags.length; i++) {
+      formData.append('picture[tags][]', tags[i]);
+    }
     this.props.uploadPicture(formData)
       .then(() => this.props.history.push('/'));
   }

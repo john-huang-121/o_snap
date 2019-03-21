@@ -23,6 +23,12 @@ class Picture < ApplicationRecord
     result
   end
 
+  # def parse_JSON_tag(tags_arr)
+  #   result_arr = []
+
+  #   tags_arr
+  # end
+
   def ensure_picture
     unless self.picture.attached?
       errors[:picture] << 'Must have picture attached'

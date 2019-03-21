@@ -6,39 +6,34 @@ class PictureIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // followers: this.props.followers,
-      pictures: this.props.pictures,
-      users: this.props.users
-    };
-    
+      pictures: null,
+    }
     // this.checkFollowed = this.checkFollowed.bind(this);
     this.allPictures = this.allPictures.bind(this);
   }
 
-  componentWillReceiveProps() {
-
+  componentWillReceiveProps(nextProps) {
+    if (this.props !== nextProps) {
+      this.allPictures();
+    }
   }
 
   allPictures() {
-    // console.log(this.props, this.state);
-    // let followers = Object.values(this.props.followers);
-    let pictures = Object.values(this.props.pictures).map(picture => {
+    let allPictures = Object.values(this.props.pictures).map(picture => {
       if (picture.user_id === 1) {
         return (
           <PictureIndexItem key={picture.id} picture={picture}
             user={this.props.users[1]}
             deletePicture={this.props.deletePicture}
-            createFollow={this.props.createFollow}
-            deleteFollow={this.props.deleteFollow} />
+           />
         );
       }
-      else if (picture.user_id == null) {
+      else if (picture.user_id == null) { //this line ensures that the recently uploaded pic gets shown
         return (
           <PictureIndexUserItem key={picture.id} picture={picture}
             user={this.props.users[this.props.currentUser]}
             deletePicture={this.props.deletePicture}
-            createFollow={this.props.createFollow}
-            deleteFollow={this.props.deleteFollow} />
+           />
         );
       }
       else {
@@ -46,20 +41,18 @@ class PictureIndex extends React.Component {
           <PictureIndexUserItem key={picture.id} picture={picture}
             user={this.props.users[picture.user_id]}
             deletePicture={this.props.deletePicture}
-            createFollow={this.props.createFollow}
-            deleteFollow={this.props.deleteFollow} />
+           />
         );
       }
     });
 
-    return pictures;
+    this.setState({ pictures: allPictures });
   }
 
   render() {
-    // console.log(this.props, this.state);
     return (
       <div className='homepage-user-feed-gallery-container'>
-        {this.allPictures()}
+        {this.state.pictures}
       </div>
     );
   }
