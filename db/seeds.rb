@@ -30,6 +30,8 @@ q = User.create!({email: 'brittany_murphy@gmail.com', password: '123456'})
 q.profile_cover.attach(io: File.open('app/assets/images/muhammad-shahzad-361233-unsplash.jpg'), filename: 'cover.jpg')
 q.save!
 
+Follow.create!({user_id: 1, follower_id: 2})
+
 User.maximum(:id).next
 
 a = Picture.new({title:'Purple Ocean', description:'In a sea of violet.', user_id: 1, tags: ['ocean','purple', 'shore', 'rocks', 'boulder']})

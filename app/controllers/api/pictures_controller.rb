@@ -16,7 +16,6 @@ class Api::PicturesController < ApplicationController
 
   def create
     @picture = Picture.new(picture_params)
-    # @picture[tags] = Picture.parse_JSON_tag(params[:tags])
     if @picture.save
       render 'api/pictures/show'
     else
