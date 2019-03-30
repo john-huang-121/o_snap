@@ -18,6 +18,7 @@ class PictureIndex extends React.Component {
     }
   }
 
+  //feed the followers into the component so it'll update simultaneously
   currentUserFeed() {
     let currentUserFollows = Object.entries(this.props.users[this.props.currentUser].follows);
     let userFollowedArr = [];

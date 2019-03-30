@@ -17,8 +17,14 @@ class Follow extends React.Component {
 
   componentDidMount() {
     this.isFollowed();
-    // console.log(this.props.user);
   }
+
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props.followers !== nextProps.followers) {
+  //     console.log(this.props.followers, nextProps.followers);
+  //     this.isFollowed();
+  //   }
+  // }
 
   isFollowed() {
     if (this.props.followers) {
@@ -27,7 +33,7 @@ class Follow extends React.Component {
 
       allFollows.forEach((followPrimaryId) => {
         if ((followHash[followPrimaryId].user_id === this.props.user.id) && (followHash[followPrimaryId].follower_id === this.props.currentUser)) {
-          this.setState({ isFollowed: true, followedPrimaryId: followPrimaryId }, () => console.log('done'));
+          this.setState({ isFollowed: true, followedPrimaryId: followPrimaryId });
         }
       });
     }
@@ -39,11 +45,17 @@ class Follow extends React.Component {
       this.props.createFollow({ user_id: this.props.user.id, follower_id: this.props.currentUser })
       .then(() => {
         this.isFollowed();
+      })
+      .then(() => {
+        window.location.reload(false);
       });
     } else {
       this.props.deleteFollow(this.state.followedPrimaryId)
       .then(() => {
         this.setState({ isFollowed: false , followedPrimaryId: null });
+      })
+      .then(() => {
+        window.location.reload(false);
       });
     }
   }
