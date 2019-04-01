@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SplashNavContainer from './splash_nav_container';
 import NavbarContainer from '../navbar/navbar_container';
-import FeedContainer from '../picture/feed_container';
+import FeedContainer from '../feed/feed_container';
 
 
 class HomepageDisplay extends React.Component {

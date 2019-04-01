@@ -23,7 +23,7 @@ class Feed extends React.Component {
     let currentUserFollows = Object.entries(this.props.users[this.props.currentUser].follows);
     let userFollowedArr = [];
     let cleanCurrentUserFollowedPictures;
-    let currentUserFollowed = currentUserFollows.forEach((follow) => {
+    currentUserFollows.forEach((follow) => {
       if (follow[1] === true) {
         userFollowedArr.push(Number(follow[0]));
       }
