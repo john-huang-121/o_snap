@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import { fetchPictures, fetchPicture, removePicture } from '../../actions/pictures_actions';
 import { createFollow, deleteFollow } from '../../actions/follows_actions';
 import { fetchUsers } from '../../actions/users_actions';
-import PictureIndex from './picture_index';
+import Feed from './feed';
 
 const mapStateToProps = (state) => {
   return {
@@ -26,5 +26,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(PictureIndex)
+  connect(mapStateToProps, mapDispatchToProps)(Feed)
 );

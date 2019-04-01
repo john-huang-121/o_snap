@@ -8,14 +8,14 @@ import ProfileContainer from './user/profile/profile_container';
 import LoginContainer from './session/login_container';
 import NavbarContainer from './navbar/navbar_container';
 import HomepageDisplayContainer from './splash/homepage_display_container';
-import PictureIndexContainer from './picture/picture_index_container';
+import FeedContainer from './picture/feed_container';
 import UploadContainer from './upload/upload_container';
 import PictureShowContainer from './picture/picture_show_container';
 
 const App = () => (
   <div>
     <Route exact path="/pictures/:id" component={PictureShowContainer} />
-    <Route exact path="/pictures" component={PictureIndexContainer} />
+    <Route exact path="/pictures" component={FeedContainer} />
     <Route exact path="/user/:id" component={ProfileContainer} />
     <Route exact path="/" component={HomepageDisplayContainer} />
     <ProtectedRoute path="/upload" component={UploadContainer} />

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import FollowContainer from '../follow/follow_container';
 const Timestamp = require('react-timestamp');
 
-const PictureIndexUserItem = ({ user, picture, deletePicture }) => {
+const FeedUserItem = ({ user, picture, deletePicture }) => {
   return (
     <ul className='picture-index-items-user-container'>
       <div href='#' className='picture-index-item-user-header-container'>
@@ -56,4 +56,4 @@ const PictureIndexUserItem = ({ user, picture, deletePicture }) => {
     </ul>);
 };
 
-export default PictureIndexUserItem;
+export default FeedUserItem;
