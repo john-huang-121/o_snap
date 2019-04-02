@@ -137,10 +137,10 @@ class Navbar extends React.Component {
             </Link>
           </li>
 
-          <li className="nav-flex-discover nav-not-working-link">
-            <a className="nav-btn" href="#">
+          <li className="nav-flex-discover">
+            <Link to="/discover" className="nav-btn">
               Discover
-            </a>
+            </Link>
           </li>
 
           <li className="nav-flex-about nav-not-working-link">

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SplashNavContainer from './splash_nav_container';
 import NavbarContainer from '../navbar/navbar_container';
 import FeedContainer from '../feed/feed_container';
+import DiscoverContainer from '../discover/discover_container';
 
 
 class HomepageDisplay extends React.Component {
