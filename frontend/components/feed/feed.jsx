@@ -13,8 +13,10 @@ class Feed extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (Object.keys(this.props.users).length > 0) {
+    if (Object.keys(this.props.users).length > 0 && this.props.users[this.props.currentUser]) {
       this.currentUserFeed();
+    } else {
+      this.setState({ pictures: <p>Loading</p>})
     }
   }
 
@@ -56,10 +58,15 @@ class Feed extends React.Component {
         }
       }
       });
-      
-    cleanCurrentUserFollowedPictures = dirtyCurrentUserFollowedPictures.filter((el) => el);
 
-    this.setState({ pictures: cleanCurrentUserFollowedPictures });
+      cleanCurrentUserFollowedPictures = dirtyCurrentUserFollowedPictures.filter((el) => el);
+    
+    if (cleanCurrentUserFollowedPictures.length === 0) {
+      this.setState({ pictures: <p>No One Followed. Go find new people to follow in Discover!</p> });
+    } else {
+      
+      this.setState({ pictures: cleanCurrentUserFollowedPictures });
+    }
   }
 
   render() {
