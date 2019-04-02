@@ -14,9 +14,9 @@ const App = () => (
   <div>
     <Route exact path="/pictures/:id" component={PictureShowContainer} />
     <Route exact path="/pictures" component={FeedContainer} />
-    <Route exact path="/discover" component={DiscoverContainer} />
     <Route exact path="/user/:id" component={ProfileContainer} />
     <Route exact path="/" component={HomepageDisplayContainer} />
+    <ProtectedRoute path="/discover" component={DiscoverContainer} />
     <ProtectedRoute path="/upload" component={UploadContainer} />
     <AuthRoute path="/login" component={LoginContainer} />
     <AuthRoute path="/signup" component={SignupHomeContainer} />
