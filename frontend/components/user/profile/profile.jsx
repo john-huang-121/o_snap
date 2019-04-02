@@ -6,6 +6,8 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
  
+    this.checkFollowers = this.checkFollowers.bind(this);
+    this.checkFollows = this.checkFollows.bind(this);
     this.checkCoverPicture = this.checkCoverPicture.bind(this);
     this.checkUsername = this.checkUsername.bind(this);
     this.checkPicture = this.checkPicture.bind(this);
@@ -37,6 +39,36 @@ class Profile extends React.Component {
       return <p>{this.props.users[this.props.currentPageId].email}</p>;
     } else {
       return <p>No name</p>;
+    }
+  }
+
+  checkFollowers() {
+    if (this.props.users[this.props.currentPageId]) {
+      let numberofFollowers = 0;
+      
+      Object.values(this.props.users[this.props.currentPageId].followers).forEach((follower) => {
+        if (follower === true) {
+          numberofFollowers++;
+        }
+      });      
+      return numberofFollowers;
+    } else {
+      return "#";
+    }
+  }
+
+  checkFollows() {
+    if (this.props.users[this.props.currentPageId]) {
+      let numberofFollows = 0;
+      
+      Object.values(this.props.users[this.props.currentPageId].follows).forEach((follow) => {
+        if (follow === true) {
+          numberofFollows++;
+        }
+      })
+      return numberofFollows;
+    } else {
+      return "#"
     }
   }
 
@@ -95,8 +127,8 @@ class Profile extends React.Component {
         <ul className='profile-details'>
           <li># Affection</li>
           <li># Photo Views</li>
-          <li># Followers</li>
-          <li># Following</li>
+          <li>{this.checkFollowers()} Followers</li>
+          <li>{this.checkFollows()} Following</li>
         </ul>
       </div>
       <div className='profile-tabs-container'>
