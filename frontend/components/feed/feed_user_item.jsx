@@ -1,16 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FollowContainer from '../follow/follow_container';
+import LikeContainer from '../like/like_container';
 const Timestamp = require('react-timestamp');
 
 const FeedUserItem = ({ user, picture, deletePicture }) => {
-  let likeCount;
-  if (picture.likes) {
-    likeCount = picture.likes.length;
-  } else {
-    likeCount = 0;
-  }
-
   return (
     <ul className='picture-index-items-user-container'>
       <div href='#' className='picture-index-item-user-header-container'>
@@ -49,11 +43,7 @@ const FeedUserItem = ({ user, picture, deletePicture }) => {
             <li className='picture-index-item-user-gallery-icon' />
           </a>
 
-          <a href='#' className='picture-index-item-user-like'>
-            <ul className='picture-index-item-user-like-icon'>
-              <li>{likeCount}</li>
-            </ul>
-          </a>
+          <LikeContainer picture={picture} />
         </div>
       </div>
 

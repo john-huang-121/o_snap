@@ -151,6 +151,19 @@
   background-color: #0099e5;
 }
 
+.picture-index-item-user-liked {
+  padding: 0 16px;
+  width: 60px;
+  height: 30px;
+  border: 1px solid grey;
+  border-color: #c7ced2;
+  background-color: #fff;
+  color: #71767a;
+  border-radius: 15px;
+  text-align: left;
+  background-color: #e50000;
+}
+
 .picture-index-item-user-like-icon {
   display: flex;
   justify-content: space-between;
@@ -163,7 +176,8 @@
   margin-top: 8px;
 }
 
-.picture-index-item-user-like-icon li {
+
+.picture-index-item-user-like-icon-number {
   font-weight: bold;
   color: white;
   padding-left: 25px;

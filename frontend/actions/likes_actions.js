@@ -14,7 +14,6 @@ export const receiveLike = like => ({
   like
 });
 
-
 export const removeLike = like => ({
   type: REMOVE_LIKE,
   like
