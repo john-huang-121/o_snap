@@ -4,6 +4,13 @@ import FollowContainer from '../follow/follow_container';
 const Timestamp = require('react-timestamp');
 
 const FeedItem = ({ user, picture, deletePicture }) => {
+  let likeCount;
+  if (picture.likes) {
+    likeCount = picture.likes.length;
+  } else {
+    likeCount = 0;
+  }
+  
   return (
     <ul className='picture-index-items-container'>
       <div href='#' className='picture-index-item'>

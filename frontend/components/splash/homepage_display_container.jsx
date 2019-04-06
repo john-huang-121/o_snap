@@ -3,6 +3,7 @@ import HomepageDisplay from './homepage_display';
 import { fetchUsers } from '../../actions/users_actions';
 import { fetchPictures } from '../../actions/pictures_actions';
 import { fetchFollows } from '../../actions/follows_actions';
+import { fetchLikes } from '../../actions/likes_actions';
 
 
 const mapStateToProps = (state) => {
@@ -19,6 +20,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchUsers: () => dispatch(fetchUsers()),
     fetchPictures: () => dispatch(fetchPictures()),
     fetchFollows: () => dispatch(fetchFollows()),
+    fetchLikes: () => dispatch(fetchLikes()),
   };
 };
 

@@ -15,6 +15,7 @@ class HomepageDisplay extends React.Component {
     this.props.fetchUsers();
     this.props.fetchPictures();
     this.props.fetchFollows();
+    this.props.fetchLikes();
   }
 
   isLoggedIn() {

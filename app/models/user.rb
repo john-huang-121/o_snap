@@ -19,6 +19,11 @@ class User < ApplicationRecord
   foreign_key: :follower_id,
   class_name: 'Follow'
 
+  has_many :likes,
+  primary_key: :id,
+  foreign_key: :liker_id,
+  class_name: 'Like'
+
   attr_reader :password
 
   def profile_cover?

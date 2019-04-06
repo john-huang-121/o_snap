@@ -5,6 +5,11 @@ class Picture < ApplicationRecord
 
   has_one_attached :picture
 
+  has_many :likes,
+  primary_key: :id,
+  foreign_key: :picture_id,
+  class_name: 'Like'
+
   def self.search_pictures(search_terms)
     i = search_terms.length
     resulting_search = []
