@@ -38,6 +38,8 @@ class Like extends React.Component {
       this.setState({ isLiked: false });
     } else if (Object.keys(this.props.picture.likes).includes(String(this.props.currentUser))) {
       this.setState({ isLiked: true, likes: (Object.keys(this.props.picture.likes).length) });
+    } else if (Object.keys(this.props.picture.likes)) {
+      this.setState({ isLiked: false, likes: (Object.keys(this.props.picture.likes).length) });
     }
   }
 

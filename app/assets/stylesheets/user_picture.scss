@@ -86,6 +86,10 @@
   border-radius: 15px;
 }
 
+.picture-index-item-user-messenger:hover {
+  background-color: red;
+}
+
 .picture-index-item-user-messenger-icon {
   background-image: url(if_paperplane_115704.png);
   background-size: 16px 16px;
@@ -107,6 +111,10 @@
   border-radius: 15px;
 }
 
+.picture-index-item-user-comment:hover {
+  background-color: red;
+}
+
 .picture-index-item-user-comment-icon {
   background-image: url(if_bubble_925926.png);
   background-size: 16px 16px;
@@ -126,6 +134,10 @@
   background-color: #fff;
   color: #71767a;
   border-radius: 15px;
+}
+
+.picture-index-item-user-gallery:hover {
+  background-color: red;
 }
 
 .picture-index-item-user-gallery-icon {
@@ -171,8 +183,8 @@
   background-size: 16px 16px;
   background-repeat: no-repeat;
   width: 16px;
-  height: 16px;
-  margin-left: 1px;
+  height: 22px;
+  margin-left: 5px;
   margin-top: 8px;
 }
 
