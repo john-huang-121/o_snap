@@ -68,7 +68,7 @@ class Discover extends React.Component {
 
       cleanCurrentUserNotFollowedPictures = dirtyCurrentUserNotFollowedPictures.filter((el) => el);
 
-      this.setState({ pictures: cleanCurrentUserNotFollowedPictures }, () => console.log(this.state));
+      this.setState({ pictures: cleanCurrentUserNotFollowedPictures });
     }
 
     render() {

@@ -1,0 +1,27 @@
+.comments-container {
+
+}
+
+.each-posted-comment {
+
+}
+
+.new-comment-form {
+  text-align: right;
+}
+
+.new-comment-box {
+  text-align: left;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid red;
+  width: calc(100% - 60px);
+  min-height: 100px;
+  overflow: hidden;
+}
+
+.new-comment-submit {
+  border: 1px solid red;
+  margin: 20px;
+  padding: 10px;
+}

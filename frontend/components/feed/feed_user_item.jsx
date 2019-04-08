@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import FollowContainer from '../follow/follow_container';
 import LikeContainer from '../like/like_container';
+import CommentIndexContainer from '../comment/comment_index_container';
 const Timestamp = require('react-timestamp');
 
 const FeedUserItem = ({ user, picture, deletePicture }) => {
@@ -50,6 +51,8 @@ const FeedUserItem = ({ user, picture, deletePicture }) => {
       <div className='picture-index-item-user-desc'>
         {picture.description}
       </div>
+
+      <CommentIndexContainer picture={picture} />
     </ul>);
 };
 

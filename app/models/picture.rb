@@ -5,6 +5,11 @@ class Picture < ApplicationRecord
 
   has_one_attached :picture
 
+  has_many :comments,
+  primary_key: :id,
+  foreign_key: :picture_id,
+  class_name: 'Comment'
+
   has_many :likes,
   primary_key: :id,
   foreign_key: :picture_id,

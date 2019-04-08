@@ -9,6 +9,11 @@ class User < ApplicationRecord
 
   has_one_attached :profile_cover
 
+  has_many :comments,
+  primary_key: :id,
+  foreign_key: :commenter_id,
+  class_name: 'Comment'
+
   has_many :followers,
   primary_key: :id,
   foreign_key: :user_id,

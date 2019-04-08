@@ -5,3 +5,10 @@ json.likes do
     json.set! like.liker_id, like.id
   end
 end
+json.comments do
+  picture.comments.each do |comment|
+    json.set! comment.id do
+      json.set! comment.commenter_id, comment.body
+    end
+  end
+end
