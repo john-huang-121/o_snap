@@ -2,8 +2,29 @@
 
 }
 
-.each-posted-comment {
+.each-posted-comment-container {
+  display: flex;
+  margin: 20px;
+  width: calc(100% - 40px);
+}
 
+.comment-user-info-container {
+  display: flex;
+}
+
+.comment-user-info {
+  margin: 0 5px;
+}
+
+.comment-body {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: #f2f3f5;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
 }
 
 .new-comment-form {
@@ -14,14 +35,17 @@
   text-align: left;
   margin: 20px;
   padding: 10px;
-  border: 1px solid red;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: #f2f3f5;
   width: calc(100% - 60px);
-  min-height: 100px;
   overflow: hidden;
 }
 
 .new-comment-submit {
-  border: 1px solid red;
+  background: #0099e5;
+  color: white;
+  border-radius: 10px;
   margin: 20px;
   padding: 10px;
 }

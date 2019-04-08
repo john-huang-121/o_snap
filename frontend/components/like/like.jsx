@@ -11,7 +11,6 @@ class Like extends React.Component {
 
     this.handleLike = this.handleLike.bind(this);
     this.checkLiked = this.checkLiked.bind(this);
-    this.likeCount = this.likeCount.bind(this);
     this.likeButtonToRender = this.likeButtonToRender.bind(this);
   }
 
@@ -34,23 +33,11 @@ class Like extends React.Component {
     }
   }
 
-  likeCount() {
-    let likeCount;
-
-    if (this.props.picture.likes) {
-      likeCount = Object.keys(this.props.picture.likes).length;
-    } else {
-      likeCount = 0;
-    }
-
-    this.setState({ likes: likeCount });
-  }
-
   checkLiked() {
     if (this.props.picture.likes === null || this.props.picture.likes === undefined) {
       this.setState({ isLiked: false });
     } else if (Object.keys(this.props.picture.likes).includes(String(this.props.currentUser))) {
-      this.setState({ isLiked: true });
+      this.setState({ isLiked: true, likes: (Object.keys(this.props.picture.likes).length) });
     }
   }
 

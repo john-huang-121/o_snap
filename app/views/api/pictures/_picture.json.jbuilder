@@ -8,7 +8,7 @@ end
 json.comments do
   picture.comments.each do |comment|
     json.set! comment.id do
-      json.set! comment.commenter_id, comment.body
+      json.extract! comment, :commenter_id, :body, :created_at
     end
   end
 end

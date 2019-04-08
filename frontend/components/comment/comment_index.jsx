@@ -1,5 +1,6 @@
 import React from "react";
 import NewCommentContainer from './new_comment_container';
+const Timestamp = require("react-timestamp");
 
 class CommentIndex extends React.Component {
   constructor(props) {
@@ -11,31 +12,29 @@ class CommentIndex extends React.Component {
     this.iterateComments = this.iterateComments.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   console.log(this.props.picture)
-  //   if (this.props.picture) {
-  //     this.iterateComments();
-  //   }
-  // }
-
   iterateComments() {
-    let pictureComments = null;
+    let pictureComments;
 
-    if (this.props.picture) {
-      pictureComments = Object.entries(this.props.picture.comments).map((comment) => {
-        let commentPrimaryId = Number(comment[0]),
-            userCommentEmail = this.props.users[Number(Object.keys(comment[1])[0])].email,
-            userCommentBody = Object.values(comment[1])[0];
-            
-        return (
-          <div className='each-posted-comment' key={commentPrimaryId}>
+    pictureComments = Object.entries(this.props.picture.comments).map((comment) => {
+      let commentPrimaryId = Number(comment[0]),
+          commentCreationTime = comment[1].created_at,
+          userCommentEmail = this.props.users[comment[1].commenter_id].email,
+          userCommentBody = comment[1].body;
+
+      return (
+        <div className='each-posted-comment-container' key={commentPrimaryId}>
+          <div className='comment-user-info-container'>
             <img className='picture-index-item-user-profile-pic' />
-            <p>{userCommentEmail}</p>
-            <p>{userCommentBody}</p>
+              <div className='comment-user-info'>
+                <p>{userCommentEmail}</p>
+                <Timestamp className='profile-gallery-timestamp'
+                  time={commentCreationTime} format='ago' />
+              </div>
           </div>
-        )
-      });
-    }
+          <p className='comment-body'>{userCommentBody}</p>
+        </div>
+      )
+    });
 
     return pictureComments;
   }
@@ -43,7 +42,7 @@ class CommentIndex extends React.Component {
   render() {
     return (
       <div className='comments-container' >
-        {this.iterateComments()}
+        {this.props.picture.comments ? this.iterateComments() : null }
         <NewCommentContainer picture={this.props.picture} />
       </div> 
     );
