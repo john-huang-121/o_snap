@@ -71,7 +71,7 @@ class Signup extends React.Component {
 
               <li className="signup-page-TOS">
                 Already have an account?
-                <Link className="nav-btn" id="login" to="/login">
+                <Link id="login" to="/login">
                   Log in
                 </Link>
               </li>
