@@ -27,4 +27,8 @@ json.followers do
     end
   end
 end
+json.likers do
+  json.set! :num_likes, user.likers.length
+end
 json.profile_cover url_for(user.profile_cover)
+json.profile_pic url_for(user.profile_pic)

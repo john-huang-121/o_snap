@@ -6,6 +6,8 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
  
+    this.checkProfilePic = this.checkProfilePic.bind(this);
+    this.checkLikers = this.checkLikers.bind(this);
     this.checkFollowers = this.checkFollowers.bind(this);
     this.checkFollows = this.checkFollows.bind(this);
     this.checkCoverPicture = this.checkCoverPicture.bind(this);
@@ -24,6 +26,16 @@ class Profile extends React.Component {
     });
   }//should add limit users on submitting only landscape images
 
+  checkProfilePic() {
+    let profilePicURL;
+
+    this.props.users[this.props.currentPageId]
+      ? profilePicURL = String(this.props.users[this.props.currentPageId].profile_pic)
+      : profilePicURL = null;
+
+    return profilePicURL;
+  }
+
   checkCoverPicture() {
     if (this.props.users[this.props.currentPageId]) {
       return <img className="profile-cover-picture" id="cover-picture" src={this.props.users[this.props.currentPageId].profile_cover} />;
@@ -32,6 +44,16 @@ class Profile extends React.Component {
           <p>Please upload a cover picture</p>
         </div>;
     }
+  }
+
+  checkLikers() {
+    let totLikes;
+
+    this.props.users[this.props.currentPageId]
+      ? totLikes = String(this.props.users[this.props.currentPageId].likers.num_likes)
+      : totLikes = "#";
+
+    return totLikes;
   }
 
   checkUsername() {
@@ -109,7 +131,7 @@ class Profile extends React.Component {
       <NavBarContainer />
       <div className='profile-cover-avatar-buttons-container'>
         {this.checkCoverPicture()}
-        <img className='profile-avatar-picture' />
+        <img className='profile-avatar-picture' src={this.checkProfilePic()}/>
         <div className='profile-buttons-container-container'>
           <ul className='profile-buttons-container'>
             <li>...</li>
@@ -125,7 +147,7 @@ class Profile extends React.Component {
           </h1>
         </div> 
         <ul className='profile-details'>
-          <li># Affection</li>
+          <li>{this.checkLikers()} Affection</li>
           <li># Photo Views</li>
           <li>{this.checkFollowers()} Followers</li>
           <li>{this.checkFollows()} Following</li>

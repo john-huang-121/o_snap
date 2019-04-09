@@ -9,9 +9,9 @@ const FeedUserItem = ({ user, picture, deletePicture }) => {
   return (
     <ul className='picture-index-items-user-container'>
       <div href='#' className='picture-index-item-user-header-container'>
-        <img className='picture-index-item-user-profile-pic' />
+        <img className='picture-index-item-user-profile-pic' src={user.profile_pic}/>
         <div className='picture-index-item-email-timestamp-container'>
-          <p>{user.email}</p>
+          <Link to={`/user/${user.id}`}>{user.email}</Link>
           <Timestamp className='profile-gallery-timestamp'
             time={picture.created_at} format='ago' />
         </div>

@@ -15,6 +15,11 @@ class Picture < ApplicationRecord
   foreign_key: :picture_id,
   class_name: 'Like'
 
+  belongs_to :user,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: 'User'
+
   def self.search_pictures(search_terms)
     i = search_terms.length
     resulting_search = []

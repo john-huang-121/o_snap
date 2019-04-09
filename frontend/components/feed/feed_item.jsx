@@ -18,7 +18,7 @@ const FeedItem = ({ user, picture, deletePicture }) => {
           <li className='profile-pic'></li>
           <div className='profile-header-texts-container'>
             <div className='profile-header-texts'>
-              <li href='#'>Osnap</li>
+              <Link to={`/user/1`}>Osnap</Link>
               <ul className='profile-header-texts-published'>published a Gallery</ul>
             </div>
             <Timestamp className='profile-gallery-timestamp'

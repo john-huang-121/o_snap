@@ -2,10 +2,11 @@ class User < ApplicationRecord
   validates :email, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validate :profile_cover?
+  validate :profile_pic?
 
   after_initialize :ensure_session_token
 
-  # has_one_attached :profile_picture, default_url: "app/assets/images/if_30.User_290120.png"
+  has_one_attached :profile_pic
 
   has_one_attached :profile_cover
 
@@ -29,7 +30,20 @@ class User < ApplicationRecord
   foreign_key: :liker_id,
   class_name: 'Like'
 
+  has_many :pictures,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: 'Picture'
+
+  has_many :likers, through: :pictures, source: :likes
+
   attr_reader :password
+
+  def profile_pic?
+    unless self.profile_pic.attached?
+      self.profile_pic.attach(io: File.open("app/assets/images/if_30.User_290120.png"), filename: 'default_pic.png')
+    end
+  end
 
   def profile_cover?
     unless self.profile_cover.attached?
