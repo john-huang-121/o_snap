@@ -120,7 +120,7 @@ w.picture.attach(io: File.open('app/assets/images/demo_user_uploads/edgar-castre
 w.save!
 
 x = Picture.new({title: 'Simple Foods', description: 'I didn\'t feel like making an extravagent', user_id: 2, tags: ['yogurt','egg','breakfast']})
-x.picture.attach(io: File.open('app/assets/images/demo_user_uploads/edgar-castrejon-459822-unsplash.jpg'), filename: 'breakfast.jpg')
+x.picture.attach(io: File.open('app/assets/images/demo_user_uploads/indra-sebeloue-1386674-unsplash.jpg'), filename: 'breakfast.jpg')
 x.save!
 
 y = Picture.new({title: 'Street View', description: 'A great view of the city street.', user_id: 2, tags: ['street','city']})
