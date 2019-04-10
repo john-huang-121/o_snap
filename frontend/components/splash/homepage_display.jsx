@@ -66,27 +66,27 @@ class HomepageDisplay extends React.Component {
     } else if (this.state.whichTab === 'city') {
       return (
         <div className='homepage-top-photos-grid-container' id='unlog-city'>
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[11].pictureUrl} />
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[14].pictureUrl} />
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[21].pictureUrl} />
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[27].pictureUrl} />
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[28].pictureUrl} />
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[34].pictureUrl} />
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[49].pictureUrl} />
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[51].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[11].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[14].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[21].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[27].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[28].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[34].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[49].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[51].pictureUrl} />
         </div>
       );
     } else if (this.state.whichTab === 'animals') {
       return (
         <div className='homepage-top-photos-grid-container' id='unlog-animals'>
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[9].pictureUrl} />
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[16].pictureUrl} />
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[19].pictureUrl} />
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[22].pictureUrl} />
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[23].pictureUrl} />
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[24].pictureUrl} />
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[25].pictureUrl} />
-          <img className='homepage-top-photos-grid-people' src={this.props.pictures[30].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[9].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[16].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[19].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[22].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[23].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[24].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[25].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[30].pictureUrl} />
         </div>
       );
     }
