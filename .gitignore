@@ -8,9 +8,9 @@
 /.bundle
 
 # Ignore images to upload
-/app/assets/images/demo_user_uploads
-/app/assets/images/editor_uploads
-/app/assets/images/user_uploads
+# /app/assets/images/demo_user_uploads
+# /app/assets/images/editor_uploads
+# /app/assets/images/user_uploads
 
 # Ignore all logfiles and tempfiles.
 /log/*
