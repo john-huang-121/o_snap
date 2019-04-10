@@ -3,20 +3,95 @@ import { Link } from 'react-router-dom';
 import SplashNavContainer from './splash_nav_container';
 import NavbarContainer from '../navbar/navbar_container';
 import FeedContainer from '../feed/feed_container';
-import DiscoverContainer from '../discover/discover_container';
 
 
 class HomepageDisplay extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      whichTab: 'people'
+    }
+
+    this.topPhotosClick = this.topPhotosClick.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchUsers();
     this.props.fetchPictures();
     this.props.fetchFollows();
     this.props.fetchLikes();
   }
+
+  topPhotosClick() {
+    if (this.state.whichTab === 'people') {
+      return (
+        <div className='homepage-top-photos-grid-container' id='unlog-people'>
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[2].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[4].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[5].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[7].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[8].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[9].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[13].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[7].pictureUrl} />
+        </div>
+      );
+    }
+  }
+  //   } else if (this.state.whichTab === 'landscapes') {
+  //     return (
+  //       <div className='homepage-top-photos-grid-container' id='unlog-landscapes'>
+  //         <img className='homepage-top-photos-grid-item' src={this.props.pictures[1].pictureUrl} />
+  //         <img className='homepage-top-photos-grid-item' src={this.props.pictures[3].pictureUrl} />
+  //         <img className='homepage-top-photos-grid-item' src={this.props.pictures[6].pictureUrl} />
+  //         <img className='homepage-top-photos-grid-item' src={this.props.pictures[10].pictureUrl} />
+  //         <img className='homepage-top-photos-grid-item' src={this.props.pictures[16].pictureUrl} />
+  //         <img className='homepage-top-photos-grid-item' src={this.props.pictures[22].pictureUrl} />
+  //         <img className='homepage-top-photos-grid-item' src={this.props.pictures[23].pictureUrl} />
+  //         <img className='homepage-top-photos-grid-item' src={this.props.pictures[24].pictureUrl} />
+  //       </div>
+  //     );
+  //   } else if (this.state.whichTab === 'nature') {
+  //     return (
+  //       <div className='homepage-top-photos-grid-container' id='unlog-nature'>
+  //         <img className='homepage-top-photos-grid-item' src={} />
+  //         <img className='homepage-top-photos-grid-item' src={} />
+  //         <img className='homepage-top-photos-grid-item' src={} />
+  //         <img className='homepage-top-photos-grid-item' src={} />
+  //         <img className='homepage-top-photos-grid-item' src={} />
+  //         <img className='homepage-top-photos-grid-item' src={} />
+  //         <img className='homepage-top-photos-grid-item' src={} />
+  //         <img className='homepage-top-photos-grid-item' src={} />
+  //       </div>
+  //     );
+  //   } else if (this.state.whichTab === 'city') {
+  //     return (
+  //       <div className='homepage-top-photos-grid-container' id='unlog-city'>
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //       </div>
+  //     );
+  //   } else if (this.state.whichTab === 'animals') {
+  //     return (
+  //       <div className='homepage-top-photos-grid-container' id='unlog-animals'>
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //         <img className='homepage-top-photos-grid-people' src={} />
+  //       </div>
+  //     );
+  //   }
+  // }
 
   isLoggedIn() {
     if (this.props.session === null) {
@@ -48,10 +123,8 @@ class HomepageDisplay extends React.Component {
               <li>City</li>
               <li>Animals</li>
             </ul>
-            <div className='homepage-top-photos-grid-container'>
-              {/* grid goes here */}
-            </div>
           </div>
+          {Object.keys(this.props.pictures).length > 0 ? this.topPhotosClick() : null}
           <div className='homepage-get-motivated-to-share'>
           {/* this is for the become a part of the community */}
           </div>

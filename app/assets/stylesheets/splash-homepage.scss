@@ -76,6 +76,7 @@
   justify-content: center;
   flex-direction: row;
   width: 100vw;
+  height: 46px;
 }
 
 .homepage-top-photos-header-list li {
@@ -86,4 +87,19 @@
 .homepage-top-photos-header-list li:hover {
   color: #0099e5;
   border-bottom: 2px solid #0099e5;
+}
+
+.homepage-top-photos-grid-container {
+  display: grid;
+  height: 800px;
+  padding: 10px 200px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.homepage-top-photos-grid-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

@@ -111,9 +111,14 @@
   cursor: pointer;
 }
 
-.profile-tabs li:hover {
+.profile-tabs-working:hover {
   color: #0099e5;
   border-bottom: 2px solid #0099e5;
+}
+
+.profile-tabs-not-working:hover {
+  background-color: lightcoral;
+  border-bottom: 2px solid red;
 }
 
 .profile-grid {
@@ -121,18 +126,24 @@
   padding: 0 40px;
 }
 
+// .user-account-picture-container {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   align-items: center;
+// }
+
 .user-account-picture-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 25vw);
+  grid-gap: 10px;
 }
 
 .user-account-picture {
-  padding: 0 5px;
-  margin-bottom: 10px;
-  max-width: 24%;
-  max-height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .profile-grid {

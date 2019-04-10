@@ -155,10 +155,10 @@ class Profile extends React.Component {
       </div>
       <div className='profile-tabs-container'>
         <ul className='profile-tabs'>
-          <li>PHOTOS</li>
-          <li>GALLERIES</li>
-          <li>GROUPS</li>
-          <li>ABOUT</li>
+          <li className='profile-tabs-working'>PHOTOS</li>
+          <li className='profile-tabs-not-working'>GALLERIES</li>
+          <li className='profile-tabs-not-working'>GROUPS</li>
+          <li className='profile-tabs-not-working'>ABOUT</li>
         </ul>
       </div>
       {this.checkPicture()}
