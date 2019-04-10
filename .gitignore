@@ -7,6 +7,11 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore images to upload
+/assets/images/demo_user_uploads
+/assets/images/editor_uploads
+/assets/images/user_uploads
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
