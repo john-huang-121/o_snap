@@ -211,18 +211,9 @@ at = Picture.new({title:'The Great Outdoors', description:'A calm lake overshado
 at.picture.attach(io: File.open('app/assets/images/user_uploads/marlon-martinez-1105823-unsplash.jpg'), filename: 'mountain_and_lake.jpg')
 at.save!
 
-au = Picture.new({title:'Breakfast of Champions', description:'A healthy breakfast of apricot, crepes, milk, and maple syrup to start your morning!', user_id: 3, tags: ['breakfast','food','crepe','syrup','fruit']})
-au.picture.attach(io: File.open('app/assets/images/user_uploads/monika-grabkowska-1106948-unsplash.jpg'), filename: 'crepe_breakfast.jpg')
-au.save!
-
 av = Picture.new({title:'Sandy Feet', description:'Feels good to visit the beach again and have the sand between my toes', user_id: 3, tags: ['sand','beach','shoe','dress','feet']})
 av.picture.attach(io: File.open('app/assets/images/user_uploads/nathan-dumlao-1105826-unsplash.jpg'), filename: 'beach_feet.jpg')
 av.save!
-
-
-aw = Picture.new({title: 'Classy Morning Coffee', description: 'Starting the morning right with a tasteful snapshot of drip coffee', user_id: 5, tags: ['coffee','black','green','glass']})
-aw.picture.attach(io: File.open('app/assets/images/demo_user_uploads/ali-yahya-1386950-unsplash.jpg'), filename: 'morning_coffee.jpg')
-aw.save!
 
 #demo_user_uploads
 
@@ -233,10 +224,6 @@ ax.save!
 ay = Picture.new({title: 'Golden Forest', description: 'The way the sun\'s rays shine through the forest. Absolutely stunning.', user_id: 2, tags: ['forest','gold','majestic']})
 ay.picture.attach(io: File.open('app/assets/images/demo_user_uploads/charl-van-rooy-672182-unsplash.jpg'), filename: 'forest.jpg')
 ay.save!
-
-az = Picture.new({title: 'Photogenic Doggo', description: 'I just want pick him up and hug him forever!', user_id: 2, tags: ['dog','photogenic']})
-az.picture.attach(io: File.open('app/assets/images/demo_user_uploads/chirag-dulyan-1386099-unsplash.jpg'), filename: 'dog.jpg' )
-az.save!
 
 aaa = Picture.new({title: 'Modern', description: 'Chic, stylish, upscale.', user_id: 2, tags: ['tan','lounge']})
 aaa.picture.attach(io: File.open('app/assets/images/demo_user_uploads/daniil-silantev-574958-unsplash.jpg'), filename: 'swing_bed.jpg')
@@ -265,11 +252,6 @@ aaf.save!
 aag = Picture.new({title: 'Tundra', description: 'An aerial shot of the tundra as we fly over Alaska.', user_id: 2, tags: ['snow','forest','white']})
 aag.picture.attach(io: File.open('app/assets/images/demo_user_uploads/sid-verma-1387708-unsplash.jpg'), filename: 'tundra.jpg')
 aag.save!
-
-aah = Picture.new({title: 'Heart', description: 'Let\'s spread the love one heart at a time.', user_id: 2, tags: ['heart','love','sun']})
-aah.picture.attach(io: File.open('app/assets/images/demo_user_uploads/tyler-nix-525389-unsplash.jpg'), filename: 'love.jpg')
-aah.save!
-
 
 Follow.create!({user_id: 1, follower_id: 2})
 Follow.create!({user_id: 3, follower_id: 2})
