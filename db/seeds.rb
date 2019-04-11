@@ -45,7 +45,7 @@ e.save!
 
 f = User.create!({email: 'v2osk@gmail.com', password: '123456'})
 f.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
-f.profile_pic.attach(io: File.open('app/assets/images/user_uploads/v2osk-301154-unsplash.jpg'), filename: 'profile_pic.jpg')
+f.profile_pic.attach(io: File.open('app/assets/images/user_uploads/brooke-cagle-274465-unsplash.jpg'), filename: 'profile_pic.jpg')
 f.save!
 
 g = User.create!({email: 'animal@gmail.com', password: '123456'})
@@ -190,10 +190,6 @@ an.save!
 ao = Picture.new({title:'Skyscrapers', description:'Woah, so tall', user_id: 5, tags: ['tall','city']})
 ao.picture.attach(io: File.open('app/assets/images/user_uploads/tyler-nix-574395-unsplash.jpg'), filename: 'skyscraper.jpg')
 ao.save!
-
-ap = Picture.new({title:'Skateboarding Trick', description:'Took this at the right moment when he flew up.', user_id: 5, tags: ['people','skate']})
-ap.picture.attach(io: File.open('app/assets/images/user_uploads/v2osk-301154-unsplash.jpg'), filename: 'skater.jpg')
-ap.save!
 
 aq = Picture.new({title:'Purple Ocean', description:'In a sea of violet.', user_id: 1, tags: ['ocean','purple', 'shore', 'rocks', 'boulder']})
 aq.picture.attach(io: File.open('app/assets/images/editor_uploads/brett-ritchie-567662-unsplash.jpg'), filename: 'ocean.jpg')
