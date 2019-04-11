@@ -59,7 +59,7 @@ class HomepageDisplay extends React.Component {
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[12].pictureUrl} />
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[13].pictureUrl} />
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[15].pictureUrl} />
-          <img className='homepage-top-photos-grid-item' src={this.props.pictures[17].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[33].pictureUrl} />
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[19].pictureUrl} />
         </div>
       );
@@ -72,8 +72,8 @@ class HomepageDisplay extends React.Component {
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[27].pictureUrl} />
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[28].pictureUrl} />
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[34].pictureUrl} />
-          <img className='homepage-top-photos-grid-item' src={this.props.pictures[49].pictureUrl} />
-          <img className='homepage-top-photos-grid-item' src={this.props.pictures[51].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[46].pictureUrl} />
+          <img className='homepage-top-photos-grid-item' src={this.props.pictures[48].pictureUrl} />
         </div>
       );
     } else if (this.state.whichTab === 'animals') {
