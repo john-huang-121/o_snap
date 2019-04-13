@@ -101,3 +101,76 @@
   height: 100%;
   object-fit: cover;
 }
+
+.homepage-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+}
+
+.homepage-footer-content-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.LinkedIn-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.LinkedIn-icon {
+  border-radius: 5px;
+  background: #0077B5;
+  color: white;
+  padding: 5px;
+  font-size: 30px;
+  font-weight: bolder;
+  margin-right: 5px;
+}
+
+.angel-list-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.angel-list-icon {
+  height: 35px;
+  width: 35px;
+  object-fit: cover;
+}
+
+.about-me-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.about-me-icon {
+  background-image: url(if_30.User_290120.png);
+  background-size: 35px 35px;
+  height: 35px;
+  width: 35px;
+  margin-right: 5px;
+}
+
+.github-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.github-icon {
+  background-image: url(GitHub-Mark-64px.png);
+  background-size: 35px 35px;
+  height: 35px;
+  width: 35px;
+  margin-right: 5px;
+}

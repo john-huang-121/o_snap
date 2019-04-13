@@ -36,7 +36,7 @@ class HomepageDisplay extends React.Component {
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[7].pictureUrl} />
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[17].pictureUrl} />
         </div>
-      );
+      )
     } else if (this.state.whichTab === 'landscapes') {
       return (
         <div className='homepage-top-photos-grid-container' id='unlog-landscapes'>
@@ -49,7 +49,7 @@ class HomepageDisplay extends React.Component {
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[36].pictureUrl} />
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[37].pictureUrl} />
         </div>
-      );
+      )
     } else if (this.state.whichTab === 'nature') {
       return (
         <div className='homepage-top-photos-grid-container' id='unlog-nature'>
@@ -62,7 +62,7 @@ class HomepageDisplay extends React.Component {
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[33].pictureUrl} />
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[19].pictureUrl} />
         </div>
-      );
+      )
     } else if (this.state.whichTab === 'city') {
       return (
         <div className='homepage-top-photos-grid-container' id='unlog-city'>
@@ -75,7 +75,7 @@ class HomepageDisplay extends React.Component {
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[45].pictureUrl} />
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[47].pictureUrl} />
         </div>
-      );
+      )
     } else if (this.state.whichTab === 'animals') {
       return (
         <div className='homepage-top-photos-grid-container' id='unlog-animals'>
@@ -88,7 +88,7 @@ class HomepageDisplay extends React.Component {
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[25].pictureUrl} />
           <img className='homepage-top-photos-grid-item' src={this.props.pictures[30].pictureUrl} />
         </div>
-      );
+      )
     }
   }
 
@@ -130,14 +130,29 @@ class HomepageDisplay extends React.Component {
             </ul>
           </div>
           {Object.keys(this.props.pictures).length > 0 ? this.topPhotosClick() : null}
-          <div className='homepage-get-motivated-to-share'>
-          {/* this is for the become a part of the community */}
-          </div>
           <footer className='homepage-footer'>
-          {/* for the bottom of the page */}
+            <p>More Content</p>
+            <div className='homepage-footer-content-container'>
+              <a href='#' className='LinkedIn-container'>
+                <div className='LinkedIn-icon'>in</div>
+                LinkedIn
+              </a>
+              <a href='#' className='angel-list-container'>
+                <img className='angel-list-icon' src="https://img.icons8.com/windows/32/000000/angelist.png" />
+                AngelList
+              </a>
+              <a href='#' className='about-me-container'>
+                <div className='about-me-icon' />
+                About
+              </a>
+              <a href='#' className='github-container'>
+                <div className='github-icon' />
+                Github
+              </a>
+            </div>
           </footer>
         </div>
-      );
+      )
       return notLogged;
 
     } else {
@@ -155,9 +170,9 @@ class HomepageDisplay extends React.Component {
   render () {
     return (
       <div>
-        {this.isLoggedIn()};
+        {this.isLoggedIn()}
       </div>
-    );
+    )
   }
 }
 
