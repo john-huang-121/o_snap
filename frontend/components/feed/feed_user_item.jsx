@@ -20,7 +20,7 @@ const FeedUserItem = ({ user, picture, deletePicture }) => {
         </div>
       </div>
 
-      <Link to={`/pictures/${picture.user_id}`}
+      <Link to={`/user/${picture.user_id}`}
         className='picture-index-item-user-image-container'>
           <img src={picture.pictureUrl}
             className='picture-index-item-user-image' />

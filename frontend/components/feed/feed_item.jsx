@@ -28,7 +28,7 @@ const FeedItem = ({ user, picture, deletePicture }) => {
             <FollowContainer user={user} />
           </div>
         </div>
-        <Link to={`/pictures/${picture.id}`}>
+        <Link to={`/user/${picture.id}`}>
           <img className='picture-index-item-picture'
             src={picture.pictureUrl} />
         </Link>
