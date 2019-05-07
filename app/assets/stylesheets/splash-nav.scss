@@ -28,7 +28,8 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 320px;
+  width: 330px;
+  height: 100%;
 }
 
 .splash-nav-flex-logo {
@@ -60,7 +61,7 @@
 .splash-nav-flex-licensing {
   display: flex;
   align-items: center;
-  width: 55px;
+  width: 65px;
   height: 100%;
   padding-left: 8px;
   padding-right: 8px;
@@ -100,7 +101,7 @@
   font-family: sans-serif;
   font-size: 16px;
   color: white;
-  padding-left: 10px;
+  // padding-left: 10px;
 }
 
 #login {

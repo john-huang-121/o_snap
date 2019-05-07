@@ -144,7 +144,7 @@ class Navbar extends React.Component {
           </li>
 
           <li className="nav-flex-about">
-            <a className="nav-btn" href="johnhuang.me">
+            <a className="nav-btn" href="http://www.johnhuang.me">
               About
             </a>
           </li>
