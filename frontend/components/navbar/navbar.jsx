@@ -143,8 +143,8 @@ class Navbar extends React.Component {
             </Link>
           </li>
 
-          <li className="nav-flex-about nav-not-working-link">
-            <a className="nav-btn" href="#">
+          <li className="nav-flex-about">
+            <a className="nav-btn" href="johnhuang.me">
               About
             </a>
           </li>

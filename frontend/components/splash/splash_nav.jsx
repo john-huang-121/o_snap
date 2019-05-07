@@ -18,7 +18,7 @@ class SplashNav extends React.Component {
 
 
           <li className='splash-nav-flex-about'>
-            <a className='splash-nav-btn' href="#">About</a>
+            <a className='splash-nav-btn' href="johnhuang.me">About</a>
           </li>
 
           <li className='splash-nav-flex-licensing'>
