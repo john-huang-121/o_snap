@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import FollowContainer from '../follow/follow_container';
 import LikeContainer from '../like/like_container';
 import CommentIndexContainer from '../comment/comment_index_container';
+import Modal from "../modal/picture_modal";
+
 const Timestamp = require('react-timestamp');
 
 const FeedUserItem = ({ user, picture, deletePicture }) => {
@@ -53,6 +55,7 @@ const FeedUserItem = ({ user, picture, deletePicture }) => {
       </div>
 
       <CommentIndexContainer picture={picture} />
+      {/* <Modal closeModal={closeModal} modalOpen={modalOpen} /> */}
     </ul>);
 };
 

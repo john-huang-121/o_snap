@@ -9,6 +9,7 @@ import FeedContainer from './feed/feed_container';
 import DiscoverContainer from './discover/discover_container';
 import UploadContainer from './upload/upload_container';
 import PictureShowContainer from './picture_show/picture_show_container';
+import ModalContainer from './modal/picture_modal_container';
 
 const App = () => (
   <div>
@@ -20,6 +21,8 @@ const App = () => (
     <ProtectedRoute path="/upload" component={UploadContainer} />
     <AuthRoute path="/login" component={LoginContainer} />
     <AuthRoute path="/signup" component={SignupHomeContainer} />
+
+    <Route exact path="/modal" component={ModalContainer} />
   </div>
 );
 
