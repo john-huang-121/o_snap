@@ -1,6 +1,7 @@
 import React from 'react';
 import FeedItem from './feed_item';
 import FeedUserItem from './feed_user_item';
+import ModalContainer from "../modal/picture_modal_container";
 
 class Feed extends React.Component {
   constructor(props) {
@@ -75,6 +76,7 @@ class Feed extends React.Component {
     return (
       <div className='homepage-user-feed-gallery-container'>
         {this.state.pictures}
+        {this.props.modalOpen ? <ModalContainer picture={this.props.modalPicture} /> : null }
       </div>
     );
   }

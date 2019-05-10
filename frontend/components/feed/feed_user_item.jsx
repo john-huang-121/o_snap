@@ -9,7 +9,7 @@ const Timestamp = require('react-timestamp');
 
 const FeedUserItem = ({ user, picture, deletePicture, openModal }) => {
   return (
-    <ul className='picture-index-items-user-container'>
+    <ul className='picture-index-items-user-container' id='feed-user-item-one'>
       <div href='#' className='picture-index-item-user-header-container'>
         <img className='picture-index-item-user-profile-pic' src={user.profile_pic}/>
         <div className='picture-index-item-email-timestamp-container'>
@@ -23,11 +23,9 @@ const FeedUserItem = ({ user, picture, deletePicture, openModal }) => {
       </div>
 
       {/* <Link to={`/user/${picture.user_id}`}  */}
-      <div onClick={openModal}
-        className='picture-index-item-user-image-container'>
-          <img src={picture.pictureUrl}
-            className='picture-index-item-user-image' />
-      </div>
+      <button onClick={() => { openModal(picture) } } className='picture-index-item-user-image-container'>
+        <img src={picture.pictureUrl} className='picture-index-item-user-image' />
+      </button>
       {/* </Link> */}
 
       <div className='picture-index-item-user-title-desc-act-container'>
@@ -57,8 +55,9 @@ const FeedUserItem = ({ user, picture, deletePicture, openModal }) => {
       </div>
 
       <CommentIndexContainer picture={picture} />
-      <ModalContainer picture={picture} />
     </ul>);
 };
 
 export default FeedUserItem;
+
+{/* <ModalContainer picture={picture} /> */}
