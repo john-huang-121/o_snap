@@ -22,11 +22,9 @@ const FeedUserItem = ({ user, picture, deletePicture, openModal }) => {
         </div>
       </div>
 
-      {/* <Link to={`/user/${picture.user_id}`}  */}
       <button onClick={() => { openModal(picture) } } className='picture-index-item-user-image-container'>
         <img src={picture.pictureUrl} className='picture-index-item-user-image' />
       </button>
-      {/* </Link> */}
 
       <div className='picture-index-item-user-title-desc-act-container'>
         <div className='picture-index-item-user-title'>
@@ -59,5 +57,3 @@ const FeedUserItem = ({ user, picture, deletePicture, openModal }) => {
 };
 
 export default FeedUserItem;
-
-{/* <ModalContainer picture={picture} /> */}

@@ -1,6 +1,9 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import LikeContainer from '../like/like_container';
 import CommentIndex from '../comment/comment_index_container';
+
+const Timestamp = require("react-timestamp");
 
 class Modal extends React.Component {
   constructor(props) {
@@ -11,9 +14,6 @@ class Modal extends React.Component {
     let modalClass = this.props.modalOpen ? 'modal-open' : 'modal-closed';
 
     return (
-      <div>
-      <h1>React Modal</h1>
-      <button onClick={this.props.openModal}>open</button>
       <div className={`${modalClass}`}>
         <section className='modal-window'>
           <div className='modal-picture'>
@@ -22,20 +22,22 @@ class Modal extends React.Component {
           <div className='modal-profile'>
             <div className='modal-author-info-container'>
               <div className='modal-author-info'>
-                <img className='modal-author-icon' src="" />
+                <div className='modal-author-icon'>
+                  <img src={this.props.users[this.props.picture.user_id].profile_pic} />
+                </div>
                 <div className='modal-author-email-timestamp-container'>
-                  <h1>Emma</h1>
-                  <h2>2hr ago</h2> 
+                  <Link to={`/user/${this.props.picture.user_id}`}>{this.props.users[this.props.picture.user_id].email}</Link>
+                  <Timestamp className='profile-gallery-timestamp'
+                    time={this.props.picture.created_at} format='ago' />
                 </div>
               </div>
-              <button onClick={this.props.closeModal}>close</button>
+              <div className="modal-close-button-container">
+                <button className="modal-close-button" onClick={this.props.closeModal}>x</button>
+              </div>
             </div>
             {/* <div href='#' className='picture-index-item-user-header-container'>
               <img className='picture-index-item-user-profile-pic' src={user.profile_pic} />
               <div className='picture-index-item-email-timestamp-container'>
-                <Link to={`/user/${user.id}`}>{user.email}</Link>
-                <Timestamp className='profile-gallery-timestamp'
-                  time={picture.created_at} format='ago' />
               </div>
             </div> */}
             <div className='modal-description-and-icon-container'>
@@ -45,9 +47,9 @@ class Modal extends React.Component {
                 <div className='modal-title'>
                   {this.props.picture.title}
                 </div>
-                <div className='modal-desc'>
+                <p className='modal-desc'>
                   {this.props.picture.description}
-                </div>
+                </p>
               </div>
 
               <div className='modal-icon-container'>
@@ -77,7 +79,6 @@ class Modal extends React.Component {
           </div>
         </section>
       </div>
-    </div>
     );
   }
 }
