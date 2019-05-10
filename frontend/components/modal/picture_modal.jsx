@@ -16,7 +16,9 @@ class Modal extends React.Component {
       <button onClick={this.props.openModal}>open</button>
       <div className={`${modalClass}`}>
         <section className='modal-window'>
-          <img className='modal-picture' src="https://s3-us-west-1.amazonaws.com/osnap-dev/people1.jpg" />
+          <div className='modal-picture'>
+            <img src={this.props.picture.pictureUrl} />
+          </div>
           <div className='modal-profile'>
             <div className='modal-author-info-container'>
               <div className='modal-author-info'>
@@ -41,10 +43,10 @@ class Modal extends React.Component {
                 {/* <h1>title</h1>
                 <p>description</p> */}
                 <div className='modal-title'>
-                  {picture.title}
+                  {this.props.picture.title}
                 </div>
                 <div className='modal-desc'>
-                  {picture.description}
+                  {this.props.picture.description}
                 </div>
               </div>
 
@@ -65,13 +67,13 @@ class Modal extends React.Component {
                   <li className='picture-index-item-user-gallery-icon' />
                 </a>
 
-                {/* <LikeContainer picture={picture} /> */}
+                <LikeContainer picture={this.props.picture} />
               </div>
             </div>
           </div>
 
           <div className='modal-comment'>
-            {/* <CommentIndex picture={picture} /> */}
+            <CommentIndex picture={this.props.picture} />
           </div>
         </section>
       </div>

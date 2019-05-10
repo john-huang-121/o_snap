@@ -45,6 +45,7 @@ class Feed extends React.Component {
             <FeedUserItem key={picture.id} picture={picture}
             user={this.props.users[this.props.currentUser]}
             deletePicture={this.props.deletePicture}
+            openModal={this.props.openModal}
             />
           );
         }
@@ -53,6 +54,7 @@ class Feed extends React.Component {
             <FeedUserItem key={picture.id} picture={picture}
             user={this.props.users[picture.user_id]}
             deletePicture={this.props.deletePicture}
+            openModal={this.props.openModal}
             />
           );
         }

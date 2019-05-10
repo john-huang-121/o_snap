@@ -21,7 +21,8 @@ const mapDispatchToProps = (dispatch) => {
     fetchPicture: (id) => dispatch(fetchPicture(id)),
     removePicture: (id) => dispatch(removePicture(id)),
     createFollow: (follow) => dispatch(createFollow(follow)),
-    deleteFollow: (id) => dispatch(deleteFollow(id))
+    deleteFollow: (id) => dispatch(deleteFollow(id)),
+    openModal: () => dispatch({ type: 'MODAL_CHANGE', modalOpen: true }),
   };
 };
 

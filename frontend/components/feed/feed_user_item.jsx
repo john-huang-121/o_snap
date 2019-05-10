@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import FollowContainer from '../follow/follow_container';
 import LikeContainer from '../like/like_container';
 import CommentIndexContainer from '../comment/comment_index_container';
-import Modal from "../modal/picture_modal";
+import ModalContainer from "../modal/picture_modal_container";
 
 const Timestamp = require('react-timestamp');
 
-const FeedUserItem = ({ user, picture, deletePicture }) => {
+const FeedUserItem = ({ user, picture, deletePicture, openModal }) => {
   return (
     <ul className='picture-index-items-user-container'>
       <div href='#' className='picture-index-item-user-header-container'>
@@ -22,11 +22,13 @@ const FeedUserItem = ({ user, picture, deletePicture }) => {
         </div>
       </div>
 
-      <Link to={`/user/${picture.user_id}`}
+      {/* <Link to={`/user/${picture.user_id}`}  */}
+      <div onClick={openModal}
         className='picture-index-item-user-image-container'>
           <img src={picture.pictureUrl}
             className='picture-index-item-user-image' />
-      </Link>
+      </div>
+      {/* </Link> */}
 
       <div className='picture-index-item-user-title-desc-act-container'>
         <div className='picture-index-item-user-title'>
@@ -55,7 +57,7 @@ const FeedUserItem = ({ user, picture, deletePicture }) => {
       </div>
 
       <CommentIndexContainer picture={picture} />
-      {/* <Modal closeModal={closeModal} modalOpen={modalOpen} /> */}
+      <ModalContainer picture={picture} />
     </ul>);
 };
 
