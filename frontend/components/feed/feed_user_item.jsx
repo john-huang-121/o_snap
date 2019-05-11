@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import FollowContainer from '../follow/follow_container';
 import LikeContainer from '../like/like_container';
 import CommentIndexContainer from '../comment/comment_index_container';
-import ModalContainer from "../modal/picture_modal_container";
 
 const Timestamp = require('react-timestamp');
 

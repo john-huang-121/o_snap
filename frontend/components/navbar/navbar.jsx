@@ -172,16 +172,3 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
-
-// <li className='nav-flex-items'>
-// {this.props.currentUserId ? (
-//   <div>
-//   <button onClick={this.props.logout}>Log Out</button>
-//   </div>
-// ) : (
-//   <section>
-//   <Link className='btn' to='/signup'>Sign Up</Link>
-//   <Link className='btn' to='/login'>Login</Link>
-//   </section>
-// )}
-// </li>

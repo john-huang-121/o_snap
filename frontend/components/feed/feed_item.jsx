@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import FollowContainer from '../follow/follow_container';
 const Timestamp = require('react-timestamp');
 
-const FeedItem = ({ user, picture, deletePicture }) => {
+const FeedItem = ({ user, picture, deletePicture, openModal }) => {
 
   return (
     <ul className='picture-index-items-container'>
@@ -22,10 +22,10 @@ const FeedItem = ({ user, picture, deletePicture }) => {
             <FollowContainer user={user} />
           </div>
         </div>
-        <Link to={`/user/${picture.id}`}>
+        <button onClick={() => { openModal(picture) }}>
           <img className='picture-index-item-picture'
             src={picture.pictureUrl} />
-        </Link>
+        </button>
         <Link to={`/pictures/${picture.id}`}
           className='picture-index-item-title'>{picture.title}
         </Link>

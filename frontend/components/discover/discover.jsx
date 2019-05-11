@@ -3,6 +3,7 @@ import React from 'react';
 import DiscoverItem from "../feed/feed_item";
 import DiscoverUserItem from "../feed/feed_user_item";
 import NavbarContainer from "../navbar/navbar_container";
+import ModalContainer from "../modal/picture_modal_container";
 
 class Discover extends React.Component {
     constructor(props) {
@@ -44,6 +45,7 @@ class Discover extends React.Component {
               <DiscoverItem key={picture.id} picture={picture}
                 user={this.props.users[1]}
                 deletePicture={this.props.deletePicture}
+                openModal={this.props.openModal}
               />
             );
           }
@@ -52,6 +54,7 @@ class Discover extends React.Component {
               <DiscoverUserItem key={picture.id} picture={picture}
                 user={this.props.users[this.props.currentUser]}
                 deletePicture={this.props.deletePicture}
+                openModal={this.props.openModal}
               />
             );
           }
@@ -60,6 +63,7 @@ class Discover extends React.Component {
               <DiscoverUserItem key={picture.id} picture={picture}
                 user={this.props.users[picture.user_id]}
                 deletePicture={this.props.deletePicture}
+                openModal={this.props.openModal}
               />
             );
           }
@@ -97,6 +101,7 @@ class Discover extends React.Component {
             </div>
           </footer>
           {this.state.pictures}
+          {this.props.modalOpen ? <ModalContainer picture={this.props.modalPicture} /> : null}
         </div>
       );
     }

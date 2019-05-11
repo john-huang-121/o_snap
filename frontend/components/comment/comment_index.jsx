@@ -25,18 +25,22 @@ class CommentIndex extends React.Component {
           userCommentBody = comment[1].body;
 
       return (
-        <div className='each-posted-comment-container' key={commentPrimaryId}>
-          <div className='comment-user-info-container'>
-            <img className='picture-index-item-user-profile-pic' src={userProfilePic}/>
-              <div className='comment-user-info'>
-                <Link to={`/user/${userId}`}>{userCommentEmail}</Link>
-                <Timestamp className='profile-gallery-timestamp'
-                  time={commentCreationTime} format='ago' />
-              </div>
+        <div
+          className="each-posted-comment-container"
+          key={commentPrimaryId}
+        >
+          <div className="comment-user-info-container">
+            <img
+              className="picture-index-item-user-profile-pic"
+              src={userProfilePic}
+            />
           </div>
-          <p className='comment-body'>{userCommentBody}</p>
+          <p className="comment-body">
+            <Link to={`/user/${userId}`}>{userCommentEmail}</Link>
+            {userCommentBody}
+          </p>
         </div>
-      )
+      );
     });
 
     return pictureComments;

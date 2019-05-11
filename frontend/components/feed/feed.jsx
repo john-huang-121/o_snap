@@ -38,6 +38,7 @@ class Feed extends React.Component {
             <FeedItem key={picture.id} picture={picture}
             user={this.props.users[1]}
             deletePicture={this.props.deletePicture}
+            openModal={this.props.openModal}
             />
           );
         }
