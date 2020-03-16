@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SplashNavContainer from './splash_nav_container';
 import NavbarContainer from '../navbar/navbar_container';
 import FeedContainer from '../feed/feed_container';
+import HomepageTileGallery from './homepage_tile_gallery';
 import Footer from '../footer/footer';
 
 
@@ -25,72 +26,7 @@ class HomepageDisplay extends React.Component {
   }
 
   topPhotosClick() {
-    if (this.state.whichTab === 'people') {
-      return (
-        <div className='homepage-top-photos-grid-container' id='unlog-people'>
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/people1.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/people2.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/people3.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/people4.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/people5.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/people6.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/people7.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/people8.jpg'} />
-        </div>
-      )
-    } else if (this.state.whichTab === 'landscapes') {
-      return (
-        <div className='homepage-top-photos-grid-container' id='unlog-landscapes'>
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/landscape1.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/landscape2.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/landscape3.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/landscape4.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/landscape5.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/landscape6.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/landscape7.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/landscape8.jpg'} />
-        </div>
-      )
-    } else if (this.state.whichTab === 'nature') {
-      return (
-        <div className='homepage-top-photos-grid-container' id='unlog-nature'>
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/nature1.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/nature2.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/nature3.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/nature4.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/nature5.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/nature6.jpg'} />
-          <img className='homepage-top-photos-grid-item-parrot' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/nature7.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/landscape4.jpg'} />
-        </div>
-      )
-    } else if (this.state.whichTab === 'city') {
-      return (
-        <div className='homepage-top-photos-grid-container' id='unlog-city'>
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/city1.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/city2.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/city3.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/city4.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/city5.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/city6.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/city7.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/city8.jpg'} />
-        </div>
-      )
-    } else if (this.state.whichTab === 'animals') {
-      return (
-        <div className='homepage-top-photos-grid-container' id='unlog-animals'>
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/animal1.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/animal2.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/animal3.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/animal4.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/animal5.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/animal6.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/animal7.jpg'} />
-          <img className='homepage-top-photos-grid-item' src={'https://s3-us-west-1.amazonaws.com/osnap-dev/animal8.jpg'} />
-        </div>
-      )
-    }
+    return <HomepageTileGallery whichTab={this.state.whichTab} />
   }
 
   handleClick(type) {
