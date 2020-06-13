@@ -71,28 +71,6 @@ class Navbar extends React.Component {
                     My Profile
                   </Link>
                 </li>
-                <li className="nav-not-working-link">
-                  <a href="#">My Stats</a>
-                </li>
-                <li className="nav-not-working-link">
-                  <a href="#">My Galleries</a>
-                </li>
-                <li className="nav-not-working-link">
-                  <a href="#">My Liked Photos</a>
-                </li>
-              </ul>
-              <ul className="nav-default-user-icon-dropdown-clearfix">
-                <li className="nav-not-working-link">
-                  <a href="#">My Settings</a>
-                </li>
-                <li className="nav-not-working-link">
-                  <a href="#">Manage Photos</a>
-                </li>
-              </ul>
-              <ul className="nav-default-user-icon-dropdown-clearfix">
-                <li className="nav-not-working-link">
-                  <a href="#">Support</a>
-                </li>
               </ul>
               <ul className="nav-default-user-icon-dropdown-clearfix">
                 <li className='nav-working-link'>
@@ -146,12 +124,6 @@ class Navbar extends React.Component {
           <li className="nav-flex-about">
             <a className="nav-btn" href="http://www.johnhuang.me">
               About
-            </a>
-          </li>
-
-          <li className="nav-flex-studio nav-not-working-link">
-            <a className="nav-btn" href="#">
-              Studio
             </a>
           </li>
 
