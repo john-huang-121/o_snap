@@ -3,7 +3,7 @@ class CreateLikes < ActiveRecord::Migration[5.2]
     create_table :likes do |t|
       t.integer :picture_id, null: false
       t.integer :liker_id, null: false
-      t.datetime
+      t.datetime :date_created, :default => DateTime.now
 
       t.timestamps
     end

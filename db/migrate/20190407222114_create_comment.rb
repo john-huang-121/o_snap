@@ -4,7 +4,7 @@ class CreateComment < ActiveRecord::Migration[5.2]
       t.integer :picture_id, null: false
       t.integer :commenter_id, null: false
       t.string :body, null: false
-      t.datetime
+      t.datetime :date_created, :default => DateTime.now
 
       t.timestamps
     end

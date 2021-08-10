@@ -3,7 +3,7 @@ class CreateFollows < ActiveRecord::Migration[5.2]
     create_table :follows do |t|
       t.integer :user_id, null: false
       t.integer :follower_id, null: false
-      t.datetime
+      t.datetime :date_created, :default => DateTime.now
 
       t.timestamps
     end

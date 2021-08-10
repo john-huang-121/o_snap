@@ -4,7 +4,7 @@ class CreatePictures < ActiveRecord::Migration[5.2]
       t.string :title, null: false
       t.string :description, null: false
       t.integer :user_id, null: false
-      t.datetime
+      t.datetime :date_created, :default => DateTime.now
 
       t.timestamps
     end
