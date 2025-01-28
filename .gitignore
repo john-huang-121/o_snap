@@ -32,3 +32,6 @@
 node_modules/
 bundle.js
 bundle.js.map
+logfile
+/.DS_Store
+.DS_Store
