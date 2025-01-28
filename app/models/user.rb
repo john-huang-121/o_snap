@@ -41,13 +41,14 @@ class User < ApplicationRecord
 
   def profile_pic?
     unless self.profile_pic.attached?
-      self.profile_pic.attach(io: File.open("app/assets/images/if_30.User_290120.png"), filename: 'default_pic.png')
+      self.profile_pic.attach(io: File.open(Rails.root.join("app", "assets", "images","if_30.User_290120.png")), filename: 'default_pic.png')
+      # (io: File.open(Rails.root.join("app", "assets", "images", "default.jpeg")), filename: 'default.jpg' , content_type: "image/jpg")
     end
   end
 
   def profile_cover?
     unless self.profile_cover.attached?
-      self.profile_cover.attach(io: File.open('app/assets/images/nathan-anderson-135242-unsplash.jpg'), filename: 'default_cover.jpg')
+      self.profile_cover.attach(io: File.open(Rails.root.join("app", "assets", "images","nathan-anderson-135242-unsplash.jpg")), filename: 'default_cover.jpg')
     end
   end
 
