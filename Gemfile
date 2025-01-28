@@ -12,7 +12,7 @@ gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier'
+gem 'terser'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 # Use CoffeeScript for .coffee assets and views
