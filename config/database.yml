@@ -80,6 +80,5 @@ test:
 #
 production:
   <<: *default
-  database: osnap_production
-  username: osnap
-  password: <%= ENV['OSNAP_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: 5
