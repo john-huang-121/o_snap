@@ -19,38 +19,38 @@ end
 #Users
 
 a = User.create!({email: 'editor@gmail.com', password: 'editor'})
-a.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
-a.profile_pic.attach(io: File.open('app/assets/images/if_users-10_984119.png'), filename: 'profile_pic.png')
+# a.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
+# a.profile_pic.attach(io: File.open('app/assets/images/if_users-10_984119.png'), filename: 'profile_pic.png')
 a.save!
 
 b = User.create!({email: 'demo_user@gmail.com', password: '123456'})
-b.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
-b.profile_pic.attach(io: File.open('app/assets/images/user_uploads/daniel-monteiro-1105874-unsplash.jpg'), filename: 'profile_pic.jpg')
+# b.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
+# # b.profile_pic.attach(io: File.open('app/assets/images/user_uploads/daniel-monteiro-1105874-unsplash.jpg'), filename: 'profile_pic.jpg')
 b.save!
 
 c = User.create!({email: 'amanda_lee@gmail.com', password: '123456'})
-c.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
-c.profile_pic.attach(io: File.open('app/assets/images/user_uploads/hunter-newton-1104673-unsplash.jpg'), filename: 'profile_pic.jpg')
+# c.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
+# # c.profile_pic.attach(io: File.open('app/assets/images/user_uploads/hunter-newton-1104673-unsplash.jpg'), filename: 'profile_pic.jpg')
 c.save!
 
 d = User.create!({email: 'brittany_murphy@gmail.com', password: '123456'})
-d.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
-d.profile_pic.attach(io: File.open('app/assets/images/user_uploads/jeff-kepler-1106964-unsplash.jpg'), filename: 'profile_pic.jpg')
+# d.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
+# # d.profile_pic.attach(io: File.open('app/assets/images/user_uploads/jeff-kepler-1106964-unsplash.jpg'), filename: 'profile_pic.jpg')
 d.save!
 
 e = User.create!({email: 'daniel_christian@gmail.com', password: '123456'})
-e.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
-e.profile_pic.attach(io: File.open('app/assets/images/user_uploads/brooke-cagle-274465-unsplash.jpg'), filename: 'profile_pic.jpg')
+# e.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
+# # e.profile_pic.attach(io: File.open('app/assets/images/user_uploads/brooke-cagle-274465-unsplash.jpg'), filename: 'profile_pic.jpg')
 e.save!
 
 f = User.create!({email: 'v2osk@gmail.com', password: '123456'})
-f.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
-f.profile_pic.attach(io: File.open('app/assets/images/user_uploads/brooke-cagle-274465-unsplash.jpg'), filename: 'profile_pic.jpg')
+# f.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
+# # f.profile_pic.attach(io: File.open('app/assets/images/user_uploads/brooke-cagle-274465-unsplash.jpg'), filename: 'profile_pic.jpg')
 f.save!
 
 g = User.create!({email: 'animal@gmail.com', password: '123456'})
-g.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
-g.profile_pic.attach(io: File.open('app/assets/images/user_uploads/linnea-sandbakk-91258-unsplash.jpg'), filename: 'profile_pic.jpg')
+# g.profile_cover.attach(io: File.open('app/assets/images/user_uploads/aaron-burden-266395-unsplash.jpg'), filename: 'cover.jpg')
+# # g.profile_pic.attach(io: File.open('app/assets/images/user_uploads/linnea-sandbakk-91258-unsplash.jpg'), filename: 'profile_pic.jpg')
 g.save!
 
 #Pictures

@@ -26,14 +26,15 @@
     "test": "test"
   },
   "scripts": {
-    "postinstall": "webpack",
-    "start": "webpack --watch --mode=development"
+    "postinstall": "npm run build",
+    "start": "webpack",
+    "build": "webpack --mode=production --config webpack.production.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": "8.4.0",
-    "npm": "6.1.0"
+    "node": "18.x",
+    "npm": "8.x"
   }
 }
