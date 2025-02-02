@@ -1,28 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Redirect, Route, withRouter } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 
-const mapStateToProps = (state) => ({
-  loggedIn: Boolean(state.session.currentUserId)
-});
+export const AuthRoute = ({ component: Component, ...rest }) => {
+  const loggedIn = useSelector((state) => Boolean(state.session.currentUserId));
+  return loggedIn ? <Navigate to="/" /> : <Component {...rest} />;
+};
 
-const Auth = ({ loggedIn, path, component: Component }) => (
-  <Route
-    path={path}
-    render={props => (
-      loggedIn ? <Redirect to='/' /> : <Component {...props} />
-    )}
-  />
-);
-
-const Protected = ({ loggedIn, path, component: Component }) => (
-  <Route
-    path={path}
-    render={props => (
-      loggedIn ? <Component {...props} /> : <Redirect to='/signup' />
-    )}
-  />
-);
-
-export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
-export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
+export const ProtectedRoute = ({ component: Component, ...rest }) => {
+  const loggedIn = useSelector((state) => Boolean(state.session.currentUserId));
+  return loggedIn ? <Component {...rest} /> : <Navigate to="/signup" />;
+};

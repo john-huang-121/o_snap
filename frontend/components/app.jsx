@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 import SignupHomeContainer from "./user/signup/signup_home_container";
 import ProfileContainer from './user/profile/profile_container';
@@ -12,18 +12,29 @@ import PictureShowContainer from './picture_show/picture_show_container';
 import ModalContainer from './modal/picture_modal_container';
 
 const App = () => (
-  <div>
-    <Route exact path="/pictures/:id" component={PictureShowContainer} />
-    <Route exact path="/pictures" component={FeedContainer} />
-    <Route exact path="/user/:id" component={ProfileContainer} />
-    <Route exact path="/" component={HomepageDisplayContainer} />
-    <ProtectedRoute path="/discover" component={DiscoverContainer} />
-    <ProtectedRoute path="/upload" component={UploadContainer} />
-    <AuthRoute path="/login" component={LoginContainer} />
-    <AuthRoute path="/signup" component={SignupHomeContainer} />
-
-    <Route exact path="/modal" component={ModalContainer} />
-  </div>
+  <Routes>
+    <Route
+      path="/discover"
+      element={<ProtectedRoute component={DiscoverContainer} />}
+    />
+    <Route
+      path="/login"
+      element={<ProtectedRoute component={UploadContainer} />}
+    />
+    <Route
+      path="/signup"
+      element={<AuthRoute component={LoginContainer} />}
+    />
+    <Route
+      path="/upload"
+      element={<AuthRoute component={SignupHomeContainer} />}
+    />
+    <Route path="/" element={<HomepageDisplayContainer />} />
+    <Route path="/pictures/:id" element={<PictureShowContainer />} />
+    <Route path="/pictures" element={<FeedContainer />} />
+    <Route path="/user/:id" element={<ProfileContainer />} />
+    <Route path="/modal" element={<ModalContainer />} />
+  </Routes>
 );
 
 export default App;
