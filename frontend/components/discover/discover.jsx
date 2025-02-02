@@ -1,110 +1,94 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 // importing FeedItems and FeedUserItems as discover
 import DiscoverItem from "../feed/feed_item";
 import DiscoverUserItem from "../feed/feed_user_item";
 import NavbarContainer from "../navbar/navbar_container";
 import ModalContainer from "../modal/picture_modal_container";
 
-class Discover extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        pictures: null,
-      }
+const Discover = (props) => {
+  const [pictures, setPictures] = useState(null);
 
-      this.currentUserNotFollowed = this.currentUserNotFollowed.bind(this);
-    }
+  useEffect(() => {
+    props.fetchUsers();
+    props.fetchPictures();
+  }, [])
 
-    componentDidMount() {
-      this.props.fetchUsers();
-      this.props.fetchPictures();
-    }
+  const currentUserNotFollowed = useCallback(() => {
+    const currentUserData = props.users[props.currentUser];
 
-    componentWillReceiveProps(nextProps) {
-      if (Object.keys(this.props.pictures).length > 0) {
-        this.currentUserNotFollowed();
-      }
-    }
+    if (!currentUserData || !currentUserData.follows) return;
 
-    //feed the followers into the component so it'll update simultaneously
-    currentUserNotFollowed() {
-      let currentUserFollows = Object.entries(this.props.users[this.props.currentUser].follows);
-      let userNotFollowedArr = [];
-      let cleanCurrentUserNotFollowedPictures;
-      let dirtyCurrentUserNotFollowedPictures;
-      //only returns the unfollowed users
-      currentUserFollows.forEach((follow) => {
-        if (follow[1] === false) {
-          userNotFollowedArr.push(Number(follow[0]));
+    // Convert follows to an array and filter for unfollowed users.
+    const userNotFollowedArr = Object.entries(currentUserData.follows)
+      .filter(([_, isFollowed]) => isFollowed === false)
+      .map(([userId]) => Number(userId));
+
+    const dirtyCurrentUserNotFollowedPictures = Object.values(this.props.pictures).map((picture) => {
+      if (userNotFollowedArr.includes(picture.user_id)) {
+        if (picture.user_id === 1) {
+          return (
+            <DiscoverItem key={picture.id} picture={picture}
+              user={this.props.users[1]}
+              deletePicture={this.props.deletePicture}
+              openModal={this.props.openModal}
+            />
+          );
         }
-      });
-      dirtyCurrentUserNotFollowedPictures = Object.values(this.props.pictures).map((picture) => {
-        if (userNotFollowedArr.includes(picture.user_id)) {
-          if (picture.user_id === 1) {
-            return (
-              <DiscoverItem key={picture.id} picture={picture}
-                user={this.props.users[1]}
-                deletePicture={this.props.deletePicture}
-                openModal={this.props.openModal}
-              />
-            );
-          }
-          else if (picture.user_id == null) { //this line ensures that the recently uploaded pic gets shown
-            return (
-              <DiscoverUserItem key={picture.id} picture={picture}
-                user={this.props.users[this.props.currentUser]}
-                deletePicture={this.props.deletePicture}
-                openModal={this.props.openModal}
-              />
-            );
-          }
-          else {
-            return (
-              <DiscoverUserItem key={picture.id} picture={picture}
-                user={this.props.users[picture.user_id]}
-                deletePicture={this.props.deletePicture}
-                openModal={this.props.openModal}
-              />
-            );
-          }
+        else {
+          return (
+            <DiscoverUserItem key={picture.id} picture={picture}
+              user={this.props.users[picture.user_id ?? this.props.currentUser]}
+              deletePicture={this.props.deletePicture}
+              openModal={this.props.openModal}
+            />
+          );
         }
-      });
+      }
+    });
 
-      cleanCurrentUserNotFollowedPictures = dirtyCurrentUserNotFollowedPictures.filter((el) => el);
+    const cleanCurrentUserNotFollowedPictures = dirtyCurrentUserNotFollowedPictures.filter((el) => el);
+    setPictures(cleanCurrentUserNotFollowedPictures);
+  }, [
+    props.pictures,
+    props.users,
+    props.currentUser,
+    props.deletePicture,
+    props.openModal,
+  ]);
 
-      this.setState({ pictures: cleanCurrentUserNotFollowedPictures });
-    }
+  // Run unfollowed calculation every time pictures, users, or the current user changes.
+  useEffect(() => {
+    Object.keys(props.pictures).length > 0 && currentUserNotFollowed();
+  }, [props.pictures, currentUserNotFollowed]);
 
-    render() {
-      return (
-        <div className='homepage-user-feed-gallery-container'>
-          <NavbarContainer />
-          <footer className='homepage-footer'>
-            <p>Find me on these platforms!</p>
-            <div className='homepage-footer-content-container'>
-              <a href='https://www.linkedin.com/in/john-huang1/' className='LinkedIn-container'>
-                <div className='LinkedIn-icon'>in</div>
-                LinkedIn
-              </a>
-              <a href='https://angel.co/john-huang-21?public_profile=1' className='angel-list-container'>
-                <img className='angel-list-icon' src="https://img.icons8.com/windows/32/000000/angelist.png" />
-                AngelList
-              </a>
-              <a href='#' className='about-me-container'>
-                <div className='about-me-icon' />
-                About
-              </a>
-              <a href='https://github.com/john-huang-121' className='github-container'>
-                <div className='github-icon' />
-                Github
-              </a>
-            </div>
-          </footer>
-          {this.state.pictures}
-          {this.props.modalOpen ? <ModalContainer picture={this.props.modalPicture} /> : null}
+  return (
+    <div className='homepage-user-feed-gallery-container'>
+      <NavbarContainer />
+      <footer className='homepage-footer'>
+        <p>Find me on these platforms!</p>
+        <div className='homepage-footer-content-container'>
+          <a href='https://www.linkedin.com/in/john-huang1/' className='LinkedIn-container'>
+            <div className='LinkedIn-icon'>in</div>
+            LinkedIn
+          </a>
+          <a href='https://angel.co/john-huang-21?public_profile=1' className='angel-list-container'>
+            <img className='angel-list-icon' src="https://img.icons8.com/windows/32/000000/angelist.png" />
+            AngelList
+          </a>
+          <a href='#' className='about-me-container'>
+            <div className='about-me-icon' />
+            About
+          </a>
+          <a href='https://github.com/john-huang-121' className='github-container'>
+            <div className='github-icon' />
+            Github
+          </a>
         </div>
-      );
-    }
-  }
+      </footer>
+      {this.state.pictures}
+      {this.props.modalOpen ? <ModalContainer picture={this.props.modalPicture} /> : null}
+    </div>
+  );
+}
 
 export default Discover;
