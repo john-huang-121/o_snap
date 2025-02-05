@@ -1,38 +1,27 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import NewCommentContainer from './new_comment_container';
-const Timestamp = require("react-timestamp");
 
-class CommentIndex extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      comments: null,
-    };
+const CommentIndex = ({ picture, users }) => {
+  // Function to iterate over the comments and return JSX for each
+  const iterateComments = () => {
+    if (!picture.comments) return null;
 
-    this.iterateComments = this.iterateComments.bind(this);
-  }
-
-  iterateComments() {
-    let pictureComments;
-
-    pictureComments = Object.entries(this.props.picture.comments).map((comment) => {
-      let commentPrimaryId = Number(comment[0]),
-          commentCreationTime = comment[1].created_at,
-          userId = comment[1].commenter_id,
-          userProfilePic = this.props.users[comment[1].commenter_id].profile_pic,
-          userCommentEmail = this.props.users[comment[1].commenter_id].email,
-          userCommentBody = comment[1].body;
+    return Object.entries(picture.comments).map(([id, comment]) => {
+      const commentPrimaryId = Number(id);
+      // const commentCreationTime = comment.created_at; // if needed
+      const userId = comment.commenter_id;
+      const userProfilePic = users[userId].profile_pic;
+      const userCommentEmail = users[userId].email;
+      const userCommentBody = comment.body;
 
       return (
-        <div
-          className="each-posted-comment-container"
-          key={commentPrimaryId}
-        >
+        <div className="each-posted-comment-container" key={commentPrimaryId}>
           <div className="comment-user-info-container">
             <img
               className="picture-index-item-user-profile-pic"
               src={userProfilePic}
+              alt="User Profile"
             />
           </div>
           <p className="comment-body">
@@ -42,18 +31,14 @@ class CommentIndex extends React.Component {
         </div>
       );
     });
+  };
 
-    return pictureComments;
-  }
-
-  render() {
-    return (
-      <div className='comments-container' >
-        {this.props.picture.comments ? this.iterateComments() : null }
-        <NewCommentContainer picture={this.props.picture} />
-      </div> 
-    );
-  }
-}
+  return (
+    <div className="comments-container">
+      {picture.comments ? iterateComments() : null}
+      <NewCommentContainer picture={picture} />
+    </div>
+  );
+};
 
 export default CommentIndex;
