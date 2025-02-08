@@ -1,21 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-class PictureShow extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const PictureShow = ({ fetchPicture, pictureId, picture }) => {
+  useEffect(() => {
+    fetchPicture(pictureId);
+  }, [fetchPicture, pictureId]);
 
-  componentDidMount() {
-    this.props.fetchPicture(this.props.key);
-  }
-
-  render() {
-    return (
-      <div className='picture-show-container'>
-        <img src={this.props.picture.pictureUrl} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className='picture-show-container'>
+      {picture ? (
+        <img src={picture.pictureUrl} alt="Picture Show" />
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
+};
 
 export default PictureShow;
