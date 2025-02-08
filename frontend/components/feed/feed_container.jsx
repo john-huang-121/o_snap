@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 import { fetchPictures, fetchPicture, removePicture } from '../../actions/pictures_actions';
 import { createFollow, deleteFollow } from '../../actions/follows_actions';
 import { fetchUsers } from '../../actions/users_actions';
@@ -28,6 +27,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Feed)
-);
+export default connect(mapStateToProps, mapDispatchToProps)(Feed);
