@@ -1,91 +1,88 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 //Need to update all follow buttons when one is clicked
+const Follow = ({ followers, user, currentUser, createFollow, deleteFollow }) => {
+  const [isFollowed, setIsFollowed] = useState(false);
+  const [followedPrimaryId, setFollowedPrimaryId] = useState(null);
 
-class Follow extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isFollowed: false,
-      followedPrimaryId: null,
-    };
-
-    this.isFollowed = this.isFollowed.bind(this);
-    this.checkIfEditor = this.checkIfEditor.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  componentDidMount() {
-    this.isFollowed();
-  }
-
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.followers !== nextProps.followers) {
-  //     console.log(this.props.followers, nextProps.followers);
-  //     this.isFollowed();
-  //   }
-  // }
-
-  isFollowed() {
-    if (this.props.followers) {
-      let followHash = this.props.followers;
-      let allFollows = Object.keys(this.props.followers); //get keys from all followers
-
-      allFollows.forEach((followPrimaryId) => {
-        if ((followHash[followPrimaryId].user_id === this.props.user.id) && (followHash[followPrimaryId].follower_id === this.props.currentUser)) {
-          this.setState({ isFollowed: true, followedPrimaryId: followPrimaryId });
+  const checkIfFollowed = useCallback(() => {
+    if (followers) {
+      const allFollows = Object.keys(followers);
+      allFollows.forEach(followPrimaryId => {
+        const follow = followers[followPrimaryId];
+        if (follow.user_id === user.id && follow.follower_id === currentUser) {
+          setIsFollowed(true);
+          setFollowedPrimaryId(followPrimaryId);
         }
       });
     }
-  }
+  }, [followers, user, currentUser]);
 
-  handleClick(e) {
+  useEffect(() => {
+    checkIfFollowed();
+  }, [checkIfFollowed])
+  
+  const handleClick = (e) => {
     e.preventDefault();
-    if (!this.state.isFollowed) {
-      this.props.createFollow({ user_id: this.props.user.id, follower_id: this.props.currentUser })
-      .then(() => {
-        this.isFollowed();
-      })
-      .then(() => {
-        window.location.reload(false);
-      });
+
+    if (!isFollowed) {
+      createFollow({ user_id: user.id, follower_id: currentUser })
+        .then(() => {
+          checkIfFollowed();
+        })
+        .then(() => {
+          window.location.reload(false);
+        });
     } else {
-      this.props.deleteFollow(this.state.followedPrimaryId)
-      .then(() => {
-        this.setState({ isFollowed: false , followedPrimaryId: null });
-      })
-      .then(() => {
-        window.location.reload(false);
-      });
+      deleteFollow(followedPrimaryId)
+        .then(() => {
+          setIsFollowed(false);
+          setFollowedPrimaryId(null);
+        })
+        .then(() => {
+          window.location.reload(false);
+        });
     }
-  }
+  };
 
-  checkIfEditor() {
-    let followButton;
-
-    if (this.props.user === 1) { //if user is the editor
-      if (this.state.isFollowed) {
-        followButton = (<button className='profile-header-follow-user-button follow-clicked' onClick={this.handleClick}>- Unfollow</button>);
-      } else {
-        followButton = (<button className='profile-header-follow-user-button' onClick={this.handleClick}>+ Follow</button>);
-      }
-      
+  const renderFollowButton = () => {
+    // editor account is Id 1 with a unique style.
+    if (user.id === 1) {
+      return isFollowed ? (
+        <button
+          className='profile-header-follow-user-button follow-clicked'
+          onClick={handleClick}
+        >
+          - Unfollow
+        </button>
+      ) : (
+        <button
+          className='profile-header-follow-user-button'
+          onClick={handleClick}
+        >
+          + Follow
+        </button>
+      );
     } else {
-      if (this.state.isFollowed) {
-        followButton = (<button className='profile-header-follow-button follow-clicked' onClick={this.handleClick}>- Unfollow</button>);
-      } else {
-        followButton = (<button className='profile-header-follow-button' onClick={this.handleClick}>+ Follow</button>);
-      }
+      return isFollowed ? (
+        <button
+          className='profile-header-follow-button follow-clicked'
+          onClick={handleClick}
+        >
+          - Unfollow
+        </button>
+      ) : (
+        <button
+          className='profile-header-follow-button'
+          onClick={handleClick}
+        >
+          + Follow
+        </button>
+      );
     }
+  };
 
-    return followButton;
-  }
-
-  render () {
-    return (
-      this.checkIfEditor()
-    );
-  }
+  return renderFollowButton();
 }
 
 export default Follow;
