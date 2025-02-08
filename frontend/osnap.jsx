@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Root from './components/root';
 import configureStore from './store/store';
-import * as actions from './actions/session_actions';
-import * as action from './actions/follows_actions';
+import * as sessionActions from './actions/session_actions';
+import * as followsActions from './actions/follows_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let preloadedState = {};
@@ -16,16 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const store = configureStore(preloadedState);
-  const root = document.getElementById('root');
+  const container = document.getElementById('root');
 
-  //testing start
-  window.fetchFollows = action.fetchFollows;
-  window.createFollow = action.createFollow;
-  window.login = actions.login;
-  window.logout = actions.logout;
+  // Testing start
+  window.fetchFollows = followsActions.fetchFollows;
+  window.createFollow = followsActions.createFollow;
+  window.login = sessionActions.login;
+  window.logout = sessionActions.logout;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  //testing end
 
-  ReactDOM.render(<Root store={store}/>, root);
+  const root = createRoot(container);
+  root.render(<Root store={store} />);
 });
