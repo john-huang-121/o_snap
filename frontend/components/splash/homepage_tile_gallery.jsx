@@ -1,73 +1,87 @@
 import React from 'react';
 import HomepageTile from './homepage_tile';
 
-function HomepageTileGallery(props) {
-  if (props.whichTab === 'people') {
-    return (
-      <div className='homepage-top-photos-grid-container' id='unlog-people'>
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/people1.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/people2.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/people3.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/people4.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/people5.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/people6.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/people7.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/people8.jpg'} />
-      </div>
-    )
-  } else if (props.whichTab === 'landscapes') {
-    return (
-      <div className='homepage-top-photos-grid-container' id='unlog-landscapes'>
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/landscape1.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/landscape2.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/landscape3.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/landscape4.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/landscape5.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/landscape6.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/landscape7.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/landscape8.jpg'} />
-      </div>
-    )
-  } else if (props.whichTab === 'nature') {
-    return (
-      <div className='homepage-top-photos-grid-container' id='unlog-nature'>
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/nature1.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/nature2.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/nature3.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/nature4.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/nature5.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/nature6.jpg'} />
-        <HomepageTile parrotPic={true} picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/nature7.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/landscape4.jpg'} />
-      </div>
-    )
-  } else if (props.whichTab === 'city') {
-    return (
-      <div className='homepage-top-photos-grid-container' id='unlog-city'>
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/city1.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/city2.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/city3.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/city4.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/city5.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/city6.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/city7.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/city8.jpg'} />
-      </div>
-    )
-  } else if (props.whichTab === 'animals') {
-    return (
-      <div className='homepage-top-photos-grid-container' id='unlog-animals'>
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/animal1.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/animal2.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/animal3.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/animal4.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/animal5.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/animal6.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/animal7.jpg'} />
-        <HomepageTile picUrl={'https://osnap-development.s3.us-west-1.amazonaws.com/animal8.jpg'} />
-      </div>
-    )
-  }
+const getS3Url = (filename) => {
+  const baseUrl = "https://osnap-development.s3.us-west-1.amazonaws.com/";
+  return `${baseUrl}${filename}`;
+};
+
+const tileData = {
+  people: [
+    'people1.jpg',
+    'people2.jpg',
+    'people3.jpg',
+    'people4.jpg',
+    'people5.jpg',
+    'people6.jpg',
+    'people7.jpg',
+    'people8.jpg'
+  ].map(getS3Url),
+
+  landscapes: [
+    'landscape1.jpg',
+    'landscape2.jpg',
+    'landscape3.jpg',
+    'landscape4.jpg',
+    'landscape5.jpg',
+    'landscape6.jpg',
+    'landscape7.jpg',
+    'landscape8.jpg'
+  ].map(getS3Url),
+
+  nature: [
+    'nature1.jpg',
+    'nature2.jpg',
+    'nature3.jpg',
+    'nature4.jpg',
+    'nature5.jpg',
+    'nature6.jpg',
+    'nature7.jpg', // special case: for this tile, pass parrotPic={true}
+    'landscape4.jpg'
+  ].map(getS3Url),
+
+  city: [
+    'city1.jpg',
+    'city2.jpg',
+    'city3.jpg',
+    'city4.jpg',
+    'city5.jpg',
+    'city6.jpg',
+    'city7.jpg',
+    'city8.jpg'
+  ].map(getS3Url),
+
+  animals: [
+    'animal1.jpg',
+    'animal2.jpg',
+    'animal3.jpg',
+    'animal4.jpg',
+    'animal5.jpg',
+    'animal6.jpg',
+    'animal7.jpg',
+    'animal8.jpg'
+  ].map(getS3Url)
+};
+
+function HomepageTileGallery({ whichTab }) {
+  const urls = tileData[whichTab];
+  if (!urls) return null;
+
+  // Build a container id based on the tab (e.g. 'unlog-people')
+  const containerId = `unlog-${whichTab}`;
+
+  return (
+    <div className="homepage-top-photos-grid-container" id={containerId}>
+      {urls.map((url, index) => (
+        <HomepageTile
+          key={index}
+          picUrl={url}
+          // For the 'nature' tab, if the tile is at index 6, pass parrotPic={true}
+          {...(whichTab === 'nature' && index === 6 ? { parrotPic: true } : {})}
+        />
+      ))}
+    </div>
+  );
 }
 
 export default HomepageTileGallery;
