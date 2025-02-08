@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NewCommentContainer from './NewCommentContainer'; // adjust path if needed
+import NewCommentContainer from './new_comment_container';
 import { Link } from 'react-router-dom';
 
 const NewComment = ({ currentUser, picture, createComment }) => {
