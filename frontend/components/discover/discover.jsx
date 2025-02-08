@@ -71,9 +71,9 @@ const Discover = (props) => {
             <div className='LinkedIn-icon'>in</div>
             LinkedIn
           </a>
-          <a href='https://angel.co/john-huang-21?public_profile=1' className='angel-list-container'>
+          <a href='https://wellfound.com/u/john-huang-21' className='wellfound-container'>
             <img className='angel-list-icon' src="https://img.icons8.com/windows/32/000000/angelist.png" />
-            AngelList
+            Wellfound
           </a>
           <a href='#' className='about-me-container'>
             <div className='about-me-icon' />
