@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 import { fetchLikes, createLike, deleteLike } from '../../actions/likes_actions';
 import { fetchPictures } from '../../actions/pictures_actions';
 import Like from './like';
@@ -21,6 +20,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Like)
-);
+export default connect(mapStateToProps, mapDispatchToProps)(Like);

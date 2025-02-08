@@ -1,73 +1,61 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
-class Like extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLiked: false,
-      likes: 0,
-      
-    };
+const Like = ({
+  picture,
+  currentUser,
+  createLike,
+  deleteLike,
+  fetchPictures,
+  pictures
+}) => {
+  const [isLiked, setIsLiked] = useState(false);
+  const [likes, setLikes] = useState(0);
 
-    this.handleLike = this.handleLike.bind(this);
-    this.checkLiked = this.checkLiked.bind(this);
-    this.likeButtonToRender = this.likeButtonToRender.bind(this);
-  }
-
-  componentDidMount() {
-    this.checkLiked();
-  }
-
-  handleLike(e) {
-    let pictureLikes = this.state.likes;
+  const checkLiked = useCallback(() => {
+    let picKey = Object.keys(picture.likes);
     
+    if (picture.likes === null || picture.likes === undefined) {
+      setIsLiked(false);
+      setLikes(0);
+    } else if (picKey.includes(String(currentUser))) {
+      setIsLiked(true);
+      setLikes(picKey.length);
+    } else {
+      setIsLiked(false);
+      setLikes(picKey.length);
+    }
+  }, [picture.likes, currentUser]);
+
+  useEffect(() => {
+    checkLiked();
+  }, [checkLiked])
+
+  const handleLike = (e) => {
     e.preventDefault();
-
-    if (!this.state.isLiked) {
-      this.props.createLike({picture_id: this.props.picture.id, liker_id: this.props.currentUser})
-        .then(() => { this.setState({isLiked: true, likes: (pictureLikes + 1) })})
-        .then(() => this.props.fetchPictures())
+    const pictureLikes = likes;
+    if (!isLiked) {
+      createLike({ picture_id: picture.id, liker_id: currentUser })
+        .then(() => {
+          setIsLiked(true);
+          setLikes(pictureLikes + 1);
+        })
+        .then(() => fetchPictures());
     } else {
-      this.props.deleteLike(this.props.pictures[this.props.picture.id].likes[this.props.currentUser])
-        .then(() => { this.setState({isLiked: false, likes: (pictureLikes - 1) })})
+      const likeId = pictures[picture.id].likes[currentUser];
+      deleteLike(likeId).then(() => {
+        setIsLiked(false);
+        setLikes(pictureLikes - 1);
+      });
     }
-  }
+  };
 
-  checkLiked() {
-    if (this.props.picture.likes === null || this.props.picture.likes === undefined) {
-      this.setState({ isLiked: false });
-    } else if (Object.keys(this.props.picture.likes).includes(String(this.props.currentUser))) {
-      this.setState({ isLiked: true, likes: (Object.keys(this.props.picture.likes).length) });
-    } else if (Object.keys(this.props.picture.likes)) {
-      this.setState({ isLiked: false, likes: (Object.keys(this.props.picture.likes).length) });
-    }
-  }
-
-  likeButtonToRender() {
-    if (this.state.isLiked) {
-      return (
-        <button className='picture-index-item-user-liked' onClick={this.handleLike}>
-          <ul className='picture-index-item-user-like-icon'>
-            <li className='picture-index-item-user-like-icon-number'>{this.state.likes}</li>
-          </ul>
-        </button>
-      )
-    } else {
-      return (
-        <button className='picture-index-item-user-like' onClick={this.handleLike}>
-          <ul className='picture-index-item-user-like-icon'>
-            <li className='picture-index-item-user-like-icon-number'>{this.state.likes}</li>
-          </ul>
-        </button>
-      )
-    }
-  }
-
-  render() {
-    return (
-      (this.likeButtonToRender())
-    );
-  }
-}
+  return (
+    <button className={`picture-index-item-user-${isLiked ? 'liked' : 'like' }`} onClick={handleLike}>
+      <ul className='picture-index-item-user-like-icon'>
+        <li className='picture-index-item-user-like-icon-number'>{likes}</li>
+      </ul>
+    </button>
+  );
+};
 
 export default Like;
