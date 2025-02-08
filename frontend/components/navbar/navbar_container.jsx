@@ -1,6 +1,5 @@
 import Navbar from './navbar';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 import { logout } from '../../actions/session_actions';
 import { fetchUsers } from '../../actions/users_actions';
 import { fetchPictures } from "../../actions/pictures_actions";
@@ -20,5 +19,5 @@ const mapDispatchToProps = dispatch => ({
   fetchPictures: () => dispatch(fetchPictures()),
   searchMatchingPictures: (searchTerms) => dispatch(searchMatchingPictures(searchTerms))
 });
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Navbar));
