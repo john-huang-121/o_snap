@@ -1,32 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavbarContainer from '../../navbar/navbar_container';
 import SignupEmailContainer from './signup_email_container';
 import Signup from './signup';
 
-class SignupHome extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isSignupClicked: false
-    };
-  }
+const SignupHome = () => {
+  const [isSignupClicked, setIsSignupClicked] = useState(false);
 
-  onSignupClick() {
-    return (e) => {
-      this.setState({isSignupClicked: true});
-    };
-  }
+  const handleSignupClick = (e) => {
+    setIsSignupClicked(true);
+  };
 
-  render () {
-    return (
-      <div>
-        <NavbarContainer />
-        {this.state.isSignupClicked ?
-          <SignupEmailContainer /> :
-          <Signup onSignupClick={this.onSignupClick.bind(this)}/>}
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <NavbarContainer />
+      {isSignupClicked ? (
+        <SignupEmailContainer />
+      ) : (
+        <Signup onSignupClick={handleSignupClick} />
+      )}
+    </div>
+  );
+};
 
 export default SignupHome;

@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 // import { logout } from '../../actions/session_actions';
 // import { fetchUsers } from '../../actions/users_actions';
-import { withRouter } from 'react-router';
 import SignupHome from './signup_home';
 
 // const mapStateToProps = (state, ownProps) => ({
@@ -14,4 +13,4 @@ import SignupHome from './signup_home';
 //   fetchUsers: () => dispatch(fetchUsers()),
 // });
 
-export default withRouter(connect(null, null)(SignupHome));
+export default connect(null, null)(SignupHome);
