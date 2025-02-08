@@ -1,50 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
+import NewCommentContainer from './NewCommentContainer'; // adjust path if needed
+import { Link } from 'react-router-dom';
 
-class NewComment extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      commenter_id: this.props.currentUser,
-      picture_id: this.props.picture.id,
-      body: ''
-    }
+const NewComment = ({ currentUser, picture, createComment }) => {
+  const [commentBody, setCommentBody] = useState('');
 
-    this.handleInput = this.handleInput.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.dynamicTextArea = this.dynamicTextArea.bind(this);
+  const handleInput = (e) => {
+    setCommentBody(e.currentTarget.value);
   }
 
-  handleInput(type) {
-    return (e) => {
-      this.setState({ [type]: e.target.value });
-    };
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.createComment(this.state);
-    window.location.reload(false);
-  }
-
-  dynamicTextArea(event) {
-    let textElement = event.currentTarget;
+  const dynamicTextArea = (e) => {
+    const textElement = e.currentTarget;
 
     textElement.style.height = '1px';
     textElement.style.height = (25 + textElement.scrollHeight) + 'px';
   }
 
-  render() {
-    return (
-      <form className='new-comment-form' onSubmit={this.handleSubmit}>
-        <textarea 
-          className='new-comment-box'
-          onChange={this.handleInput('body')}
-          placeholder='New comment...'
-          onKeyUp={e => this.dynamicTextArea(e)} />
-        <input className='new-comment-submit' type='submit' value='Create Comment' />
-      </form>
-    );
-  }
-}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Prepare the comment data.
+    const commentData = {
+      commenter_id: currentUser,
+      picture_id: picture.id,
+      commentBody,
+    };
+
+    // Create the comment and then reload the page.
+    createComment(commentData);
+    window.location.reload(false);
+  };
+
+  return (
+    <form className='new-comment-form' onSubmit={handleSubmit}>
+      <textarea
+        className='new-comment-box'
+        value={body}
+        onChange={handleInput}
+        placeholder='New comment...'
+        onKeyUp={dynamicTextArea}
+      />
+      <input className='new-comment-submit' type='submit' value='Create Comment' />
+    </form>
+  );
+};
 
 export default NewComment;
