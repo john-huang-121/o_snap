@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import { fetchUsers } from '../../../actions/users_actions';
 import { fetchPictures } from '../../../actions/pictures_actions';
-import { withRouter } from "react-router";
 import Profile from "./profile";
 
 const mapStateToProps = (state, ownProps) => ({
@@ -15,4 +14,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchPictures: () => dispatch(fetchPictures()),
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Profile));
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
