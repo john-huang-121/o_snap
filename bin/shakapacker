@@ -1,4 +1,4 @@
-#!/app/bin/ruby ruby
+#!/usr/bin/env ruby
 ENV["RAILS_ENV"] ||= "development"
 ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile", __FILE__)
 
