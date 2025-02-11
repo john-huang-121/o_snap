@@ -1,9 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import Root from './components/root';
-import configureStore from './store/store';
-import * as sessionActions from './actions/session_actions';
-import * as followsActions from './actions/follows_actions';
+import Root from './frontend/components/root.jsx';
+import configureStore from './frontend/store/store.js';
+import * as sessionActions from './frontend/actions/session_actions.js';
+import * as followsActions from './frontend/actions/follows_actions.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   let preloadedState = {};
@@ -29,3 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = createRoot(container);
   root.render(<Root store={store} />);
 });
+
+// import React from 'react';
+// import { createRoot } from 'react-dom/client';
+// import HelloMessage from '../frontend/store/HelloMessage';
+
+// const container = document.getElementById('root');
+// const root = createRoot(container);
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   root.render(<HelloMessage name="World" />);
+// });

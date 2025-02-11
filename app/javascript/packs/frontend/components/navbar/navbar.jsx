@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { fetchPicture } from '../../utils/pictures_utils';
 // import UploadContainer from '../upload/upload_container';
 
 const Navbar = (props) => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     props.fetchUsers();
@@ -25,7 +26,7 @@ const Navbar = (props) => {
 
   // Determine what to display based on current page state.
   const currentPageState = () => {
-    if (props.isSignup) {
+    if (location.pathname === '/signup') {
       return (
         <li className="nav-flex-login">
           <Link className="nav-btn" id="login" to="/login">
@@ -33,7 +34,7 @@ const Navbar = (props) => {
           </Link>
         </li>
       );
-    } else if (props.isLogin) {
+    } else if (location.pathname === '/login') {
       return (
         <li className="nav-flex-signup">
           <Link className="nav-btn" id="signup" to="/signup">
@@ -41,7 +42,7 @@ const Navbar = (props) => {
           </Link>
         </li>
       );
-    } else if (props.isSplash && props.currentUserId === 'null') {
+    } else if (location.pathname === '/' && props.currentUserId === 'null') {
       return (
         <ul className="nav-flex-login-signup-container">
           <li className="nav-flex-login">

@@ -8,9 +8,6 @@ import { searchMatchingPictures } from "../../actions/search_actions";
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.entities.users[state.session.currentUserId],
   currentUserId: state.session.currentUserId,
-  isSignup: ownProps.location.pathname === '/signup',
-  isLogin: ownProps.location.pathname === '/login',
-  isSplash: ownProps.location.pathname === '/'
 });
 
 const mapDispatchToProps = dispatch => ({

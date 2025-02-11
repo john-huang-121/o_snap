@@ -23,7 +23,7 @@ const NewComment = ({ currentUser, picture, createComment }) => {
     const commentData = {
       commenter_id: currentUser,
       picture_id: picture.id,
-      commentBody,
+      body: commentBody,
     };
 
     // Create the comment and then reload the page.
@@ -35,7 +35,7 @@ const NewComment = ({ currentUser, picture, createComment }) => {
     <form className='new-comment-form' onSubmit={handleSubmit}>
       <textarea
         className='new-comment-box'
-        value={body}
+        value={commentBody}
         onChange={handleInput}
         placeholder='New comment...'
         onKeyUp={dynamicTextArea}

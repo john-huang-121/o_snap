@@ -25,7 +25,6 @@ gem 'jbuilder'
 gem 'bcrypt'
 
 gem 'annotate'
-gem 'jquery-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'aws-sdk-s3', require: false

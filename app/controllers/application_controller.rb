@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   helper_method :logged_in?, :current_user
+  skip_before_action :verify_authenticity_token
 
   def current_user
     @current_user ||= User.find_by_session_token(session[:session_token])
