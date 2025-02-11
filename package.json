@@ -39,6 +39,12 @@
   "scripts": {
     "dev": "bin/shakapacker-dev-server"
   },
+  "babel": {
+    "presets": [
+      "./node_modules/shakapacker/package/babel/preset.js",
+      "@babel/preset-react"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -51,9 +57,6 @@
   ],
   "packageManager": "npm@7.7.6",
   "devDependencies": {
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "react-refresh": "^0.16.0",
     "webpack-dev-server": "^4.15.2"
   }
 }
