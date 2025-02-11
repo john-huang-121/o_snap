@@ -40,7 +40,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_27_075808) do
     t.integer "picture_id", null: false
     t.integer "commenter_id", null: false
     t.string "body", null: false
-    t.datetime "date_created", precision: nil, default: "2025-02-08 10:00:48"
+    t.datetime "date_created", precision: nil, default: "2025-02-11 07:48:14"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["commenter_id", "picture_id"], name: "index_comments_on_commenter_id_and_picture_id"
@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_27_075808) do
   create_table "follows", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "follower_id", null: false
-    t.datetime "date_created", precision: nil, default: "2025-02-08 10:00:48"
+    t.datetime "date_created", precision: nil, default: "2025-02-11 07:48:14"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["follower_id"], name: "index_follows_on_follower_id"
@@ -61,7 +61,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_27_075808) do
   create_table "likes", force: :cascade do |t|
     t.integer "picture_id", null: false
     t.integer "liker_id", null: false
-    t.datetime "date_created", precision: nil, default: "2025-02-08 10:00:48"
+    t.datetime "date_created", precision: nil, default: "2025-02-11 07:48:14"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["liker_id", "picture_id"], name: "index_likes_on_liker_id_and_picture_id"
@@ -72,7 +72,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_27_075808) do
     t.string "title", null: false
     t.string "description", null: false
     t.integer "user_id", null: false
-    t.datetime "date_created", precision: nil, default: "2025-02-08 10:00:48"
+    t.datetime "date_created", precision: nil, default: "2025-02-11 07:48:14"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.string "tags", array: true
@@ -84,7 +84,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_27_075808) do
     t.string "email", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
-    t.datetime "date_created", precision: nil, default: "2025-02-08 10:00:48"
+    t.datetime "date_created", precision: nil, default: "2025-02-11 07:48:14"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.string "username"
