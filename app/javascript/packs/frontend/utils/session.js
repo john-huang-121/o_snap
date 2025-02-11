@@ -1,46 +1,73 @@
-export const createUser = (user) => {
-  return fetch('/api/users', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ user })
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Failed to create user');
-    }
-    return response.json();
-  });
-};
+import $ from 'jquery';;
 
-export const createSession = (user) => {
-  return fetch('/api/session', {
+// user auth section
+export const createUser = (user) => (
+  $.ajax ({
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ user })
+    url: `/api/users`,
+    data: { user }
   })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Failed to create session');
-    }
-    return response.json();
-  });
-};
+);
 
-export const deleteSession = () => {
-  return fetch('/api/session', {
+export const createSession = (user) => (
+  $.ajax ({
+    method: 'POST',
+    url: `/api/session`,
+    data: { user }
+  })
+);
+
+export const deleteSession = () => (
+  $.ajax ({
     method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json'
-    }
+    url: `/api/session`
   })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Failed to delete session');
-    }
-    return response.json();
-  });
-};
+);
+// 
+
+// export const createUser = (user) => {
+//   return fetch('/api/users', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({ user })
+//   })
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error('Failed to create user');
+//     }
+//     return response.json();
+//   });
+// };
+
+// export const createSession = (user) => {
+//   return fetch('/api/session', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({ user })
+//   })
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error('Failed to create session');
+//     }
+//     return response.json();
+//   });
+// };
+
+// export const deleteSession = () => {
+//   return fetch('/api/session', {
+//     method: 'DELETE',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     }
+//   })
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error('Failed to delete session');
+//     }
+//     return response.json();
+//   });
+// };
