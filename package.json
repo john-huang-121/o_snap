@@ -37,8 +37,7 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "bin/shakapacker-dev-server",
-    "build": "bin/shakapacker"
+    "dev": "bin/shakapacker-dev-server"
   },
   "keywords": [],
   "author": "",
