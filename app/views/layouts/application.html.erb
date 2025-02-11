@@ -2,21 +2,24 @@
 <html>
   <head>
     <title>OSnap</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400" rel="stylesheet">
-    <link rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <% if current_user %>
       <script>
-        window.currentUserId = {
-          currentUserId: <%= current_user.id %>
-        };
+        window.currentUserId = { currentUserId: <%= current_user.id %> };
       </script>
     <% end %>
+
+    <%= yield :head %>
+
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_pack_tag "application" %>
   </head>
 
   <body>
