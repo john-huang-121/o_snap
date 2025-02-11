@@ -25,7 +25,7 @@ const FeedUserItem = ({ user, picture, deletePicture, openModal }) => {
         <img src={picture.pictureUrl} className='picture-index-item-user-image' />
       </button>
 
-      {/* <div className='picture-index-item-user-title-desc-act-container'>
+      <div className='picture-index-item-user-title-desc-act-container'>
         <div className='picture-index-item-user-title'>
           {picture.title}
         </div>
@@ -45,7 +45,7 @@ const FeedUserItem = ({ user, picture, deletePicture, openModal }) => {
 
           <LikeContainer picture={picture} />
         </div>
-      </div> */}
+      </div>
 
       <div className='picture-index-item-user-desc'>
         {picture.description}

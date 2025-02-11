@@ -12,12 +12,15 @@ const Like = ({
   const [likes, setLikes] = useState(0);
 
   const checkLiked = useCallback(() => {
-    let picKey = Object.keys(picture.likes);
-    
-    if (picture.likes === null || picture.likes === undefined) {
+    if (!picture.likes) {
       setIsLiked(false);
       setLikes(0);
-    } else if (picKey.includes(String(currentUser))) {
+      return;
+    }
+
+    const picKey = Object.keys(picture.likes);
+
+    if (picKey.includes(String(currentUser))) {
       setIsLiked(true);
       setLikes(picKey.length);
     } else {
