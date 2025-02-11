@@ -67,9 +67,9 @@ const Login = (props) => {
               <label className="login-form-password-container">
                 <div className="login-form-password-header">
                   Password
-                  <a href="#login" className="forgot-pass">
+                  <Link to="/login" className="forgot-pass">
                     Forgot password?
-                  </a>
+                  </Link>
                 </div>
                 <input 
                   className="login-input" 

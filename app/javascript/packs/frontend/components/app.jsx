@@ -14,20 +14,20 @@ import ModalContainer from './modal/picture_modal_container';
 const App = () => (
   <Routes>
     <Route
+      path="/login"
+      element={<AuthRoute component={LoginContainer} />}
+    />
+    <Route
+      path="/signup"
+      element={<AuthRoute component={SignupHomeContainer} />}
+    />
+    <Route
       path="/discover"
       element={<ProtectedRoute component={DiscoverContainer} />}
     />
     <Route
-      path="/login"
-      element={<ProtectedRoute component={UploadContainer} />}
-    />
-    <Route
-      path="/signup"
-      element={<AuthRoute component={LoginContainer} />}
-    />
-    <Route
       path="/upload"
-      element={<AuthRoute component={SignupHomeContainer} />}
+      element={<ProtectedRoute component={UploadContainer} />}
     />
     <Route path="/" element={<HomepageDisplayContainer />} />
     <Route path="/pictures/:id" element={<PictureShowContainer />} />

@@ -5,9 +5,9 @@ const SplashNav = () => (
   <nav className="splash-nav-flex-container">
     <ul className="splash-nav-flex-link-container">
       <li className="splash-nav-flex-logo">
-        <a className="splash-logo font-effect-fire-animation" href="#">
+        <Link className="splash-logo font-effect-fire-animation" to="/">
           OSnap
-        </a>
+        </Link>
       </li>
       <li className="splash-nav-flex-discover">
         <a className="splash-nav-btn" href="#">

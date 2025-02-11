@@ -23,23 +23,23 @@ const Discover = (props) => {
       .filter(([_, isFollowed]) => isFollowed === false)
       .map(([userId]) => Number(userId));
 
-    const dirtyCurrentUserNotFollowedPictures = Object.values(this.props.pictures).map((picture) => {
+    const dirtyCurrentUserNotFollowedPictures = Object.values(props.pictures).map((picture) => {
       if (userNotFollowedArr.includes(picture.user_id)) {
         if (picture.user_id === 1) {
           return (
             <DiscoverItem key={picture.id} picture={picture}
-              user={this.props.users[1]}
-              deletePicture={this.props.deletePicture}
-              openModal={this.props.openModal}
+              user={props.users[1]}
+              deletePicture={props.deletePicture}
+              openModal={props.openModal}
             />
           );
         }
         else {
           return (
             <DiscoverUserItem key={picture.id} picture={picture}
-              user={this.props.users[picture.user_id ?? this.props.currentUser]}
-              deletePicture={this.props.deletePicture}
-              openModal={this.props.openModal}
+              user={props.users[picture.user_id ?? props.currentUser]}
+              deletePicture={props.deletePicture}
+              openModal={props.openModal}
             />
           );
         }
@@ -85,8 +85,8 @@ const Discover = (props) => {
           </a>
         </div>
       </footer>
-      {this.state.pictures}
-      {this.props.modalOpen ? <ModalContainer picture={this.props.modalPicture} /> : null}
+      {pictures}
+      {props.modalOpen ? <ModalContainer picture={props.modalPicture} /> : null}
     </div>
   );
 }

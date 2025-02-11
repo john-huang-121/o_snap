@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import NavBarContainer from '../../navbar/navbar_container';
+import { useParams } from 'react-router-dom';
 
-const Profile = (props) => {
-  const { users, currentPageId, pictures, fetchPictures } = props;
+const Profile = ({ users, pictures, fetchPictures }) => {
+  const currentPageId = parseInt(useParams().id);
 
   useEffect(() => {
     fetchPictures();
@@ -78,7 +79,7 @@ const Profile = (props) => {
 
   const renderUserPictures = () => {
     const allUserPictures = Object.values(pictures)
-      .filter((picture) => picture.user_id == currentPageId)
+      .filter((picture) => picture.user_id === currentPageId)
       .map((picture) => (
         <img
           key={picture.id}
