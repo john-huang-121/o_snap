@@ -2,7 +2,7 @@
 
 OSnap is an attempt at cloning a pixel perfect version of the high-quality photosharing website, 500Px. Here at Osnap, users are able to make an account, share high resolution pictures they've taken on the site, and see a feed of recent content other users have posted. Below is the live site:
 
-http://o-snap.herokuapp.com/#/
+[http://o-snap.herokuapp.com/#/](https://osnap-f6717303e0fa.herokuapp.com/)
 
 
 ## Technologies:
